@@ -1,0 +1,1099 @@
+@import 'vars';
+@import 'mixins';
+
+/* Основные стили */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Wix Madefor Text";
+}
+
+.center {
+  padding-left: calc(50% - 720px);
+  padding-right: calc(50% - 720px);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 19px;
+  padding-bottom: 19px;
+}
+
+.nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 48px;
+  list-style-type: none;
+
+  &__link {
+    color: $text_black;
+    font-family: "Wix Madefor Text";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 40px;
+    text-decoration: none;
+    text-transform: capitalize;
+  }
+}
+
+.hero {
+  &__container {
+    width: 95%;
+    margin: 0 auto;
+    padding-top: 105px;
+    padding-bottom: 80px;
+    border-radius: 32px;
+    background: linear-gradient(112deg, #FFF5F5 21.92%, #E7EAFC 76.74%);
+  }
+
+  &__title {
+    color: $text_black;
+    text-align: center;
+    font-family: Unbounded;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 75px;
+    position: relative;
+  }
+
+  &__highlight {
+    position: absolute;
+    z-index: 1000;
+    top: 46px;
+    left: 52%;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 22px;
+    display: flex;
+    transform: rotate(-2deg);
+    padding: 15px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background-image: url('../images/back_title.svg');
+    background-size: cover;
+    /* Покрывает всю область */
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  &__highlight-text {
+    transform: rotate(-3deg);
+  }
+
+  &__img {
+    display: flex;
+    justify-content: center;
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+
+  &__subtitle {
+    color: #2E2E2E;
+    text-align: center;
+    max-width: 745px;
+    margin: 0 auto;
+    font-family: "Wix Madefor Text";
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 64px;
+  }
+
+  &__button {
+    display: flex;
+    width: 419px;
+    padding: 16px 32px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border-radius: 12px;
+    border: 2px solid $text_black;
+    background: linear-gradient(270deg, #65ACFF 0%, #FF314A 100%);
+    box-shadow: -3px 3px 0px 0px #000;
+    color: $text_white;
+    text-decoration: none;
+    text-align: center;
+    font-family: "Wix Madefor Text";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    transition: all .3s;
+  }
+
+  &__arrow-container {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.programs {
+  padding-top: 100px;
+  padding-bottom: 100px;
+
+  &__title {
+    color: var(--Text-Black, #000);
+    text-align: center;
+    font-family: Unbounded;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 75px;
+  }
+
+  &__filters {
+    padding-top: 32px;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  &__filter {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+    display: flex;
+    height: 48px;
+    padding: 0px 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border-radius: 66px;
+    border: 1px solid #413B83;
+    background-color: #fff;
+    color: var(--Text-Light-Gray, #2E2E2E);
+    font-family: "Wix Madefor Text";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    &_active {
+      background-color: #413B83; // Цвет активного фона
+      color: #fff; // Цвет текста в активной кнопке
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    gap: 1rem;
+    margin-top: 64px;
+    justify-content: center;
+  }
+}
+
+.course-card {
+  position: relative;
+  padding: 48px;
+  height: 532px;
+  border-radius: 32px;
+  border: 1px solid #A5A8B1;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &__icon {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    width: 64px;
+    /* Задайте подходящий размер */
+    height: 64px;
+  }
+
+  &__title {
+    color: $text_black;
+    font-family: "Wix Madefor Text";
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px;
+    margin-bottom: 16px;
+  }
+
+  &__start {
+    display: inline-flex;
+    height: 32px;
+    padding: 7px 16px;
+    align-items: center;
+    gap: 4px;
+    flex-shrink: 0;
+    border-radius: 100px;
+    background: linear-gradient(93deg, #CAB3F1 4.56%, #535BED 103.19%);
+    color: $text_white;
+    font-family: "Wix Madefor Text";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  &__lessons {
+    display: flex;
+    gap: 10px;
+    padding-top: 10px;
+    padding-bottom: 24px;
+  }
+
+  &__info {
+    display: flex;
+    height: 32px;
+    padding: 6px 12px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: #2E2E2E;
+    font-family: "Wix Madefor Text";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    border-radius: 24px;
+    background: var(--Micro-Gray, #EFF0F5);
+  }
+
+  &__description {
+    color: #2E2E2E;
+    /* Secondary Body 16 */
+    font-family: "Wix Madefor Text";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  &__pricing {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+
+  &__price {
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    border-radius: 16px;
+    border: 1px solid #EFF0F5;
+    color: #2E2E2E;
+    font-family: "Wix Madefor Text";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+  }
+
+  &__cost {
+    color: $text_black;
+    font-family: "Wix Madefor Text";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+  }
+
+  &__button {
+    display: flex;
+    width: 368px;
+    height: 48px;
+    padding: 16px 32px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 12px;
+    border: 2px solid #2E2E2E;
+    background: var(--White, #FFF);
+    box-shadow: -3px 3px 0px 0px #000;
+    color: $text_black;
+    text-align: center;
+    font-family: "Wix Madefor Text";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 22px;
+  }
+}
+
+.tech-stack {
+  &__container {
+    padding-top: 64px;
+    padding-bottom: 64px;
+    border-radius: 32px;
+    background: #413B83;
+    margin-bottom: 100px;
+  }
+
+  &__content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+  }
+
+  &__subtitle {
+    position: relative;
+    display: inline-block;
+    color: #FFF;
+    text-align: center;
+    font-family: Unbounded;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 500;
+
+    padding: 10px;
+    /* Внутренние отступы для текста */
+    border-radius: 32px;
+    @include gradient-border(#413B83, #FF314A, #65ACFF);
+  }
+
+  &__title {
+    color: #FFF;
+    text-align: center;
+    font-family: Unbounded;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 75px;
+  }
+
+  &__description {
+    color: #F1F3FF;
+    text-align: center;
+    font-family: "Wix Madefor Text";
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  &__icons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 64px;
+  }
+
+  &__icon {
+    margin-left: -15px;
+    height: auto;
+    border-radius: 50%;
+  }
+}
+
+.education-stages {
+  margin-bottom: 100px;
+
+  &__container {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    border-radius: 32px;
+    background: #f1f3ff;
+    margin-top: 100px;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  &__header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  &__badge {
+    color: $text_black;
+    text-align: center;
+    font-family: Unbounded;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 500;
+    border-radius: 100px;
+    padding: 10px;
+    display: inline-block;
+    @include gradient-border(#f1f3ff, #ff314a, #65acff);
+  }
+
+  &__title {
+    color: $text_black;
+    text-align: center;
+    font-family: Unbounded;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 75px;
+    margin-top: 10px;
+  }
+
+  &__grid {
+    margin-top: 64px;
+  }
+
+  &__form {
+    grid-column: span 1;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+}
+
+.form-card {
+  border-radius: 24px;
+  background: #413B83;
+  padding: 24px;
+  margin-bottom: 16px;
+  grid-row: 1 / 4;
+
+  &__img {
+    position: relative;
+    top: -8px;
+    right: -8px;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__step {
+    display: inline-flex;
+    height: 22px;
+    padding: 2px 10px 4px 10px;
+    align-items: center;
+    gap: 4px;
+    flex-shrink: 0;
+    border-radius: 24px;
+    background: #EFF0F5;
+  }
+
+  &__title {
+    color: $text_white;
+    font-family: "Wix Madefor Text";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  &__description {
+    color: #EFF0F5;
+    font-family: "Wix Madefor Text";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 16px;
+    margin-bottom: 32px;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__input {
+    color: #A5A8B1;
+    font-family: sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding: 12px 16px;
+    border-radius: 10px;
+  }
+
+  &__phone-group {
+    display: flex;
+    gap: 8px;
+  }
+
+  &__phone-code {
+    width: 76px;
+    height: 48px;
+    border-radius: 10px;
+    outline: none;
+  }
+
+  &__submit {
+    display: flex;
+    padding: 13px 20px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    border: 2px solid #252525;
+    background: #FFF;
+    box-shadow: -3px 3px 0px 0px #000;
+    color: #000;
+    text-align: center;
+    font-family: "Wix Madefor Text";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 22px;
+    /* 137.5% */
+  }
+
+  &__consent {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    color: #EFF0F5;
+    font-family: "Wix Madefor Text";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 14px;
+  }
+}
+
+.step-card {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+
+  &_big {
+    grid-column: span 2;
+    background-image: url(../images/gradient-bg.png);
+    background-repeat: no-repeat;
+    border-radius: 20px;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__step {
+    font-size: 0.9em;
+    color: #8d99ae;
+    margin-bottom: 5px;
+  }
+
+  &__title {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+  }
+
+  &__description {
+    font-size: 0.9em;
+    color: #4a4e69;
+  }
+}
+
+.about-expert {
+  &__container {
+    width: 90%;
+    border-radius: 32px;
+    border: 1px solid #A5A8B1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    padding-bottom: 64px;
+  }
+
+  &__info {
+    padding-top: 64px;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 64px;
+  }
+
+  &__name {
+    color: $text_black;
+    text-align: center;
+
+    font-family: Unbounded;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 500;
+    border-radius: 100px;
+    padding: 10px;
+    @include gradient-border(white, #FF314A, #65ACFF);
+  }
+
+  &__fullname {
+    color: var(--Text-Black, #000);
+    text-align: center;
+    font-family: Unbounded;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 500;
+  }
+
+  &__description {
+    color: #2E2E2E;
+    text-align: center;
+    font-family: "Wix Madefor Text";
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    max-width: 700px;
+  }
+
+  &__flex {
+    display: flex;
+    gap: 24px;
+  }
+
+  &__top {
+    display: flex;
+  }
+
+  &__bottom {
+    display: flex;
+    gap: 24px
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__info {
+    // Контейнер для карточек информации
+  }
+
+  &__image {
+
+    // Контейнер для изображения эксперта
+    &_photo {
+      height: 525px;
+    }
+  }
+
+  &__photo {
+    height: 100%;
+  }
+
+  &__cta {
+    width: 714px;
+    height: 132px;
+    border-radius: 24px;
+    background: #F1F3FF;
+    padding: 24px;
+    display: flex;
+    gap: 24px;
+
+    // Блок призыва к действию (CTA)
+    &-title {
+      max-width: 245px;
+    }
+
+    &-description {
+      max-width: 220px;
+      color: #2E2E2E;
+      font-family: "Wix Madefor Text";
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+
+    &-link {
+      // Ссылка для Telegram
+    }
+
+    &-icon {
+      // Иконка Telegram
+    }
+  }
+}
+
+.info-card {
+  display: flex;
+  padding: 24px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  border-radius: 24px;
+  background: #F1F3FF;
+  max-width: 293px;
+
+  &_height {
+    flex-grow: 1;
+  }
+
+  // Карточка информации о достижениях
+  &__title {
+    color: $text_black;
+    font-family: "Wix Madefor Text";
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+
+  &__number {
+    color: $text_black;
+    font-family: "Wix Madefor Text";
+    font-size: 54px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-top: 24px;
+  }
+
+  &__text {
+    color: #A5A8B1;
+    font-family: "Wix Madefor Text";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  &__box {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  &__logos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 24px;
+  }
+
+  &__logo {
+    height: 22px;
+    padding: 2px 8px 4px 8px;
+    align-items: center;
+    border-radius: 24px;
+    background: #FFF;
+    color: #2E2E2E;
+    font-family: "Wix Madefor Text";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 14px;
+  }
+}
+
+.selection-help {
+  margin-top: 100px;
+  margin-bottom: 100px;
+
+  &__container {
+    border-radius: 32px;
+    background: #F1F3FF;
+    padding-top: 64px;
+    padding-bottom: 64px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__discount {
+    padding: 10px;
+    border-radius: 100px;
+    @include gradient-border(#F1F3FF, #FF314A, #65ACFF);
+  }
+
+  &__discount-text {
+    color: $text_black;
+    text-align: center;
+    font-family: Unbounded;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 500;
+  }
+
+  &__title {
+    color: var(--Text-Black, #000);
+    text-align: center;
+    font-family: Unbounded;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 75px;
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
+
+  &__subtitle {
+    color: #2E2E2E;
+    text-align: center;
+    font-family: "Wix Madefor Text";
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  &__features {
+    display: flex;
+    gap: 32px;
+    margin-top: 64px;
+    margin-bottom: 80px;
+  }
+
+  &__form {
+    border-radius: 16px;
+    background: #413B83;
+    padding: 24px;
+  }
+
+  &__content {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+
+  &__input {
+    color: #A5A8B1;
+    font-family: sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding: 12px 16px;
+    border-radius: 8px;
+
+    &_phone {
+      width: 194px;
+    }
+  }
+
+  &__submit {
+    display: flex;
+    padding: 13px 20px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    border: 2px solid #252525;
+    background: var(--Primary-Gradient, linear-gradient(270deg, #65ACFF 0%, #FF314A 100%));
+    box-shadow: -3px 3px 0px 0px #000;
+    color: var(--White, #FFF);
+    text-align: center;
+    font-family: "Wix Madefor Text";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 22px;
+    width: 283px;
+  }
+
+  &__consent {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #EFF0F5;
+    font-family: "Wix Madefor Text";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 14px;
+  }
+}
+
+.custom-checkbox {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  min-height: 24px;
+  appearance: none;
+  background-color: #fff;
+  border: 2px solid #9b9b9b;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+
+  &:checked {
+    background-image: url(../images/checkbox.svg);
+    background-size: cover;
+  }
+
+  &:focus {
+    border-color: #8ab4f8;
+  }
+
+  &:not(:checked):focus {
+    border-color: #8ab4f8;
+  }
+
+  &:checked:focus {
+    background-color: #000;
+    border-color: #8ab4f8;
+  }
+}
+
+
+.feature {
+  display: flex;
+  width: 178px;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+
+  &__text {
+    color: var(--Text-Light-Gray, #2E2E2E);
+    text-align: center;
+    font-family: "Wix Madefor Text";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+}
+
+.footer {
+  border-radius: 32px 32px 0px 0px;
+  background: var(--Primary-Blue, #413B83);
+  padding-top: 64px;
+  padding-bottom: 64px;
+
+  &__programs {}
+
+  &__heading {
+    color: #FFF;
+    font-family: "Wix Madefor Text";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  &__columns {
+    display: grid;
+    margin-top: 64px;
+    grid-template-columns: repeat(3, 260px);
+    justify-content: space-between;
+    margin-bottom: 80px;
+  }
+
+  &__subheading {
+    color: #FFF;
+    font-family: "Wix Madefor Text";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 24px;
+  }
+
+  &__list {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  &__link {
+    color: #F1F3FF;
+    font-family: "Wix Madefor Text";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__social {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 32px;
+    border-bottom: 1px solid #A5A8B1;
+  }
+
+  &__icons {
+    display: flex;
+    gap: 16px;
+  }
+
+  &__coll {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  &__phone {
+    color: #FFF;
+    text-align: center;
+    font-family: Unbounded;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    text-decoration: none;
+  }
+
+  &__text {
+    color: #F1F3FF;
+    font-family: "Wix Madefor Text";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  &__bottom {
+    padding-top: 48px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__bottom-left {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  &__address {
+    color: #A5A8B1;
+    font-family: "Wix Madefor Text";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  &__credits {
+    color: #F4F6F7;
+    font-family: "Wix Madefor Text";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    display: flex;
+    gap: 22px;
+    align-items: center;
+  }
+
+  &__link {
+
+  }
+
+}

@@ -1,0 +1,10 @@
+@mixin gradient-border($background-color, $gradient-color-1, $gradient-color-2) {
+  border: 1.5px solid transparent;
+
+  /* Двойной фон для градиентной рамки и фона */
+  background-image: 
+    linear-gradient($background-color, $background-color), 
+    linear-gradient(45deg, $gradient-color-1, $gradient-color-2);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}

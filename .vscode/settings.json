@@ -1,0 +1,7 @@
+{
+    "workbench.editor.tabSizingFixedMaxWidth": 50,
+    "workbench.editor.pinnedTabSizing": "compact",
+    "editor.tabSize": 2,
+    "editor.lineNumbers": "off",
+    "workbench.editor.labelFormat": "default"
+}

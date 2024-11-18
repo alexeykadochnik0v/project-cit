@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IT-курсы от веб-студии Профессионал</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+  href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&family=Wix+Madefor+Text:ital,wght@0,400..800;1,400..800&display=swap"
+  rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <header class="header center">
+    <a href=""><img src="images/logo.svg" alt="logo"></a>
+    <nav>
+      <ul class="nav">
+        <li class="nav__li"><a href="#" class="nav__link">Услуги</a></li>
+        <li class="nav__li"><a href="#" class="nav__link">Портфолио</a></li>
+        <li class="nav__li"><a href="#" class="nav__link">Блог</a></li>
+        <li class="nav__li"><a href="#" class="nav__link">IT-курсы</a></li>
+        <li class="nav__li"><a href="#" class="nav__link">О компании</a></li>
+        <li class="nav__li"><a href="#" class="nav__link">Контакты</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section class="hero" id="hero">
+    <div class="hero__container">
+      <h1 class="hero__title">
+        IT-курсы <br> от веб-студии <br>
+        <span class="hero__highlight">
+          <span class="hero__highlight-text">С нуля до первых денег</span>
+        </span>
+      </h1>
+      <div class="hero__img">
+        <img class="hero__prof" src="images/prof.svg" alt="Профессионал">
+      </div>
+      <p class="hero__subtitle">
+        Начните свой путь в IT с курсами на базе веб-студии "Профессионал", созданными основателем студии и
+        преподавателем высшей школы. Получите уникальные знания из первых рук от эксперта с многолетним опытом в
+        индустрии и обучении.
+      </p>
+      <div class="hero__arrow-container">
+        <a href="#programs" class="button button--primary hero__button">Выбрать курс <img src="images/arrow-right.svg"
+          alt="arrow-right"></a>
+        </div>
+      </div>
+    </section>
+    <section class="programs center">
+      <h2 class="programs__title">Программы обучения</h2>
+      <div class="programs__filters">
+        <button class="programs__filter programs__filter_active" data-filter="all">Все программы</button>
+        <button class="programs__filter" data-filter="web">WEB-разработка</button>
+        <button class="programs__filter" data-filter="programming">Языки программирования</button>
+      </div>
+      <div class="programs__list" id="programsList"></div>
+    </section>
+    <section class="tech-stack center">
+      <div class="tech-stack__container">
+        <div class="tech-stack__content">
+          <p class="tech-stack__subtitle">Инструменты, которые вы освоите</p>
+          <h2 class="tech-stack__title">Технологический стек курсов</h2>
+          <p class="tech-stack__description">Освойте эти инструменты и программы, проходя обучение у нас</p>
+        </div>
+        <div class="tech-stack__icons">
+          <img src="images/Icon program=HTML, Size=100.svg" alt="HTML5" class="tech-stack__icon">
+          <img src="images/Icon program=CSS, Size=100.svg" alt="CSS3" class="tech-stack__icon">
+          <img src="images/Icon program=JS, Size=100.svg" alt="JavaScript" class="tech-stack__icon">
+          <img src="images/Icon program=SASS, Size=100.svg" alt="SASS" class="tech-stack__icon">
+          <img src="images/Icon program=Photoshop, Size=100.svg" alt="Photoshop" class="tech-stack__icon">
+          <img src="images/Icon program=Figma, Size=100.svg" alt="Figma" class="tech-stack__icon">
+          <img src="images/Icon program=Java, Size=100.svg" alt="Java" class="tech-stack__icon">
+          <img src="images/Icon program=C++, Size=100.svg" alt="C++" class="tech-stack__icon">
+          <img src="images/Icon program=CSH, Size=100.svg" alt="C++" class="tech-stack__icon">
+        </div>
+      </div>
+    </section>
+    <section class="education-stages">
+      <div class="education-stages__container">
+        <div class="education-stages__header">
+          <span class="education-stages__badge">с 2000 года в IT-обучении</span>
+          <h2 class="education-stages__title">Этапы обучения:<br>ваш путь к успеху в IT</h2>
+        </div>
+        <div class="education-stages__grid center">
+          <!-- Steps -->
+          <div class="education-stages__steps">
+            <div class="form-card">
+              <div class="form-card__header">
+                <span class="form-card__step">Шаг 1</span>
+                <img class="form-card__img" src="images/plane.svg" alt="plane">
+              </div>
+              <h3 class="form-card__title">Оставьте заявку</h3>
+              <p class="form-card__description">
+                Оставьте заявку на обучение и сделайте первый шаг к освоению востребованной профессии в IT.
+                Мы поможем вам выбрать подходящий курс и начнем вместе этот путь к новым знаниям и
+                возможностям.
+              </p>
+              <form class="form-card__form">
+                <input type="text" class="form-card__input" placeholder="Имя" />
+                <input type="email" class="form-card__input" placeholder="Email" />
+                <input type="tel" class="form-card__input form-card__input_number phone-number" placeholder="Телефон" />
+                <button class="form-card__submit">Отправить</button>
+                <label class="form-card__consent">
+                  <input class="form-card__checkbox custom-checkbox" type="checkbox" />
+                  <span>
+                    Отправляя заявку, вы даете согласие на обработку своих
+                    персональных данных в соответствии с политикой конфиденциальности
+                  </span>
+                </label>
+              </form>
+            </div>
+            <!-- Steps with icons -->
+            <div class="step-card">
+              <div class="step-card__header">
+                <span class="step-card__step">шаг 2</span>
+                <img class="step-card__img" src="images/Heart.png" alt="heart">
+              </div>
+              <h3 class="step-card__title">Знакомство</h3>
+              <p class="step-card__description">Обсуждаем ваши пожелания, цели и задачи. Подбираем нужную
+                программу для обучения</p>
+              </div>
+              <div class="step-card">
+                <div class="step-card__header">
+                  <span class="step-card__step">шаг 3</span>
+                  <img class="step-card__img" src="images/Display.png" alt="display">
+                </div>
+                <h3 class="step-card__title">Пробный урок</h3>
+                <p class="step-card__description">Если вас что-то не устроит в подаче материала или других
+                  аспектах — пробный урок для вас будет бесплатным.</p>
+                </div>
+                <div class="step-card">
+                  <div class="step-card__header">
+                    <span class="step-card__step">шаг 4</span>
+                    <img class="step-card__img" src="images/Calendar.png" alt="calendar">
+                  </div>
+                  <h3 class="step-card__title">Бронь</h3>
+                  <p class="step-card__description">После оплаты курса выбираем даты и формат для индивидуальных
+                    занятий. Групповые занятия начинаются по графику.</p>
+                  </div>
+                  <div class="step-card">
+                    <div class="step-card__header">
+                      <span class="step-card__step">шаг 5</span>
+                      <img class="step-card__img" src="images/Lamp.png" alt="lamp">
+                    </div>
+                    <h3 class="step-card__title">Обучение</h3>
+                    <p class="step-card__description">Вы проходите курс в комфортном графике до получения
+                      необходимых навыков и знаний.</p>
+                    </div>
+                    <div class="step-card">
+                      <div class="step-card__header">
+                        <span class="step-card__step">шаг 6</span>
+                        <img class="step-card__img" src="images/Diamond.png" alt="diamond">
+                      </div>
+                      <h3 class="step-card__title">Стажировка</h3>
+                      <p class="step-card__description">При желании вы можете пройти стажировку в нашей веб-студии.
+                      </p>
+                    </div>
+                    <div class="step-card">
+                      <div class="step-card__header">
+                        <span class="step-card__step">шаг 7</span>
+                        <img class="step-card__img" src="images/notebook.png" alt="notebook">
+                      </div>
+                      <h3 class="step-card__title">Сертификат</h3>
+                      <p class="step-card__description">После сдачи дипломной работы, вы получаете подтверждающий
+                        документ об успешном прохождении курса.</p>
+                      </div>
+                      <div class="step-card step-card_big">
+                        <div class="step-card__header">
+                          <span class="step-card__step">шаг 8</span>
+                          <img class="step-card__img" src="images/portfolio.png" alt="portfolio">
+                        </div>
+                        <h3 class="step-card__title">Трудоустройство</h3>
+                        <p class="step-card__description">Для лучших учеников я активно помогаю в поиске клиентов и
+                          компаний, чтобы обеспечить успешное начало карьеры в IT.</p>
+                        </div>
+                        <img src="images/step-card-img.svg" alt="step">
+                      </div>
+                    </div>
+                  </div>
+                </section>
+                <section class="about-expert">
+                  <div class="about-expert__container">
+                    <div class="about-expert__info">
+                      <p class="about-expert__name">Преподаватель и автор курсов</p>
+                      <h2 class="about-expert__fullname">Александр Дарбинян</h2>
+                      <p class="about-expert__description">
+                        Основатель веб-студии «Профессионал», сертифицированный веб-разработчик с более чем 20-летним опытом.
+                      </p>
+                    </div>
+                    <div class="about-expert__content">
+                      <div class="about-expert__top">
+                        <div class="about-expert__details">
+                          <div class="about-expert__flex">
+                            <div class="info-card__box">
+                              <div class="info-card">
+                                <h3 class="info-card__title">Сертифицированный веб-разработчик</h3>
+                                <p class="info-card__number">20+</p>
+                                <p class="info-card__text">лет опыта</p>
+                              </div>
+                              <div class="info-card">
+                                <h3 class="info-card__title">Помог сотням людей войти в IT и стать профессионалами</h3>
+                                <p class="info-card__number">с 2000г.</p>
+                                <p class="info-card__text">в web-разработке</p>
+                              </div>
+                            </div>
+                            <div class="info-card__box">
+                              <div class="info-card info-card_height">
+                                <h3 class="info-card__title">Проводил обучение для групп до 50 человек</h3>
+                                <p class="info-card__number">700+</p>
+                                <p class="info-card__text">семинаров</p>
+                              </div>
+                              <div class="info-card">
+                                <h3 class="info-card__title">Работал с ведущими российскими компаниями</h3>
+                                <div class="info-card__logos">
+                                  <span class="info-card__logo">Лукойл</span>
+                                  <span class="info-card__logo">Роснефть</span>
+                                  <span class="info-card__logo">Термнефть</span>
+                                  <span class="info-card__logo">ИнжГео</span>
+                                  <span class="info-card__logo">КубаньЭнерго</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="about-expert__image about-expert__image_photo">
+                          <img src="images/expert.png" alt="Эксперт" class="about-expert__photo">
+                        </div>
+                      </div>
+                      <div class="about-expert__bottom">
+                        <div class="info-card">
+                          <h3 class="info-card__title">Преподавал в Академии Ворлдскиллс Россия</h3>
+                        </div>
+                        <div class="info-card">
+                          <h3 class="info-card__title">Разрабатывал портал для ФК Краснодар</h3>
+                        </div>
+                        <div class="about-expert__cta">
+                          <h3 class="about-expert__cta-title">Присоединяйтесь к моему Telegram-каналу!</h3>
+                          <p class="about-expert__cta-description">
+                            Следите за успехами учеников, участвуйте в проектах и получайте свежие новости из мира IT!
+                          </p>
+                          <a href="https://t.me/example" class="about-expert__cta-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="151" height="121" viewBox="0 0 151 121" fill="none">
+                              <rect x="40" y="13" width="87" height="87" rx="24" fill="#50A8E4" />
+                              <g filter="url(#filter0_f_1_3513)">
+                                <rect x="40" y="40" width="71" height="66" rx="33" fill="#50A8E4" />
+                              </g>
+                              <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M63.4653 56.5645C74.8612 51.5992 82.4603 48.3258 86.2625 46.7442C97.1185 42.2286 99.3743 41.4441 100.845 41.4182C101.168 41.4125 101.891 41.4927 102.359 41.8728C102.755 42.1937 102.864 42.6272 102.916 42.9315C102.968 43.2357 103.033 43.9288 102.981 44.4704C102.393 50.652 99.8473 65.6531 98.5523 72.5766C98.0043 75.5062 96.9253 76.4884 95.8807 76.5846C93.6106 76.7935 91.8868 75.0843 89.6881 73.6429C86.2476 71.3875 84.3039 69.9834 80.9643 67.7825C77.1047 65.239 79.6067 63.8411 81.8062 61.5564C82.3819 60.9585 92.384 51.8603 92.5776 51.035C92.6018 50.9317 92.6243 50.547 92.3957 50.3438C92.1671 50.1406 91.8298 50.2101 91.5863 50.2654C91.2412 50.3437 85.7449 53.9767 75.0974 61.1645C73.5373 62.2359 72.1242 62.7579 70.8581 62.7305C69.4623 62.7004 66.7775 61.9413 64.7815 61.2924C62.3334 60.4966 60.3877 60.0759 60.5572 58.7243C60.6454 58.0203 61.6148 57.3004 63.4653 56.5645Z"
+                              fill="white" />
+                              <defs>
+                                <filter id="filter0_f_1_3513" x="0" y="0" width="151" height="146" filterUnits="userSpaceOnUse"
+                                color-interpolation-filters="sRGB">
+                                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+                                <feGaussianBlur stdDeviation="20" result="effect1_foregroundBlur_1_3513" />
+                              </filter>
+                            </defs>
+                          </svg>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section class="selection-help center">
+                <div class="selection-help__container">
+                  <div class="selection-help__discount">
+                    <span class="selection-help__discount-text">20% скидка на обучение в группе</span>
+                  </div>
+                  <h2 class="selection-help__title">Помочь с выбором?</h2>
+                  <p class="selection-help__subtitle">
+                    Старт занятий в любое удобное время. <br> В группе или индивидуально
+                  </p>
+                  <div class="selection-help__features">
+                    <div class="feature">
+                      <img src="images/help1.svg" alt="Networking" class="feature__icon">
+                      <p class="feature__text">Нетворкинг с другими учениками, проходящими ваш курс и коллегами</p>
+                    </div>
+                    <div class="feature">
+                      <img src="images/help2.svg" alt="Employment" class="feature__icon">
+                      <p class="feature__text">Помощь в трудоустройстве и поиске клиентов</p>
+                    </div>
+                    <div class="feature">
+                      <img src="images/help3.svg" alt="Internship" class="feature__icon">
+                      <p class="feature__text">Возможность стажировки в нашей веб-студии</p>
+                    </div>
+                  </div>
+                  <form class="selection-help__form">
+                    <div class="selection-help__content">
+                      <input type="text" class="selection-help__input" placeholder="Имя" />
+                      <input type="email" class="selection-help__input" placeholder="Email" />
+                      <input type="tel" class="selection-help__input selection-help__input_phone phone-number"
+                      placeholder="+7 (___) ___-__-__" />
+                      <button type="submit" class="selection-help__submit">Отправить</button>
+                    </div>
+                    <label class="selection-help__consent">
+                      <input type="checkbox" class="selection-help__checkbox custom-checkbox" />
+                      <span>Отправляя заявку, вы даете согласие на обработку своих персональных данных в соответствии с политикой
+                        конфиденциальности</span>
+                      </label>
+                    </form>
+                  </div>
+                </section>
+                <footer class="footer">
+                  <div class="center">
+                    <div class="footer__programs">
+                      <h3 class="footer__heading">Образовательные программы</h3>
+                      <div class="footer__columns">
+                        <div class="footer__column">
+                          <h4 class="footer__subheading">Курсы по веб-разработке</h4>
+                          <ul class="footer__list">
+                            <li class="footer__item"><a href="#" class="footer__link">Создание сайтов на HTML5, CSS3, JavaScript</a></li>
+                            <li class="footer__item"><a href="#" class="footer__link">Вёрстка на профессиональном уровне (HTML, CSS, JS, jQuery, Bootstrap, SASS)</a></li>
+                            <li class="footer__item"><a href="#" class="footer__link">Frontend-разработка (HTML, CSS, JS, jQuery, Bootstrap, SASS)</a></li>
+                            <li class="footer__item"><a href="#" class="footer__link">Веб-разработчик (Fullstack)</a></li>
+                            <li class="footer__item"><a href="#" class="footer__link">Создание веб-приложений на React и Redux</a></li>
+                          </ul>
+                        </div>
+                        <div class="footer__column">
+                          <h4 class="footer__subheading">Курсы по программированию</h4>
+                          <ul class="footer__list">
+                            <li class="footer__item"><a href="#" class="footer__link">Java-разработчик (базовый уровень)</a></li>
+                            <li class="footer__item"><a href="#" class="footer__link">C++ разработчик (базовый уровень)</a></li>
+                            <li class="footer__item"><a href="#" class="footer__link">C# разработчик (базовый уровень)</a></li>
+                            <li class="footer__item"><a href="#" class="footer__link">JavaScript-разработчик (базовый и профессиональный уровни)</a></li>
+                            <li class="footer__item"><a href="#" class="footer__link">Python-разработчик (базовый и продвинутый уровни, включая ООП)</a></li>
+                          </ul>
+                        </div>
+                        <div class="footer__column">
+                          <h4 class="footer__subheading">Дополнительные курсы</h4>
+                          <ul class="footer__list">
+                            <li class="footer__item"><a href="#" class="footer__link">MS Excel – базовый курс для новичков</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <h3 class="footer__heading">Информация и поддержка</h3>
+                    
+                    <div class="footer__info">
+                      <div class="footer__columns">
+                        <div class="footer__column">
+                          <h4 class="footer__subheading">О школе:</h4>
+                          <ul class="footer__list">
+                            <li class="footer__item"><a href="#" class="footer__link">Блог</a></li>
+                            <li class="footer__item"><a href="#" class="footer__link">Отзывы</a></li>
+                            <li class="footer__item"><a href="#" class="footer__link">О преподавателе</a></li>
+                            <li class="footer__item"><a href="#" class="footer__link">История и достижения</a></li>
+                          </ul>
+                        </div>
+                        <div class="footer__column">
+                          <h4 class="footer__subheading">Центр карьеры</h4>
+                          <ul class="footer__list">
+                            <li class="footer__item"><a href="#" class="footer__link">Помощь в выборе курса</a></li>
+                            <li class="footer__item"><a href="#" class="footer__link">Подготовка к трудоустройству</a></li>
+                            <li class="footer__item"><a href="#" class="footer__link">Вакансии веб-студии “Профессионал”</a></li>
+                            <li class="footer__item"><a href="#" class="footer__link">Поддержка студентов</a></li>
+                            <li class="footer__item"><a href="#" class="footer__link">Полезные ресурсы и материалы</a></li>
+                          </ul>
+                        </div>
+                        <div class="footer__column">
+                          <h4 class="footer__subheading">Правовая информация</h4>
+                          <ul class="footer__list">
+                            <li class="footer__item"><a href="#" class="footer__link">Условия обучения</a></li>
+                            <li class="footer__item"><a href="#" class="footer__link">Политика возврата средств</a></li>
+                            <li class="footer__item"><a href="#" class="footer__link">Политика конфиденциальности</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="footer__social">
+                      <a href="index.html" class="footer__logo"><img src="images/logo-footer.svg" alt="logo"></a>
+                      <div class="footer__icons">
+                        <a href="#" class="footer__icon">
+                          <img src="images/vk.svg" alt="vk">
+                        </a>
+                        <a href="#" class="footer__icon">
+                          <img src="images/vk.svg" alt="vk">
+                        </a>
+                        <a href="#" class="footer__icon">
+                          <img src="images/vk.svg" alt="vk">
+                        </a>
+                      </div>
+                      <div class="footer__coll">
+                        <a href="tel:+79184184222" class="footer__phone">8(918)482-42-22</a>
+                        <p class="footer__text">Позвоните или оставьте заявку</p>
+                      </div>
+                    </div>
+                    <div class="footer__bottom">
+                      <div class="footer__bottom-left">
+                        <p class="footer__address">
+                          Веб-студия "Профессионал" 350004, г. Краснодар, ул. Бабушкина, 252, оф. 11
+                        </p>
+                        <p class="footer__address">
+                          ИНН 231114234337, ОГРН 304231136600682
+                        </p>
+                      </div>
+                      <p class="footer__credits">Создание сайта: <a href="#" class="footer__link"><img src="images/cit.svg" alt="cit"></a></p>
+                    </div>
+                  </div>
+                </footer>
+                
+                
+                <script src="https://cdn.jsdelivr.net/npm/imask@6.4.2/dist/imask.min.js"></script>
+                <script src="script.js"></script>
+              </body>
+              
+              </html>

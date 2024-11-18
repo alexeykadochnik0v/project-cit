@@ -1,0 +1,976 @@
+@charset "UTF-8";
+/* Основные стили */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Wix Madefor Text";
+}
+
+.center {
+  padding-left: calc(50% - 720px);
+  padding-right: calc(50% - 720px);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 19px;
+  padding-bottom: 19px;
+}
+
+.nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 48px;
+  list-style-type: none;
+}
+.nav__link {
+  color: #000;
+  font-family: "Wix Madefor Text";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 40px;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
+.hero__container {
+  width: 95%;
+  margin: 0 auto;
+  padding-top: 105px;
+  padding-bottom: 80px;
+  border-radius: 32px;
+  background: linear-gradient(112deg, #FFF5F5 21.92%, #E7EAFC 76.74%);
+}
+.hero__title {
+  color: #000;
+  text-align: center;
+  font-family: Unbounded;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 75px;
+  position: relative;
+}
+.hero__highlight {
+  position: absolute;
+  z-index: 1000;
+  top: 46px;
+  left: 52%;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 22px;
+  display: flex;
+  transform: rotate(-2deg);
+  padding: 15px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background-image: url("../images/back_title.svg");
+  background-size: cover;
+  /* Покрывает всю область */
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.hero__highlight-text {
+  transform: rotate(-3deg);
+}
+.hero__img {
+  display: flex;
+  justify-content: center;
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+.hero__subtitle {
+  color: #2E2E2E;
+  text-align: center;
+  max-width: 745px;
+  margin: 0 auto;
+  font-family: "Wix Madefor Text";
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 64px;
+}
+.hero__button {
+  display: flex;
+  width: 419px;
+  padding: 16px 32px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 12px;
+  border: 2px solid #000;
+  background: linear-gradient(270deg, #65ACFF 0%, #FF314A 100%);
+  box-shadow: -3px 3px 0px 0px #000;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  font-family: "Wix Madefor Text";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  transition: all 0.3s;
+}
+.hero__arrow-container {
+  display: flex;
+  justify-content: center;
+}
+
+.programs {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+.programs__title {
+  color: var(--Text-Black, #000);
+  text-align: center;
+  font-family: Unbounded;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 75px;
+}
+.programs__filters {
+  padding-top: 32px;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+.programs__filter {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s ease;
+  display: flex;
+  height: 48px;
+  padding: 0px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 66px;
+  border: 1px solid #413B83;
+  background-color: #fff;
+  color: var(--Text-Light-Gray, #2E2E2E);
+  font-family: "Wix Madefor Text";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.programs__filter_active {
+  background-color: #413B83;
+  color: #fff;
+}
+.programs__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 1rem;
+  margin-top: 64px;
+  justify-content: center;
+}
+
+.course-card {
+  position: relative;
+  padding: 48px;
+  height: 532px;
+  border-radius: 32px;
+  border: 1px solid #A5A8B1;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.course-card__icon {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 64px;
+  /* Задайте подходящий размер */
+  height: 64px;
+}
+.course-card__title {
+  color: #000;
+  font-family: "Wix Madefor Text";
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 40px;
+  margin-bottom: 16px;
+}
+.course-card__start {
+  display: inline-flex;
+  height: 32px;
+  padding: 7px 16px;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+  border-radius: 100px;
+  background: linear-gradient(93deg, #CAB3F1 4.56%, #535BED 103.19%);
+  color: #fff;
+  font-family: "Wix Madefor Text";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.course-card__lessons {
+  display: flex;
+  gap: 10px;
+  padding-top: 10px;
+  padding-bottom: 24px;
+}
+.course-card__info {
+  display: flex;
+  height: 32px;
+  padding: 6px 12px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  color: #2E2E2E;
+  font-family: "Wix Madefor Text";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  border-radius: 24px;
+  background: var(--Micro-Gray, #EFF0F5);
+}
+.course-card__description {
+  color: #2E2E2E;
+  /* Secondary Body 16 */
+  font-family: "Wix Madefor Text";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.course-card__pricing {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+.course-card__price {
+  display: flex;
+  padding: 10px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  border-radius: 16px;
+  border: 1px solid #EFF0F5;
+  color: #2E2E2E;
+  font-family: "Wix Madefor Text";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+}
+.course-card__cost {
+  color: #000;
+  font-family: "Wix Madefor Text";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+}
+.course-card__button {
+  display: flex;
+  width: 368px;
+  height: 48px;
+  padding: 16px 32px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 12px;
+  border: 2px solid #2E2E2E;
+  background: var(--White, #FFF);
+  box-shadow: -3px 3px 0px 0px #000;
+  color: #000;
+  text-align: center;
+  font-family: "Wix Madefor Text";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 22px;
+}
+
+.tech-stack__container {
+  padding-top: 64px;
+  padding-bottom: 64px;
+  border-radius: 32px;
+  background: #413B83;
+  margin-bottom: 100px;
+}
+.tech-stack__content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+}
+.tech-stack__subtitle {
+  position: relative;
+  display: inline-block;
+  color: #FFF;
+  text-align: center;
+  font-family: Unbounded;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 500;
+  padding: 10px;
+  /* Внутренние отступы для текста */
+  border-radius: 32px;
+  border: 1.5px solid transparent;
+  /* Двойной фон для градиентной рамки и фона */
+  background-image: linear-gradient(#413B83, #413B83), linear-gradient(45deg, #FF314A, #65ACFF);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+.tech-stack__title {
+  color: #FFF;
+  text-align: center;
+  font-family: Unbounded;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 75px;
+}
+.tech-stack__description {
+  color: #F1F3FF;
+  text-align: center;
+  font-family: "Wix Madefor Text";
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.tech-stack__icons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 64px;
+}
+.tech-stack__icon {
+  margin-left: -15px;
+  height: auto;
+  border-radius: 50%;
+}
+
+.education-stages {
+  margin-bottom: 100px;
+}
+.education-stages__container {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  border-radius: 32px;
+  background: #f1f3ff;
+  margin-top: 100px;
+  width: 90%;
+  margin: 0 auto;
+}
+.education-stages__header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.education-stages__badge {
+  color: #000;
+  text-align: center;
+  font-family: Unbounded;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 500;
+  border-radius: 100px;
+  padding: 10px;
+  display: inline-block;
+  border: 1.5px solid transparent;
+  /* Двойной фон для градиентной рамки и фона */
+  background-image: linear-gradient(#f1f3ff, #f1f3ff), linear-gradient(45deg, #ff314a, #65acff);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+.education-stages__title {
+  color: #000;
+  text-align: center;
+  font-family: Unbounded;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 75px;
+  margin-top: 10px;
+}
+.education-stages__grid {
+  margin-top: 64px;
+}
+.education-stages__form {
+  grid-column: span 1;
+  display: flex;
+  justify-content: center;
+}
+.education-stages__steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.form-card {
+  border-radius: 24px;
+  background: #413B83;
+  padding: 24px;
+  margin-bottom: 16px;
+  grid-row: 1/4;
+}
+.form-card__img {
+  position: relative;
+  top: -8px;
+  right: -8px;
+}
+.form-card__header {
+  display: flex;
+  justify-content: space-between;
+}
+.form-card__step {
+  display: inline-flex;
+  height: 22px;
+  padding: 2px 10px 4px 10px;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+  border-radius: 24px;
+  background: #EFF0F5;
+}
+.form-card__title {
+  color: #fff;
+  font-family: "Wix Madefor Text";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.form-card__description {
+  color: #EFF0F5;
+  font-family: "Wix Madefor Text";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 16px;
+  margin-bottom: 32px;
+}
+.form-card__form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.form-card__input {
+  color: #A5A8B1;
+  font-family: sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding: 12px 16px;
+  border-radius: 10px;
+}
+.form-card__phone-group {
+  display: flex;
+  gap: 8px;
+}
+.form-card__phone-code {
+  width: 76px;
+  height: 48px;
+  border-radius: 10px;
+  outline: none;
+}
+.form-card__submit {
+  display: flex;
+  padding: 13px 20px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  border: 2px solid #252525;
+  background: #FFF;
+  box-shadow: -3px 3px 0px 0px #000;
+  color: #000;
+  text-align: center;
+  font-family: "Wix Madefor Text";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 22px;
+  /* 137.5% */
+}
+.form-card__consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  color: #EFF0F5;
+  font-family: "Wix Madefor Text";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 14px;
+}
+
+.step-card {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+}
+.step-card_big {
+  grid-column: span 2;
+  background-image: url(../images/gradient-bg.png);
+  background-repeat: no-repeat;
+  border-radius: 20px;
+}
+.step-card__header {
+  display: flex;
+  justify-content: space-between;
+}
+.step-card__step {
+  font-size: 0.9em;
+  color: #8d99ae;
+  margin-bottom: 5px;
+}
+.step-card__title {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+.step-card__description {
+  font-size: 0.9em;
+  color: #4a4e69;
+}
+
+.about-expert__container {
+  width: 90%;
+  border-radius: 32px;
+  border: 1px solid #A5A8B1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  padding-bottom: 64px;
+}
+.about-expert__info {
+  padding-top: 64px;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 64px;
+}
+.about-expert__name {
+  color: #000;
+  text-align: center;
+  font-family: Unbounded;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 500;
+  border-radius: 100px;
+  padding: 10px;
+  border: 1.5px solid transparent;
+  /* Двойной фон для градиентной рамки и фона */
+  background-image: linear-gradient(white, white), linear-gradient(45deg, #FF314A, #65ACFF);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+.about-expert__fullname {
+  color: var(--Text-Black, #000);
+  text-align: center;
+  font-family: Unbounded;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 500;
+}
+.about-expert__description {
+  color: #2E2E2E;
+  text-align: center;
+  font-family: "Wix Madefor Text";
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  max-width: 700px;
+}
+.about-expert__flex {
+  display: flex;
+  gap: 24px;
+}
+.about-expert__top {
+  display: flex;
+}
+.about-expert__bottom {
+  display: flex;
+  gap: 24px;
+}
+.about-expert__content {
+  display: flex;
+  flex-direction: column;
+}
+.about-expert__image_photo {
+  height: 525px;
+}
+.about-expert__photo {
+  height: 100%;
+}
+.about-expert__cta {
+  width: 714px;
+  height: 132px;
+  border-radius: 24px;
+  background: #F1F3FF;
+  padding: 24px;
+  display: flex;
+  gap: 24px;
+}
+.about-expert__cta-title {
+  max-width: 245px;
+}
+.about-expert__cta-description {
+  max-width: 220px;
+  color: #2E2E2E;
+  font-family: "Wix Madefor Text";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.info-card {
+  display: flex;
+  padding: 24px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  border-radius: 24px;
+  background: #F1F3FF;
+  max-width: 293px;
+}
+.info-card_height {
+  flex-grow: 1;
+}
+.info-card__title {
+  color: #000;
+  font-family: "Wix Madefor Text";
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.info-card__number {
+  color: #000;
+  font-family: "Wix Madefor Text";
+  font-size: 54px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin-top: 24px;
+}
+.info-card__text {
+  color: #A5A8B1;
+  font-family: "Wix Madefor Text";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.info-card__box {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.info-card__logos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 24px;
+}
+.info-card__logo {
+  height: 22px;
+  padding: 2px 8px 4px 8px;
+  align-items: center;
+  border-radius: 24px;
+  background: #FFF;
+  color: #2E2E2E;
+  font-family: "Wix Madefor Text";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 14px;
+}
+
+.selection-help {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+.selection-help__container {
+  border-radius: 32px;
+  background: #F1F3FF;
+  padding-top: 64px;
+  padding-bottom: 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.selection-help__discount {
+  padding: 10px;
+  border-radius: 100px;
+  border: 1.5px solid transparent;
+  /* Двойной фон для градиентной рамки и фона */
+  background-image: linear-gradient(#F1F3FF, #F1F3FF), linear-gradient(45deg, #FF314A, #65ACFF);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+.selection-help__discount-text {
+  color: #000;
+  text-align: center;
+  font-family: Unbounded;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 500;
+}
+.selection-help__title {
+  color: var(--Text-Black, #000);
+  text-align: center;
+  font-family: Unbounded;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 75px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+.selection-help__subtitle {
+  color: #2E2E2E;
+  text-align: center;
+  font-family: "Wix Madefor Text";
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.selection-help__features {
+  display: flex;
+  gap: 32px;
+  margin-top: 64px;
+  margin-bottom: 80px;
+}
+.selection-help__form {
+  border-radius: 16px;
+  background: #413B83;
+  padding: 24px;
+}
+.selection-help__content {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.selection-help__input {
+  color: #A5A8B1;
+  font-family: sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding: 12px 16px;
+  border-radius: 8px;
+}
+.selection-help__input_phone {
+  width: 194px;
+}
+.selection-help__submit {
+  display: flex;
+  padding: 13px 20px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  border: 2px solid #252525;
+  background: var(--Primary-Gradient, linear-gradient(270deg, #65ACFF 0%, #FF314A 100%));
+  box-shadow: -3px 3px 0px 0px #000;
+  color: var(--White, #FFF);
+  text-align: center;
+  font-family: "Wix Madefor Text";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 22px;
+  width: 283px;
+}
+.selection-help__consent {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #EFF0F5;
+  font-family: "Wix Madefor Text";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 14px;
+}
+
+.custom-checkbox {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  min-height: 24px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: #fff;
+  border: 2px solid #9b9b9b;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+.custom-checkbox:checked {
+  background-image: url(../images/checkbox.svg);
+  background-size: cover;
+}
+.custom-checkbox:focus {
+  border-color: #8ab4f8;
+}
+.custom-checkbox:not(:checked):focus {
+  border-color: #8ab4f8;
+}
+.custom-checkbox:checked:focus {
+  background-color: #000;
+  border-color: #8ab4f8;
+}
+
+.feature {
+  display: flex;
+  width: 178px;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.feature__text {
+  color: var(--Text-Light-Gray, #2E2E2E);
+  text-align: center;
+  font-family: "Wix Madefor Text";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.footer {
+  border-radius: 32px 32px 0px 0px;
+  background: var(--Primary-Blue, #413B83);
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+.footer__heading {
+  color: #FFF;
+  font-family: "Wix Madefor Text";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.footer__columns {
+  display: grid;
+  margin-top: 64px;
+  grid-template-columns: repeat(3, 260px);
+  justify-content: space-between;
+  margin-bottom: 80px;
+}
+.footer__subheading {
+  color: #FFF;
+  font-family: "Wix Madefor Text";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 24px;
+}
+.footer__list {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.footer__link {
+  color: #F1F3FF;
+  font-family: "Wix Madefor Text";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration: none;
+}
+.footer__link:hover {
+  text-decoration: underline;
+}
+.footer__social {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 32px;
+  border-bottom: 1px solid #A5A8B1;
+}
+.footer__icons {
+  display: flex;
+  gap: 16px;
+}
+.footer__coll {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.footer__phone {
+  color: #FFF;
+  text-align: center;
+  font-family: Unbounded;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  text-decoration: none;
+}
+.footer__text {
+  color: #F1F3FF;
+  font-family: "Wix Madefor Text";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.footer__bottom {
+  padding-top: 48px;
+  display: flex;
+  justify-content: space-between;
+}
+.footer__bottom-left {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.footer__address {
+  color: #A5A8B1;
+  font-family: "Wix Madefor Text";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.footer__credits {
+  color: #F4F6F7;
+  font-family: "Wix Madefor Text";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  display: flex;
+  gap: 22px;
+  align-items: center;
+}/*# sourceMappingURL=style.css.map */
