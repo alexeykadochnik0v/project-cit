@@ -88,6 +88,7 @@ const sanitizeHTML = text => {
 // Функция для создания HTML карточек
 const createCourseCard = ({ id, title, startDate, lessons, hours, price, currency, description, icon }) => `
   <div class="course-card" data-id="${id}">
+    <div class="gradient-circle"></div>
       <img src="${icon}" alt="${title} icon" class="course-card__icon">
       <div>
         <p class="course-card__start">Старт: ${sanitizeHTML(startDate.day)} ${sanitizeHTML(startDate.month)}</p>
@@ -160,6 +161,30 @@ document.addEventListener("DOMContentLoaded", function () {
       lazy: false, // Маска всегда отображается
       placeholderChar: '_', // Символ заполнителя
       overwrite: true, // Включает режим замены символов
+    });
+  });
+});
+
+const cards = document.querySelectorAll(".course-card");
+
+cards.forEach((card) => {
+  card.addEventListener("mousemove", (e) => {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left; // Позиция курсора относительно карточки
+    const y = e.clientY - rect.top;
+
+    // Создаём "огонёк"
+    const flame = document.createElement("div");
+    flame.classList.add("flame");
+    flame.style.left = `${x}px`;
+    flame.style.top = `${y}px`;
+
+    // Добавляем "огонёк" в карточку
+    card.appendChild(flame);
+
+    // Удаляем "огонёк" после завершения анимации
+    flame.addEventListener("animationend", () => {
+      flame.remove();
     });
   });
 });

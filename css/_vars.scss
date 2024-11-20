@@ -1,2 +1,36 @@
+// Цвета
 $text_black: #000;
 $text_white: #fff;
+$text_light_gray: #2E2E2E;
+$background_gray: #EFF0F5;
+$gradient_red: #FF314A;
+$gradient_blue: #65ACFF;
+$gradient_purple: #413B83;
+
+// Шрифты
+$font_primary: "Wix Madefor Text";
+$font_secondary: "Unbounded";
+
+// Размеры шрифтов
+$font-size-xs: 12px;
+$font-size-sm: 14px;
+$font-size-md: 16px;
+$font-size-lg: 18px;
+$font-size-xl: 22px;
+$font-size-xxl: 24px;
+$font-size-xxxl: 36px;
+$font-size-xxxxl: 64px;
+
+// Отступы и размеры
+$border-radius: 12px;
+$large-border-radius: 32px;
+$small-padding: 16px;
+$medium-padding: 24px;
+$large-padding: 48px;
+
+// Тени
+$box-shadow: -3px 3px 0px 0px $text_black;
+
+// Градиенты
+$gradient-main: linear-gradient(270deg, $gradient_blue 0%, $gradient_red 100%);
+$gradient-secondary: linear-gradient(112deg, #FFF5F5 21.92%, #E7EAFC 76.74%);
