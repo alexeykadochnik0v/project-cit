@@ -4,7 +4,7 @@ const courses = [
     id: 1,
     title: "Разработчик сайтов с нуля",
     category: "web",
-    icon: "images/html-logo.svg",
+    icon: "images/Icon program=HTML, Size=64.svg",
     startDate: { day: 23, month: "января" },
     lessons: 30,
     hours: 120,
@@ -16,7 +16,7 @@ const courses = [
     id: 2,
     title: "Java-разработчик",
     category: "programming",
-    icon: "images/java-logo.svg",
+    icon: "images/Icon program=Java, Size=64.svg",
     startDate: { day: 23, month: "января" },
     lessons: 30,
     hours: 120,
@@ -28,7 +28,7 @@ const courses = [
     id: 3,
     title: "Разработчик на C++",
     category: "programming",
-    icon: "images/cpp-logo.svg",
+    icon: "images/Icon program=C++, Size=64.svg",
     startDate: { day: 23, month: "января" },
     lessons: 30,
     hours: 120,
@@ -40,7 +40,7 @@ const courses = [
     id: 4,
     title: "C# разработчик",
     category: "programming",
-    icon: "images/csharp-logo.svg",
+    icon: "images/Icon program=C, Size=64.svg",
     startDate: { day: 23, month: "января" },
     lessons: 30,
     hours: 120,
@@ -52,7 +52,7 @@ const courses = [
     id: 5,
     title: "Верстка: HTML, CSS, JS, Bootstrap, SASS и другие",
     category: "web",
-    icon: "images/js-logo.svg",
+    icon: "images/Icon program=CSS, Size=64.svg",
     startDate: { day: 23, month: "января" },
     lessons: 30,
     hours: 120,
@@ -64,7 +64,7 @@ const courses = [
     id: 6,
     title: "Дизайн сайтов в Figma",
     category: "web",
-    icon: "images/figma-logo.svg",
+    icon: "images/Icon program=Figma, Size=64.svg",
     startDate: { day: 23, month: "января" },
     lessons: 30,
     hours: 120,
@@ -73,6 +73,7 @@ const courses = [
     description: "Освойте основы работы с Figma: создание макетов, интерактивных прототипов и графических элементов."
   }
 ];
+
 
 
 // Функция для форматирования цены с валютой
@@ -90,8 +91,8 @@ const createCourseCard = ({ id, title, startDate, lessons, hours, price, currenc
   <div class="course-card" data-id="${id}">
     <div class="gradient-circle"></div>
       <img src="${icon}" alt="${title} icon" class="course-card__icon">
-      <div>
-        <p class="course-card__start">Старт: ${sanitizeHTML(startDate.day)} ${sanitizeHTML(startDate.month)}</p>
+      <div class="course-card__top">
+<p class="course-card__start">Старт: ${sanitizeHTML(startDate.day)} ${sanitizeHTML(startDate.month)}</p>
         <div class="course-card__lessons">  
           <p class="course-card__info">${lessons} уроков</p>
           <p class="course-card__info">${hours} академ. часов</p>
@@ -113,9 +114,9 @@ const createCourseCard = ({ id, title, startDate, lessons, hours, price, currenc
 const renderCourses = (filter = 'all') => {
   const programsList = document.getElementById('programsList');
   programsList.innerHTML = courses
-    .filter(({ category }) => filter === 'all' || category === filter)
-    .map(createCourseCard)
-    .join('');
+  .filter(({ category }) => filter === 'all' || category === filter)
+  .map(createCourseCard)
+  .join('');
 };
 
 // Функция для переключения активного фильтра и рендеринга карточек
@@ -140,10 +141,10 @@ filterButtons.forEach(button => {
   button.addEventListener('click', () => {
     // Удаляем класс 'active' у всех кнопок
     filterButtons.forEach(btn => btn.classList.remove('programs__filter_active'));
-
+    
     // Добавляем класс 'active' к нажатой кнопке
     button.classList.add('programs__filter_active');
-
+    
     // Выполняем фильтрацию курсов
     const filter = button.getAttribute('data-filter');
     renderCourses(filter);
@@ -154,7 +155,7 @@ filterButtons.forEach(button => {
 // Маска для поля ввода 
 document.addEventListener("DOMContentLoaded", function () {
   const phoneInputs = document.querySelectorAll(".phone-number");
-
+  
   phoneInputs.forEach((phoneInput) => {
     IMask(phoneInput, {
       mask: '+7 (000) 000-00-00', // Маска для российского номера телефона
@@ -172,16 +173,16 @@ cards.forEach((card) => {
     const rect = card.getBoundingClientRect();
     const x = e.clientX - rect.left; // Позиция курсора относительно карточки
     const y = e.clientY - rect.top;
-
+    
     // Создаём "огонёк"
     const flame = document.createElement("div");
     flame.classList.add("flame");
     flame.style.left = `${x}px`;
     flame.style.top = `${y}px`;
-
+    
     // Добавляем "огонёк" в карточку
     card.appendChild(flame);
-
+    
     // Удаляем "огонёк" после завершения анимации
     flame.addEventListener("animationend", () => {
       flame.remove();
