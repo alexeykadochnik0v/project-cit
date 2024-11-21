@@ -117,6 +117,7 @@ const renderCourses = (filter = 'all') => {
   .filter(({ category }) => filter === 'all' || category === filter)
   .map(createCourseCard)
   .join('');
+  addHoverEffect();
 };
 
 // Функция для переключения активного фильтра и рендеринга карточек
@@ -166,28 +167,31 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-const cards = document.querySelectorAll(".course-card");
+function addHoverEffect () {
+  const cards = document.querySelectorAll(".course-card");
 
-cards.forEach((card) => {
-  card.addEventListener("mousemove", (e) => {
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left; // Позиция курсора относительно карточки
-    const y = e.clientY - rect.top;
-    
-    // Создаём "огонёк"
-    const flame = document.createElement("div");
-    flame.classList.add("flame");
-    flame.style.left = `${x}px`;
-    flame.style.top = `${y}px`;
-    
-    // Добавляем "огонёк" в карточку
-    card.appendChild(flame);
-    
-    // Удаляем "огонёк" после завершения анимации
-    flame.addEventListener("animationend", () => {
-      flame.remove();
+  cards.forEach((card) => {
+    card.addEventListener("mousemove", (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left; // Позиция курсора относительно карточки
+      const y = e.clientY - rect.top;
+
+      // Создаём "огонёк"
+      const flame = document.createElement("div");
+      flame.classList.add("flame");
+      flame.style.left = `${x}px`;
+      flame.style.top = `${y}px`;
+
+      // Добавляем "огонёк" в карточку
+      card.appendChild(flame);
+
+      // Удаляем "огонёк" после завершения анимации
+      flame.addEventListener("animationend", () => {
+        flame.remove();
+      });
     });
   });
-});
+};
 
+addHoverEffect();
 
