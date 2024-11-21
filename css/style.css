@@ -12,6 +12,15 @@ body {
   font-family: "Wix Madefor Text";
 }
 
+input {
+  border: none;
+}
+
+input:focus {
+  border: none;
+  outline: none;
+}
+
 .center {
   padding-left: calc(50% - 720px);
   padding-right: calc(50% - 720px);
@@ -67,14 +76,23 @@ body {
   /* Линия подчеркивания растет */
 }
 
-/* Анимация для текста */
+@keyframes bg-pan-left {
+  0% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 .hero__container {
   width: 95%;
   margin: 0 auto;
   padding-top: 105px;
   padding-bottom: 80px;
   border-radius: 32px;
-  background: linear-gradient(112deg, #FFF5F5 21.92%, #E7EAFC 76.74%);
+  background: linear-gradient(90deg, #FFF5F5 0%, #E7EAFC 50%, #E7EAFC 50.01%, #FFF5F5 100%);
+  background-size: 200%;
+  animation: bg-pan-left 3s forwards infinite alternate;
 }
 .hero__title {
   color: #000;
@@ -85,6 +103,7 @@ body {
   font-weight: 500;
   line-height: 75px;
   position: relative;
+  background: url(../images/back-top1.svg) no-repeat 25% 70%, url(../images/back-top2.svg) no-repeat 80% 29px;
 }
 .hero__highlight {
   position: absolute;
@@ -152,7 +171,7 @@ body {
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  transition: all 1s ease;
+  transition: background 1s ease;
 }
 .hero__button:hover {
   background-position: 100% 50%;
@@ -235,7 +254,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   color: #000;
-  transition: all 0.3s;
+  transition: background 0.3s;
   overflow: hidden;
   /* Анимация шлейфа */
 }
@@ -414,7 +433,7 @@ body {
   flex-shrink: 0;
   border-radius: 12px;
   border: 2px solid #2E2E2E;
-  background: var(--White, #FFF);
+  background: #FFF;
   box-shadow: -3px 3px 0px 0px #000;
   color: #000;
   text-align: center;
@@ -423,6 +442,13 @@ body {
   font-style: normal;
   font-weight: 700;
   line-height: 22px;
+  transition: all 0.4s;
+}
+.course-card__button:hover {
+  cursor: pointer;
+  background: #000;
+  color: white;
+  box-shadow: 0px 0px 0px 0px #000;
 }
 
 .tech-stack__container {
@@ -431,6 +457,12 @@ body {
   border-radius: 32px;
   background: #413B83;
   margin-bottom: 100px;
+}
+.tech-stack__container:hover .tech-stack__icon {
+  animation-name: wave;
+  animation-duration: 0.8s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
 }
 .tech-stack__content {
   text-align: center;
@@ -485,8 +517,48 @@ body {
   margin-left: -15px;
   height: auto;
   border-radius: 50%;
+  transition: transform 1.5s ease;
+  animation: none;
+}
+.tech-stack__icon:nth-child(1) {
+  animation-delay: 0s;
+}
+.tech-stack__icon:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.tech-stack__icon:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.tech-stack__icon:nth-child(4) {
+  animation-delay: 0.3s;
+}
+.tech-stack__icon:nth-child(5) {
+  animation-delay: 0.4s;
+}
+.tech-stack__icon:nth-child(6) {
+  animation-delay: 0.5s;
+}
+.tech-stack__icon:nth-child(7) {
+  animation-delay: 0.6s;
+}
+.tech-stack__icon:nth-child(8) {
+  animation-delay: 0.7s;
+}
+.tech-stack__icon:nth-child(9) {
+  animation-delay: 0.8s;
 }
 
+@keyframes wave {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
 .education-stages {
   margin-bottom: 100px;
 }
@@ -917,9 +989,14 @@ body {
   align-items: center;
   border-radius: 12px;
   border: 2px solid #252525;
-  background: var(--Primary-Gradient, linear-gradient(270deg, #65ACFF 0%, #FF314A 100%));
+  background: linear-gradient(90deg, #ff314a 0%, #65acff 50%, #65acff 50.01%, #535bed 100%);
+  /* Два градиента в одном фоне */
+  background-size: 200% 100%;
+  /* Растягиваем фон */
+  background-position: 0% 50%;
+  /* Изначальная позиция */
   box-shadow: -3px 3px 0px 0px #000;
-  color: var(--White, #FFF);
+  color: #fff;
   text-align: center;
   font-family: "Wix Madefor Text";
   font-size: 16px;
@@ -927,6 +1004,12 @@ body {
   font-weight: 700;
   line-height: 22px;
   width: 283px;
+  transition: background 1s ease;
+}
+.selection-help__submit:hover {
+  background-position: 100% 50%;
+  /* Сдвигаем фон вправо */
+  box-shadow: 0px 0px 0px 0px #000;
 }
 .selection-help__consent {
   display: flex;
@@ -1059,6 +1142,9 @@ body {
   font-style: normal;
   font-weight: 500;
   text-decoration: none;
+}
+.footer__phone:hover {
+  text-decoration: underline;
 }
 .footer__text {
   color: #F1F3FF;
