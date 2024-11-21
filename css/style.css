@@ -15,10 +15,15 @@ body {
 input {
   border: none;
 }
-
 input:focus {
   border: none;
   outline: none;
+}
+input::-moz-placeholder {
+  color: #A5A8B1;
+}
+input::placeholder {
+  color: #A5A8B1;
 }
 
 .center {
@@ -666,7 +671,7 @@ input:focus {
   gap: 16px;
 }
 .form-card__input {
-  color: #A5A8B1;
+  color: black;
   font-family: sans-serif;
   font-size: 18px;
   font-style: normal;
@@ -971,7 +976,7 @@ input:focus {
   margin-bottom: 12px;
 }
 .selection-help__input {
-  color: #A5A8B1;
+  color: black;
   font-family: sans-serif;
   font-size: 18px;
   font-style: normal;
