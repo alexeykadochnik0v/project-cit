@@ -150,8 +150,6 @@ input {
   &__img {
     display: flex;
     justify-content: center;
-    padding-top: 32px;
-    padding-bottom: 32px;
   }
 
   &__subtitle {
@@ -165,6 +163,14 @@ input {
     font-weight: 400;
     line-height: normal;
     margin-bottom: 64px;
+    margin-top: 32px;
+  }
+
+  &__professional {
+    font-size: 104px;
+    line-height: 115px;
+    font-family: Unbounded;
+    font-weight: 400;
   }
 
   &__button {
@@ -209,6 +215,30 @@ input {
     justify-content: center;
   }
 }
+
+@keyframes tracking-in-contract {
+  0% {
+    letter-spacing: 1em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    letter-spacing: normal;
+    opacity: 1;
+  }
+}
+
+@keyframes bg-pan-left {
+  0% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 
 @keyframes gradient-change {
   0% {
@@ -823,6 +853,7 @@ input {
   background-color: #fff;
   padding: 20px;
   border-radius: 10px;
+  transition: background-color 0.4s ease, transform 0.4s ease;
 
   &_big {
     grid-column: span 2;
@@ -853,6 +884,7 @@ input {
     color: #4a4e69;
   }
 }
+
 
 .about-expert {
   &__container {
