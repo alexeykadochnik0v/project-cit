@@ -1,5 +1,7 @@
 @import 'vars';
 @import 'mixins';
+@import 'keyframes';
+
 
 /* Основные стили */
 *,
@@ -10,20 +12,7 @@
   padding: 0;
 }
 
-body {
-  font-family: "Wix Madefor Text";
-}
-
-input {
-  border: none;
-  &:focus {
-    border: none;
-    outline: none;
-  }
-  &::placeholder {
-    color: #A5A8B1;
-  }
-}
+@import 'blocks';
 
 
 
@@ -87,14 +76,6 @@ input {
   }
 }
 
-@keyframes bg-pan-left {
-  0% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
 
 .hero {
   &__container {
@@ -118,7 +99,7 @@ input {
     line-height: 75px;
     position: relative;
     background: url(../images/back-top1.svg) no-repeat 25% 70%,
-    url(../images/back-top2.svg) no-repeat 80% 29px;
+      url(../images/back-top2.svg) no-repeat 80% 29px;
   }
 
   &__highlight {
@@ -150,6 +131,7 @@ input {
   &__img {
     display: flex;
     justify-content: center;
+    padding-top: 32px;
   }
 
   &__subtitle {
@@ -173,80 +155,9 @@ input {
     font-weight: 400;
   }
 
-  &__button {
-    display: flex;
-    width: 419px;
-    padding: 16px 32px;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-    border-radius: 12px;
-    border: 2px solid $text_black;
-    background: linear-gradient(90deg,
-        #ff314a 0%,
-        #65acff 50%,
-        #65acff 50.01%,
-        #535bed 100%);
-    /* Два градиента в одном фоне */
-    background-size: 200% 100%;
-    /* Растягиваем фон */
-    background-position: 0% 50%;
-    /* Изначальная позиция */
-    box-shadow: -3px 3px 0px 0px #000;
-    color: $text_white;
-    text-decoration: none;
-    text-align: center;
-    font-family: "Wix Madefor Text";
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    transition: background 1s ease;
-
-    &:hover {
-      background-position: 100% 50%;
-      /* Сдвигаем фон вправо */
-      box-shadow: 0px 0px 0px 0px #000;
-    }
-  }
-
   &__arrow-container {
     display: flex;
     justify-content: center;
-  }
-}
-
-@keyframes tracking-in-contract {
-  0% {
-    letter-spacing: 1em;
-    opacity: 0;
-  }
-  40% {
-    opacity: 0.6;
-  }
-  100% {
-    letter-spacing: normal;
-    opacity: 1;
-  }
-}
-
-@keyframes bg-pan-left {
-  0% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-
-@keyframes gradient-change {
-  0% {
-    background: var(--Primary-Gradient, linear-gradient(270deg, #65ACFF 0%, #FF314A 100%));
-  }
-
-  100% {
-    background: var(--Secondary-Gradient, linear-gradient(93deg, #CAB3F1 4.56%, #535BED 103.19%));
   }
 }
 
@@ -328,8 +239,8 @@ input {
   }
 
   &:hover .course-card__description,
-  &:hover .course-card__price,
-  &:hover .course-card__cost {
+  &:hover .pricing__price,
+  &:hover .pricing__cost {
     color: white;
   }
 
@@ -354,28 +265,14 @@ input {
     /* Центрирование огонька */
   }
 
-  /* Анимация шлейфа */
-  @keyframes flame-trail {
-    0% {
-      opacity: 1;
-      transform: translate(-50%, -50%) scale(1);
-    }
-
-    100% {
-      opacity: 0;
-      transform: translate(-50%, -50%) scale(2);
-      /* Увеличиваем и исчезаем */
-    }
-  }
-
   &:hover {
     background: #413B83;
     color: white;
   }
 
   &:hover .course-card__description,
-  &:hover .course-card__price,
-  &:hover .course-card__cost &:hover .course-card__info {
+  &:hover .pricing__price,
+  &:hover .pricing__cost &:hover .course-card__info {
     color: white;
     position: relative;
     z-index: 2;
@@ -398,45 +295,6 @@ input {
     width: 64px;
     height: 64px;
     z-index: 2;
-  }
-
-  @keyframes heartbeat {
-    from {
-      -webkit-transform: scale(1);
-      transform: scale(1);
-      -webkit-transform-origin: center center;
-      transform-origin: center center;
-      -webkit-animation-timing-function: ease-out;
-      animation-timing-function: ease-out;
-    }
-
-    10% {
-      -webkit-transform: scale(0.91);
-      transform: scale(0.91);
-      -webkit-animation-timing-function: ease-in;
-      animation-timing-function: ease-in;
-    }
-
-    17% {
-      -webkit-transform: scale(0.98);
-      transform: scale(0.98);
-      -webkit-animation-timing-function: ease-out;
-      animation-timing-function: ease-out;
-    }
-
-    33% {
-      -webkit-transform: scale(0.87);
-      transform: scale(0.87);
-      -webkit-animation-timing-function: ease-in;
-      animation-timing-function: ease-in;
-    }
-
-    45% {
-      -webkit-transform: scale(1);
-      transform: scale(1);
-      -webkit-animation-timing-function: ease-out;
-      animation-timing-function: ease-out;
-    }
   }
 
 
@@ -500,35 +358,6 @@ input {
     line-height: normal;
   }
 
-  &__pricing {
-    display: flex;
-    gap: 8px;
-    margin-bottom: 24px;
-  }
-
-  &__price {
-    display: flex;
-    padding: 10px;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-    border-radius: 16px;
-    border: 1px solid #EFF0F5;
-    color: #2E2E2E;
-    font-family: "Wix Madefor Text";
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 400;
-  }
-
-  &__cost {
-    color: $text_black;
-    font-family: "Wix Madefor Text";
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 700;
-  }
-
   &__button {
     display: flex;
     width: 368px;
@@ -540,7 +369,7 @@ input {
     flex-shrink: 0;
     border-radius: 12px;
     border: 2px solid #2E2E2E;
-    background:  #FFF;
+    background: #FFF;
     box-shadow: -3px 3px 0px 0px #000;
     color: $text_black;
     text-align: center;
@@ -550,9 +379,11 @@ input {
     font-weight: 700;
     line-height: 22px;
     transition: all 0.4s;
+
     &:hover {
       cursor: pointer;
-      background:  #000;
+      background: radial-gradient(circle, #6c1afa, rgba(255, 255, 255, 0));
+      background: black;
       color: white;
       box-shadow: 0px 0px 2px 0px white;
       border: 1px solid white;
@@ -572,7 +403,7 @@ input {
       animation-name: wave; // Привязка анимации
       animation-duration: 0.8s;
       animation-timing-function: ease-out;
-      animation-fill-mode:forwards;
+      animation-fill-mode: forwards;
       animation-direction: alternate;
     }
   }
@@ -639,44 +470,38 @@ input {
     &:nth-child(1) {
       animation-delay: 0s;
     }
+
     &:nth-child(2) {
       animation-delay: 0.1s;
     }
+
     &:nth-child(3) {
       animation-delay: 0.2s;
     }
+
     &:nth-child(4) {
       animation-delay: 0.3s;
     }
+
     &:nth-child(5) {
       animation-delay: 0.4s;
     }
+
     &:nth-child(6) {
       animation-delay: 0.5s;
     }
+
     &:nth-child(7) {
       animation-delay: 0.6s;
     }
+
     &:nth-child(8) {
       animation-delay: 0.7s;
     }
+
     &:nth-child(9) {
       animation-delay: 0.8s;
     }
-  }
-}
-
-@keyframes wave {
-  0% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-20px);
-  }
-
-  100% {
-    transform: translateY(0);
   }
 }
 
@@ -739,115 +564,7 @@ input {
   }
 }
 
-.form-card {
-  border-radius: 24px;
-  background: #413B83;
-  padding: 24px;
-  grid-row: 1 / 4;
 
-  &__img {
-    position: relative;
-    top: -8px;
-    right: -8px;
-  }
-
-  &__header {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  &__step {
-    display: inline-flex;
-    height: 22px;
-    padding: 2px 10px 4px 10px;
-    align-items: center;
-    gap: 4px;
-    flex-shrink: 0;
-    border-radius: 24px;
-    background: #EFF0F5;
-  }
-
-  &__title {
-    color: $text_white;
-    font-family: "Wix Madefor Text";
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-  }
-
-  &__description {
-    color: #EFF0F5;
-    font-family: "Wix Madefor Text";
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    margin-top: 16px;
-    margin-bottom: 32px;
-  }
-
-  &__form {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-
-  &__input {
-    color: black;
-    font-family: sans-serif;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    padding: 12px 16px;
-    border-radius: 10px;
-  }
-
-  &__phone-group {
-    display: flex;
-    gap: 8px;
-  }
-
-  &__phone-code {
-    width: 76px;
-    height: 48px;
-    border-radius: 10px;
-    outline: none;
-  }
-
-  &__submit {
-    display: flex;
-    padding: 13px 20px;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-radius: 12px;
-    border: 2px solid #252525;
-    background: #FFF;
-    box-shadow: -3px 3px 0px 0px #000;
-    color: #000;
-    text-align: center;
-    font-family: "Wix Madefor Text";
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 22px;
-    /* 137.5% */
-  }
-
-  &__consent {
-    display: flex;
-    align-items: flex-start;
-    gap: 16px;
-    color: #EFF0F5;
-    font-family: "Wix Madefor Text";
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 14px;
-  }
-}
 
 .step-card {
   background-color: #fff;
@@ -888,7 +605,7 @@ input {
 
 .about-expert {
   &__container {
-    width: 90%;
+    padding: 48px;
     border-radius: 32px;
     border: 1px solid #A5A8B1;
     display: flex;
@@ -1180,6 +897,7 @@ input {
     line-height: 22px;
     width: 283px;
     transition: background 1s ease;
+
     &:hover {
       background-position: 100% 50%;
       /* Сдвигаем фон вправо */
@@ -1269,8 +987,8 @@ input {
   &__columns {
     display: grid;
     margin-top: 64px;
-    grid-template-columns: repeat(3, 260px);
-    justify-content: space-between;
+    grid-template-columns: repeat(3, 342px);
+    gap: 146px;
     margin-bottom: 80px;
   }
 
@@ -1332,6 +1050,7 @@ input {
     font-style: normal;
     font-weight: 500;
     text-decoration: none;
+
     &:hover {
       text-decoration: underline;
     }
@@ -1379,6 +1098,10 @@ input {
     align-items: center;
   }
 }
+
+// Всторая страница 
+
+@import 'card-course';
 
 @media (max-width: 1440px) {
   .center {

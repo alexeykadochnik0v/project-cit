@@ -79,12 +79,6 @@ const courses = [
 // Функция для форматирования цены с валютой
 const formatPrice = (amount, currency) => `${amount.toLocaleString()} ${currency}`;
 
-// Экранирующая функция для безопасности
-const sanitizeHTML = text => {
-  const div = document.createElement('div');
-  div.textContent = text;
-  return div.innerHTML;
-};
 
 // Функция для создания HTML карточек
 const createCourseCard = ({ id, title, startDate, lessons, hours, price, currency, description, icon }) => `
@@ -101,9 +95,9 @@ const createCourseCard = ({ id, title, startDate, lessons, hours, price, currenc
         <p class="course-card__description">${sanitizeHTML(description)}</p>
       </div>
       <div>
-        <div class="course-card__pricing">
-            <div class="course-card__price">В группе <span class="course-card__cost">${formatPrice(price.group, currency)}</span></div>
-            <div class="course-card__price">Индивидуально <span class="course-card__cost">${formatPrice(price.individual, currency)}</span></div>
+        <div class="pricing">
+            <div class="pricing__price">В группе <span class="pricing__cost">${formatPrice(price.group, currency)}</span></div>
+            <div class="pricing__price">Индивидуально <span class="pricing__cost">${formatPrice(price.individual, currency)}</span></div>
         </div>
         <button class="course-card__button">Подробнее о курсе</button>
       </div>
@@ -114,9 +108,9 @@ const createCourseCard = ({ id, title, startDate, lessons, hours, price, currenc
 const renderCourses = (filter = 'all') => {
   const programsList = document.getElementById('programsList');
   programsList.innerHTML = courses
-  .filter(({ category }) => filter === 'all' || category === filter)
-  .map(createCourseCard)
-  .join('');
+    .filter(({ category }) => filter === 'all' || category === filter)
+    .map(createCourseCard)
+    .join('');
   addHoverEffect();
 };
 
@@ -130,68 +124,6 @@ document.querySelectorAll('.programs__filter').forEach(button => {
   });
 });
 
+
 // Инициализация отображения всех курсов
 renderCourses();
-
-
-// Получаем все кнопки фильтров
-const filterButtons = document.querySelectorAll('.programs__filter');
-
-// Добавляем событие для каждого фильтра
-filterButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    // Удаляем класс 'active' у всех кнопок
-    filterButtons.forEach(btn => btn.classList.remove('programs__filter_active'));
-    
-    // Добавляем класс 'active' к нажатой кнопке
-    button.classList.add('programs__filter_active');
-    
-    // Выполняем фильтрацию курсов
-    const filter = button.getAttribute('data-filter');
-    renderCourses(filter);
-  });
-});
-
-
-// Маска для поля ввода 
-document.addEventListener("DOMContentLoaded", function () {
-  const phoneInputs = document.querySelectorAll(".phone-number");
-  
-  phoneInputs.forEach((phoneInput) => {
-    IMask(phoneInput, {
-      mask: '+7 (000) 000-00-00', // Маска для российского номера телефона
-      lazy: false, // Маска всегда отображается
-      placeholderChar: '_', // Символ заполнителя
-      overwrite: true, // Включает режим замены символов
-    });
-  });
-});
-
-function addHoverEffect () {
-  const cards = document.querySelectorAll(".course-card");
-
-  cards.forEach((card) => {
-    card.addEventListener("mousemove", (e) => {
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left; // Позиция курсора относительно карточки
-      const y = e.clientY - rect.top;
-
-      // Создаём "огонёк"
-      const flame = document.createElement("div");
-      flame.classList.add("flame");
-      flame.style.left = `${x}px`;
-      flame.style.top = `${y}px`;
-
-      // Добавляем "огонёк" в карточку
-      card.appendChild(flame);
-
-      // Удаляем "огонёк" после завершения анимации
-      flame.addEventListener("animationend", () => {
-        flame.remove();
-      });
-    });
-  });
-};
-
-addHoverEffect();
-
