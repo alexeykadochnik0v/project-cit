@@ -3,7 +3,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
   <title>IT-курсы от веб-студии Профессионал</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,7 +86,6 @@
         <h2 class="education-stages__title">Этапы обучения:<br>ваш путь к успеху в IT</h2>
       </div>
       <div class="education-stages__grid center">
-        <!-- Steps -->
         <div class="education-stages__steps">
           <div class="form-card">
             <div class="form-card__header">
@@ -112,7 +112,6 @@
               </label>
             </form>
           </div>
-          <!-- Steps with icons -->
           <div class="step-card">
             <div class="step-card__header">
               <span class="step-card__step">шаг 2</span>
@@ -227,7 +226,11 @@
             </div>
           </div>
           <div class="about-expert__image about-expert__image_photo">
-            <img src="images/expert.png" alt="Эксперт" class="about-expert__photo">
+            <picture>
+              <source srcset="images/expert.png" media="(min-width: 1440px)">
+              <source srcset="images/expert-photo-lg.png" media="(max-width: 1439px)">
+              <img src="images/expert-photo-lg.png" alt="Эксперт" class="about-expert__photo">
+            </picture>            
           </div>
         </div>
         <div class="about-expert__bottom">
@@ -243,7 +246,7 @@
               Следите за успехами учеников, участвуйте в проектах и получайте свежие новости из мира IT!
             </p>
             <a href="https://t.me/example" class="about-expert__cta-link">
-              <img src="images/tele.svg" alt="">
+              <img src="images/TG.svg" alt="">
             </a>
           </div>
         </div>

@@ -68,7 +68,7 @@ input {
   color: var(--Text-Black, #000);
   text-align: center;
   font-family: "Wix Madefor Text";
-  font-size: 16px;
+  font-size: 18px;
   font-style: normal;
   font-weight: 700;
   line-height: 22px;
@@ -84,10 +84,9 @@ input {
 
   &:hover {
     cursor: pointer;
-    background: #6c1afa;
+    background: #535bed ;
     color: white;
-    box-shadow: 0px 0px 2px 0px white;
-    border: 1px solid white;
+    box-shadow: 0px 0px 0px 0px #000;
   }
 }
 

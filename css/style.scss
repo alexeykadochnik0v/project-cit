@@ -14,7 +14,9 @@
 
 @import 'blocks';
 
-
+img {
+  max-width: 100%;
+}
 
 .center {
   padding-left: calc(50% - 720px);
@@ -119,7 +121,6 @@
     gap: 10px;
     background-image: url('../images/back_title.svg');
     background-size: cover;
-    /* Покрывает всю область */
     background-position: center;
     background-repeat: no-repeat;
   }
@@ -678,13 +679,16 @@
   }
 
   &__image {
+    display: grid;
+    align-items: end;
+
     &_photo {
       min-height: 525px;
     }
   }
 
   &__photo {
-    height: 100%;
+
   }
 
   &__cta {
@@ -1109,6 +1113,12 @@
     padding-right: calc(50% - 636px);
   }
 
+  .hero {
+    &__title {
+      background: url(../images/back-top1.svg) no-repeat 15% 70%, url(../images/back-top2.svg) no-repeat 95% 29px;
+    }
+  }
+
   .course-card {
     &__button {
       width: 100%;
@@ -1132,21 +1142,44 @@
     }
   }
 
-  .about-expert {
-    &__photo {
-      height: auto;
+  .education-stages {
+    padding-left: calc(50% - 636px);
+    padding-right: calc(50% - 636px);
+
+    &__container {
+      width: 100%;
+      padding-left: 36px;
+      padding-right: 36px;
     }
   }
 
-  .about-expert__container {
-    padding-left: 48px;
-    padding-right: 48px;
-    width: 95%;
+  .about-expert {
+    &__image_photo {
+      display: grid;
+      align-items: flex-end;
+      justify-content: end;
+      flex-grow: 1;
+    }
+
+    &__photo {
+      height: auto;
+    }
+
+    &__container {
+      padding-left: 48px;
+      padding-right: 48px;
+    }
+
+    &__details {
+      margin-bottom: 24px;
+    }
   }
 
-  .about-expert__details {
-    margin-bottom: 24px;
+  .footer__columns {
+    gap: 130px;
   }
+
+
 }
 
 @media (max-width: 1080px) {
@@ -1163,8 +1196,27 @@
     }
   }
 
-  .hero__prof {
-    width: 90%;
+  .hero {
+    &__img {
+      width: 80%;
+      margin: auto;
+
+      & img {
+        width: 100%;
+      }
+    }
+
+    &__title {
+      background: url(../images/back-top1.svg) no-repeat 16px 0, url(../images/back-top2.svg) no-repeat 100% 0;
+    }
+
+    &__highlight {
+      background-size: contain;
+      font-size: 18px;
+      line-height: 18px;
+      transform: rotate(0);
+      top: 52px;
+    }
   }
 
   .education-stages {
@@ -1176,14 +1228,19 @@
     }
   }
 
-  .about-expert__top {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
+  .about-expert {
+    &__image_photo {
+      justify-content: center;
+    }
+    &__top {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
 
-  .about-expert__bottom {
-    flex-wrap: wrap;
-    justify-content: center;
+    &__bottom {
+      flex-wrap: wrap-reverse;
+      justify-content: center;
+    }
   }
 
   .info-card {
@@ -1214,6 +1271,10 @@
     &__input {
       max-width: 189px;
       flex-grow: 1;
+    }
+    &__submit {
+      width: 100%;
+      margin-top: 8px;
     }
   }
 
