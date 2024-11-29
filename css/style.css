@@ -348,36 +348,77 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 19px;
-  padding-bottom: 19px;
+  padding: 19px;
+}
+.header__logo {
+  z-index: 10000;
+  position: relative;
+  display: block;
+}
+.header__logo img {
+  max-width: 100px;
+  /* Логотип всегда виден */
+  height: auto;
+}
+
+.burger {
+  display: none;
+  /* Скрыт на десктопе */
+  flex-direction: column;
+  gap: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  /* Анимация крестика */
+}
+.burger__line {
+  width: 36px;
+  height: 6px;
+  border-radius: 6px;
+  background: #000;
+  transition: all 0.3s ease-in-out;
+}
+.burger__line_big {
+  width: 48px;
+}
+.burger--active .burger__line:nth-child(1) {
+  transform: rotate(45deg) translateY(20px);
+}
+.burger--active .burger__line:nth-child(2) {
+  opacity: 0;
+  /* Исчезает средняя полоска */
+}
+.burger--active .burger__line:nth-child(3) {
+  transform: rotate(-45deg) translateY(-20px);
 }
 
 .nav {
-  display: inline-flex;
-  align-items: center;
+  display: flex;
+  /* По умолчанию горизонтальное меню на десктопе */
   gap: 48px;
-  list-style-type: none;
+  /* Дополнительные элементы только для мобильной версии */
+}
+.nav__list {
+  display: flex;
+  list-style: none;
+  gap: 48px;
+}
+.nav__li {
+  list-style: none;
 }
 .nav__link {
   position: relative;
   color: #000;
-  /* Базовый цвет текста */
   font-family: "Wix Madefor Text";
   font-size: 24px;
-  font-style: normal;
   font-weight: 600;
-  line-height: 40px;
   text-decoration: none;
   text-transform: capitalize;
-  overflow: hidden;
-  /* Для анимации */
-  transition: color 0.3s ease;
-  /* Эффект при наведении */
-  /* Анимация "подчеркивания" текста */
+  transition: color 0.3s;
+  /* Анимация подчеркивания */
 }
 .nav__link:hover {
-  color: #413B83;
-  /* Меняем цвет текста */
+  color: #413b83;
 }
 .nav__link::after {
   content: "";
@@ -391,7 +432,29 @@ img {
 }
 .nav__link:hover::after {
   width: 100%;
-  /* Линия подчеркивания растет */
+}
+.nav__mobile-extra {
+  display: none;
+  /* Скрыто на десктопе */
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-top: 24px;
+}
+.nav__mobile-extra .nav__phone {
+  font-size: 32px;
+  font-weight: 500;
+  font-family: Unbounded;
+  color: #000;
+  text-decoration: none;
+}
+.nav__mobile-extra .nav__social {
+  display: flex;
+  gap: 16px;
+}
+.nav__mobile-extra .nav__social-icon img {
+  width: 48px;
+  height: 48px;
 }
 
 .hero__container {
@@ -1185,6 +1248,7 @@ img {
   background: var(--Primary-Blue, #413B83);
   padding-top: 64px;
   padding-bottom: 64px;
+  /* Мобильная версия */
 }
 .footer__heading {
   color: #FFF;
@@ -1292,6 +1356,51 @@ img {
   display: flex;
   gap: 22px;
   align-items: center;
+}
+.footer__mobile {
+  display: none;
+  /* Скрыта по умолчанию */
+}
+.footer__mobile .footer__accordion {
+  border-bottom: 1px solid #a5a8b1;
+  margin-bottom: 16px;
+}
+.footer__mobile .footer__accordion-header {
+  background: none;
+  border: none;
+  color: #fff;
+  font-family: "Wix Madefor Text";
+  font-size: 18px;
+  font-weight: 700;
+  padding: 12px 0;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  transition: color 0.3s;
+}
+.footer__mobile .footer__accordion-header:hover {
+  color: #f1f3ff;
+}
+.footer__mobile .footer__accordion-icon {
+  font-size: 18px;
+  font-weight: bold;
+  transition: transform 0.3s;
+}
+.footer__mobile .footer__accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+.footer__mobile .footer__accordion-content.open {
+  max-height: 500px;
+  opacity: 1;
+  transform: scaleY(1);
 }
 
 .breadcrumb__ul {
@@ -2510,8 +2619,38 @@ img {
     gap: 130px;
   }
 }
+@media (max-width: 1140px) {
+  .footer {
+    padding-bottom: 40px;
+  }
+  .footer__heading {
+    display: none;
+  }
+  .footer__columns {
+    display: none;
+    /* Скрываем десктопную структуру */
+  }
+  .footer__mobile {
+    display: block;
+    /* Включаем аккордеоны */
+  }
+  .footer__list {
+    padding-bottom: 12px;
+  }
+  .footer__social {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+    padding-bottom: 40px;
+  }
+  .footer__bottom {
+    flex-direction: column;
+    gap: 40px;
+  }
+}
 @media (max-width: 1080px) {
-  .center {
+  .center,
+  .hero {
     padding-left: calc(50% - 480px);
     padding-right: calc(50% - 480px);
   }
@@ -2520,6 +2659,9 @@ img {
   }
   .nav__link {
     font-size: 20px;
+  }
+  .hero__container {
+    width: 100%;
   }
   .hero__img {
     width: 80%;
@@ -2580,5 +2722,286 @@ img {
   .selection-help__submit {
     width: 100%;
     margin-top: 8px;
+  }
+}
+@media (max-width: 996px) {
+  .center,
+  .hero {
+    padding-left: calc(50% - 348px);
+    padding-right: calc(50% - 348px);
+  }
+  .gradient-circle {
+    display: none;
+  }
+  .burger {
+    display: flex;
+    /* Показываем бургер на мобильных */
+    z-index: 11000;
+    /* Поверх меню */
+  }
+  .header__logo {
+    z-index: 11000;
+  }
+  .header__logo img {
+    width: 98px;
+  }
+  .nav {
+    display: none;
+    /* Скрываем меню по умолчанию */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #f5f5f5;
+    flex-direction: column;
+    padding-top: 30%;
+    z-index: 10000;
+    justify-content: space-between;
+    padding-bottom: 20%;
+  }
+  .nav.nav--active {
+    display: flex;
+    /* Показываем меню */
+  }
+  .nav__list {
+    text-align: center;
+    flex-direction: column;
+    /* Вертикальное расположение ссылок */
+    gap: 24px;
+  }
+  .nav__mobile-extra {
+    display: flex;
+    /* Показываем номер телефона и соцсети */
+  }
+  .hero__container {
+    padding-top: 0;
+  }
+  .hero__title {
+    padding-top: 100px;
+    background: url(../images/back-top1.svg) no-repeat 1px 54px, url(../images/back-top2.svg) no-repeat right 0/20%;
+  }
+  .hero__highlight {
+    top: 154px;
+  }
+  .hero__subtitle {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+  .programs__list {
+    grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+  }
+  .course-card {
+    min-height: 572px;
+  }
+  .course-card__info {
+    font-size: 12px;
+  }
+  .course-card__icon {
+    width: 48px;
+    height: 48px;
+  }
+  .course-card__description {
+    margin-bottom: 24px;
+  }
+  .tech-stack__title {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+  .tech-stack__description {
+    max-width: 454px;
+  }
+  .tech-stack__icons {
+    max-width: 460px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .education-stages__title {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+  .about-expert__info {
+    padding-top: 0;
+  }
+}
+@media (max-width: 767px) {
+  .center,
+  .hero {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .hero__container {
+    padding: 24px 16px;
+  }
+  .hero__title {
+    font-size: 32px;
+    line-height: 42px;
+  }
+  .hero__highlight {
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    background-image: url(../images/hero-grad.png);
+    background-repeat: no-repeat;
+  }
+  .hero__highlight-text {
+    transform: none;
+    font-size: 14px;
+    white-space: nowrap;
+  }
+  .hero__subtitle {
+    font-size: 18px;
+    margin-top: 24px;
+    margin-bottom: 48px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .hero__img {
+    padding-top: 24px;
+    width: 100%;
+  }
+  .hero__title {
+    background: url(../images/back-top1.svg) no-repeat 1px 54px/25%, url(../images/back-top2.svg) no-repeat 105% 63px/25%;
+  }
+  .header__logo img {
+    width: 48px;
+  }
+  .nav__mobile-extra .nav__phone {
+    font-size: 28px;
+  }
+  .burger {
+    gap: 6px;
+    /* Анимация крестика */
+  }
+  .burger__line {
+    width: 24px;
+    height: 4px;
+    border-radius: 4px;
+    background: #000;
+    transition: all 0.3s ease-in-out;
+  }
+  .burger__line_big {
+    width: 32px;
+  }
+  .burger--active .burger__line:nth-child(1) {
+    transform: rotate(45deg) translateY(14.5px);
+  }
+  .burger--active .burger__line:nth-child(3) {
+    transform: rotate(-45deg) translateY(-14.5px);
+  }
+  .programs__title {
+    font-size: 32px;
+    line-height: 42px;
+  }
+  .programs__filters {
+    flex-direction: column;
+  }
+  .course-card {
+    padding: 24px;
+    min-height: 400px;
+  }
+  .tech-stack__container {
+    padding-top: 32px;
+    margin-bottom: 40px;
+  }
+  .tech-stack__subtitle {
+    font-size: 12px;
+  }
+  .tech-stack__title {
+    font-size: 32px;
+    line-height: 42px;
+  }
+  .tech-stack__description {
+    font-size: 16px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  .tech-stack__icons {
+    margin-top: 32px;
+    margin-left: 32px;
+    margin-right: 16px;
+  }
+  .tech-stack__icon {
+    width: 64px;
+    height: 64px;
+  }
+  .education-stages {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 40px;
+  }
+  .education-stages__container {
+    padding-top: 32px;
+    padding-bottom: 24px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .education-stages__badge {
+    font-size: 14px;
+  }
+  .education-stages__title {
+    font-size: 32px;
+    line-height: 42px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .education-stages__grid {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .education-stages__steps {
+    padding-left: 0;
+    padding-right: 0;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .step-card_big {
+    grid-column: span 1;
+  }
+  .about-expert__container {
+    padding: 32px 24px;
+  }
+  .about-expert__name {
+    font-size: 12px;
+  }
+  .about-expert__fullname {
+    font-size: 32px;
+  }
+  .about-expert__description {
+    font-size: 18px;
+  }
+  .about-expert__flex {
+    flex-direction: column;
+  }
+  .about-expert__cta {
+    width: 100%;
+    flex-direction: column;
+    height: auto;
+  }
+  .about-expert__image_photo {
+    min-height: auto;
+  }
+  .info-card {
+    max-width: 100%;
+  }
+  .selection-help__container {
+    padding-top: 32px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .selection-help__discount-text {
+    font-size: 12px;
+  }
+  .selection-help__title {
+    font-size: 32px;
+    line-height: 42px;
+  }
+  .selection-help__subtitle {
+    font-size: 18px;
+  }
+  .selection-help__features {
+    flex-direction: column;
+  }
+  .selection-help__input {
+    max-width: 100%;
   }
 }/*# sourceMappingURL=style.css.map */

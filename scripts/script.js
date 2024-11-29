@@ -101,4 +101,24 @@ const sanitizeHTML = text => {
 };
 
 
+document.addEventListener("DOMContentLoaded", () => {
+  const burger = document.querySelector(".burger");
+  const nav = document.querySelector(".nav");
+
+  // Открытие/закрытие меню
+  burger.addEventListener("click", () => {
+    nav.classList.toggle("nav--active");
+    burger.classList.toggle("burger--active");
+  });
+
+  // Закрытие меню при клике вне области меню
+  document.addEventListener("click", (event) => {
+    if (!nav.contains(event.target) && !burger.contains(event.target)) {
+      nav.classList.remove("nav--active");
+      burger.classList.remove("burger--active");
+    }
+  });
+});
+
+
 

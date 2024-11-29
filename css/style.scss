@@ -27,38 +27,90 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 19px;
-  padding-bottom: 19px;
+  padding: 19px;
+
+  &__logo {
+    z-index: 10000;
+    position: relative;
+    display: block;
+
+    img {
+      max-width: 100px;
+      /* Логотип всегда виден */
+      height: auto;
+
+    }
+  }
 }
 
+
+.burger {
+  display: none;
+  /* Скрыт на десктопе */
+  flex-direction: column;
+  gap: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  &__line {
+    width: 36px;
+    height: 6px;
+    border-radius: 6px;
+    background: #000;
+    transition: all 0.3s ease-in-out;
+
+    &_big {
+      width: 48px;
+    }
+  }
+
+  /* Анимация крестика */
+  &--active .burger__line:nth-child(1) {
+    transform: rotate(45deg) translateY(20px);
+  }
+
+  &--active .burger__line:nth-child(2) {
+    opacity: 0;
+    /* Исчезает средняя полоска */
+  }
+
+  &--active .burger__line:nth-child(3) {
+    transform: rotate(-45deg) translateY(-20px);
+  }
+}
+
+
 .nav {
-  display: inline-flex;
-  align-items: center;
+  display: flex;
+  /* По умолчанию горизонтальное меню на десктопе */
   gap: 48px;
-  list-style-type: none;
+
+  &__list {
+    display: flex;
+    list-style: none;
+    gap: 48px;
+  }
+
+  &__li {
+    list-style: none;
+  }
 
   &__link {
     position: relative;
-    color: $text_black;
-    /* Базовый цвет текста */
+    color: #000;
     font-family: "Wix Madefor Text";
     font-size: 24px;
-    font-style: normal;
     font-weight: 600;
-    line-height: 40px;
     text-decoration: none;
     text-transform: capitalize;
-    overflow: hidden;
-    /* Для анимации */
-    transition: color 0.3s ease;
+    transition: color 0.3s;
 
-    /* Эффект при наведении */
     &:hover {
-      color: #413B83;
-      /* Меняем цвет текста */
+      color: #413b83;
     }
 
-    /* Анимация "подчеркивания" текста */
+    /* Анимация подчеркивания */
     &::after {
       content: "";
       position: absolute;
@@ -72,11 +124,38 @@ img {
 
     &:hover::after {
       width: 100%;
-      /* Линия подчеркивания растет */
+    }
+  }
+
+  /* Дополнительные элементы только для мобильной версии */
+  &__mobile-extra {
+    display: none;
+    /* Скрыто на десктопе */
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    margin-top: 24px;
+
+    & .nav__phone {
+      font-size: 32px;
+      font-weight: 500;
+      font-family: Unbounded;
+      color: #000;
+      text-decoration: none;
     }
 
+    & .nav__social {
+      display: flex;
+      gap: 16px;
+
+      &-icon img {
+        width: 48px;
+        height: 48px;
+      }
+    }
   }
 }
+
 
 
 .hero {
@@ -687,9 +766,7 @@ img {
     }
   }
 
-  &__photo {
-
-  }
+  &__photo {}
 
   &__cta {
     width: 714px;
@@ -1101,10 +1178,62 @@ img {
     gap: 22px;
     align-items: center;
   }
+
+  /* Мобильная версия */
+  &__mobile {
+    display: none;
+    /* Скрыта по умолчанию */
+
+    & .footer__accordion {
+      border-bottom: 1px solid #a5a8b1;
+      margin-bottom: 16px;
+
+      &-header {
+        background: none;
+        border: none;
+        color: #fff;
+        font-family: "Wix Madefor Text";
+        font-size: 18px;
+        font-weight: 700;
+        padding: 12px 0;
+        text-align: left;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        transition: color 0.3s;
+
+        &:hover {
+          color: #f1f3ff;
+        }
+      }
+
+      &-icon {
+        font-size: 18px;
+        font-weight: bold;
+        transition: transform 0.3s;
+      }
+
+      &-content {
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transform: scaleY(0);
+        transform-origin: top;
+        transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+
+        &.open {
+          max-height: 500px;
+          opacity: 1;
+          transform: scaleY(1);
+        }
+      }
+    }
+  }
 }
 
 // Всторая страница 
-
 @import 'card-course';
 
 @media (max-width: 1440px) {
@@ -1182,8 +1311,46 @@ img {
 
 }
 
+@media (max-width: 1140px) {
+  .footer {
+    padding-bottom: 40px;
+
+    &__heading {
+      display: none;
+    }
+
+    &__columns {
+      display: none;
+      /* Скрываем десктопную структуру */
+    }
+
+    &__mobile {
+      display: block;
+      /* Включаем аккордеоны */
+    }
+
+    &__list {
+      padding-bottom: 12px;
+    }
+
+    &__social {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 40px;
+      padding-bottom: 40px;
+    }
+
+    &__bottom {
+      flex-direction: column;
+      gap: 40px;
+    }
+  }
+}
+
 @media (max-width: 1080px) {
-  .center {
+
+  .center,
+  .hero {
     padding-left: calc(50% - 480px);
     padding-right: calc(50% - 480px);
   }
@@ -1197,6 +1364,10 @@ img {
   }
 
   .hero {
+    &__container {
+      width: 100%;
+    }
+
     &__img {
       width: 80%;
       margin: auto;
@@ -1232,6 +1403,7 @@ img {
     &__image_photo {
       justify-content: center;
     }
+
     &__top {
       flex-wrap: wrap;
       justify-content: center;
@@ -1272,6 +1444,7 @@ img {
       max-width: 189px;
       flex-grow: 1;
     }
+
     &__submit {
       width: 100%;
       margin-top: 8px;
@@ -1279,4 +1452,365 @@ img {
   }
 
 
+}
+
+@media (max-width: 996px) {
+
+  .center,
+  .hero {
+    padding-left: calc(50% - 348px);
+    padding-right: calc(50% - 348px);
+  }
+
+  .gradient-circle {
+    display: none;
+  }
+
+  .burger {
+    display: flex;
+    /* Показываем бургер на мобильных */
+    z-index: 11000;
+    /* Поверх меню */
+  }
+
+  .header__logo {
+    z-index: 11000;
+
+    & img {
+      width: 98px;
+    }
+  }
+
+  .nav {
+    display: none;
+    /* Скрываем меню по умолчанию */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #f5f5f5;
+    flex-direction: column;
+    padding-top: 30%;
+    z-index: 10000;
+    justify-content: space-between;
+    padding-bottom: 20%;
+
+    &.nav--active {
+      display: flex;
+      /* Показываем меню */
+    }
+
+    &__list {
+      text-align: center;
+      flex-direction: column;
+      /* Вертикальное расположение ссылок */
+      gap: 24px;
+    }
+
+    &__mobile-extra {
+      display: flex;
+      /* Показываем номер телефона и соцсети */
+    }
+  }
+
+  .hero {
+    &__container {
+      padding-top: 0;
+    }
+
+    &__title {
+      padding-top: 100px;
+      background: url(../images/back-top1.svg) no-repeat 1px 54px, url(../images/back-top2.svg) no-repeat right 0 / 20%;
+    }
+
+    &__highlight {
+      top: 154px;
+    }
+
+    &__subtitle {
+      padding-left: 32px;
+      padding-right: 32px;
+    }
+
+  }
+
+  .programs {
+    &__list {
+      grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+    }
+  }
+
+  .course-card {
+    min-height: 572px;
+
+    &__info {
+      font-size: 12px;
+    }
+
+    &__icon {
+      width: 48px;
+      height: 48px;
+    }
+
+    &__description {
+      margin-bottom: 24px;
+    }
+
+  }
+
+  .tech-stack {
+    &__title {
+      padding-left: 32px;
+      padding-right: 32px;
+    }
+
+    &__description {
+      max-width: 454px;
+    }
+
+    &__icons {
+      max-width: 460px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  .education-stages__title {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  .about-expert__info {
+    padding-top: 0;
+  }
+}
+
+@media (max-width: 767px) {
+
+  .center,
+  .hero {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .hero {
+    &__container {
+      padding: 24px 16px;
+    }
+
+    &__title {
+      font-size: 32px;
+      line-height: 42px;
+
+    }
+
+    &__highlight {
+      left: 50%;
+      transform: translateX(-50%);
+      top: 0;
+      background-image: url(../images/hero-grad.png);
+      background-repeat: no-repeat;
+
+      &-text {
+        transform: none;
+        font-size: 14px;
+        white-space: nowrap;
+      }
+    }
+
+    &__subtitle {
+      font-size: 18px;
+      margin-top: 24px;
+      margin-bottom: 48px;
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    &__img {
+      padding-top: 24px;
+      width: 100%;
+    }
+
+    &__title {
+      background: url(../images/back-top1.svg) no-repeat 1px 54px / 25%,
+        url(../images/back-top2.svg) no-repeat 105% 63px/25%;
+    }
+  }
+
+  .header {
+    &__logo {
+      & img {
+        width: 48px;
+      }
+    }
+  }
+
+
+  .nav__mobile-extra .nav__phone {
+    font-size: 28px;
+  }
+
+  .burger {
+    gap: 6px;
+
+    &__line {
+      width: 24px;
+      height: 4px;
+      border-radius: 4px;
+      background: #000;
+      transition: all 0.3s ease-in-out;
+
+      &_big {
+        width: 32px;
+      }
+    }
+
+    /* Анимация крестика */
+    &--active .burger__line:nth-child(1) {
+      transform: rotate(45deg) translateY(14.5px);
+    }
+
+    &--active .burger__line:nth-child(3) {
+      transform: rotate(-45deg) translateY(-14.5px);
+    }
+  }
+
+  .programs {
+    &__title {
+      font-size: 32px;
+      line-height: 42px;
+    }
+
+    &__filters {
+      flex-direction: column;
+    }
+  }
+
+  .course-card {
+    padding: 24px;
+    min-height: 400px;
+  }
+
+  .tech-stack {
+    &__container {
+      padding-top: 32px;
+      margin-bottom: 40px;
+    }
+
+    &__subtitle {
+      font-size: 12px;
+    }
+
+    &__title {
+      font-size: 32px;
+      line-height: 42px;
+    }
+
+    &__description {
+      font-size: 16px;
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+
+    &__icons {
+      margin-top: 32px;
+      margin-left: 32px;
+      margin-right: 16px;
+    }
+
+    &__icon {
+      width: 64px;
+      height: 64px;
+    }
+  }
+
+  .education-stages {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 40px;
+    &__container {
+      padding-top: 32px;
+      padding-bottom: 24px;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    &__badge {
+      font-size: 14px;
+    }
+    &__title {
+      font-size: 32px;
+      line-height: 42px;
+      padding-left: 0;
+      padding-right: 0;
+    }
+    &__grid {
+      padding-left: 0;
+      padding-right: 0;
+    }
+    &__steps {
+      padding-left: 0;
+      padding-right: 0;
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+  .step-card_big {
+    grid-column: span 1;
+  }
+
+  .about-expert {
+    &__container {
+      padding: 32px 24px;
+    }
+    &__name {
+      font-size: 12px;
+    }
+    &__fullname {
+      font-size: 32px;
+    }
+    &__description {
+      font-size: 18px;
+    }
+    &__flex {
+      flex-direction: column;
+    }
+    &__cta {
+      width: 100%;
+      flex-direction: column;
+      height: auto;
+    }
+    &__image_photo {
+      min-height: auto;
+    }
+  }
+  .info-card {
+    max-width: 100%;
+  }
+
+  .selection-help{
+    &__container {
+      padding-top: 32px;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    &__discount-text {
+      font-size: 12px;
+    }
+
+    &__title {
+      font-size: 32px;
+      line-height: 42px;
+    }
+    &__subtitle {
+      font-size: 18px;
+    }
+    &__features {
+      flex-direction: column;
+    }
+
+    &__input {
+      max-width: 100%;
+    }
+
+  }
 }
