@@ -1677,7 +1677,7 @@ img {
   }
 
   .programs {
-    padding-top: 24px;
+    padding-top: 48px;
     padding-bottom: 40px;
     &__title {
       font-size: 32px;
@@ -1690,9 +1690,11 @@ img {
 
     &__filters {
       display: grid;
-      grid-template-columns: repeat(3, 180px);
+      grid-template-columns: repeat(3, 170px);
       overflow: scroll;
       justify-content: flex-start;
+      gap: 8px;
+      scrollbar-width: none;
     }
   }
 

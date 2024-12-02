@@ -2890,7 +2890,7 @@ img {
     transform: rotate(-45deg) translateY(-14.5px);
   }
   .programs {
-    padding-top: 24px;
+    padding-top: 48px;
     padding-bottom: 40px;
   }
   .programs__title {
@@ -2902,9 +2902,11 @@ img {
   }
   .programs__filters {
     display: grid;
-    grid-template-columns: repeat(3, 180px);
+    grid-template-columns: repeat(3, 170px);
     overflow: scroll;
     justify-content: flex-start;
+    gap: 8px;
+    scrollbar-width: none;
   }
   .course-card {
     padding: 24px;
