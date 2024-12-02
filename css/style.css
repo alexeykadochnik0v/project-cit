@@ -2889,12 +2889,22 @@ img {
   .burger--active .burger__line:nth-child(3) {
     transform: rotate(-45deg) translateY(-14.5px);
   }
+  .programs {
+    padding-top: 24px;
+    padding-bottom: 40px;
+  }
   .programs__title {
     font-size: 32px;
     line-height: 42px;
   }
+  .programs__list {
+    margin-top: 32px;
+  }
   .programs__filters {
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(3, 180px);
+    overflow: scroll;
+    justify-content: flex-start;
   }
   .course-card {
     padding: 24px;
@@ -2928,7 +2938,7 @@ img {
   .education-stages {
     padding-left: 20px;
     padding-right: 20px;
-    margin-bottom: 40px;
+    margin-bottom: 24px;
   }
   .education-stages__container {
     padding-top: 32px;
@@ -2971,11 +2981,16 @@ img {
   }
   .about-expert__flex {
     flex-direction: column;
+    gap: 16px;
+  }
+  .about-expert__bottom {
+    gap: 16px;
   }
   .about-expert__cta {
     width: 100%;
     flex-direction: column;
     height: auto;
+    gap: 16px;
   }
   .about-expert__image_photo {
     min-height: auto;
@@ -2983,10 +2998,18 @@ img {
   .info-card {
     max-width: 100%;
   }
+  .info-card__box {
+    gap: 16px;
+  }
+  .selection-help {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
   .selection-help__container {
     padding-top: 32px;
     padding-left: 20px;
     padding-right: 20px;
+    padding-bottom: 24px;
   }
   .selection-help__discount-text {
     font-size: 12px;
@@ -3000,6 +3023,8 @@ img {
   }
   .selection-help__features {
     flex-direction: column;
+    margin-top: 32px;
+    margin-bottom: 32px;
   }
   .selection-help__input {
     max-width: 100%;

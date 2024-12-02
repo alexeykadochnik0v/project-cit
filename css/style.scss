@@ -1677,13 +1677,22 @@ img {
   }
 
   .programs {
+    padding-top: 24px;
+    padding-bottom: 40px;
     &__title {
       font-size: 32px;
       line-height: 42px;
     }
 
+    &__list {
+      margin-top: 32px;
+    }
+
     &__filters {
-      flex-direction: column;
+      display: grid;
+      grid-template-columns: repeat(3, 180px);
+      overflow: scroll;
+      justify-content: flex-start;
     }
   }
 
@@ -1728,32 +1737,38 @@ img {
   .education-stages {
     padding-left: 20px;
     padding-right: 20px;
-    margin-bottom: 40px;
+    margin-bottom: 24px;
+
     &__container {
       padding-top: 32px;
       padding-bottom: 24px;
       padding-left: 20px;
       padding-right: 20px;
     }
+
     &__badge {
       font-size: 14px;
     }
+
     &__title {
       font-size: 32px;
       line-height: 42px;
       padding-left: 0;
       padding-right: 0;
     }
+
     &__grid {
       padding-left: 0;
       padding-right: 0;
     }
+
     &__steps {
       padding-left: 0;
       padding-right: 0;
       grid-template-columns: repeat(1, 1fr);
     }
   }
+
   .step-card_big {
     grid-column: span 1;
   }
@@ -1762,37 +1777,57 @@ img {
     &__container {
       padding: 32px 24px;
     }
+
     &__name {
       font-size: 12px;
     }
+
     &__fullname {
       font-size: 32px;
     }
+
     &__description {
       font-size: 18px;
     }
+
     &__flex {
       flex-direction: column;
+      gap: 16px;
     }
+
+    &__bottom {
+      gap: 16px;
+    }
+
     &__cta {
       width: 100%;
       flex-direction: column;
       height: auto;
+      gap: 16px;
     }
+
     &__image_photo {
       min-height: auto;
     }
   }
+
   .info-card {
     max-width: 100%;
+    &__box {
+      gap: 16px;
+    }
   }
 
-  .selection-help{
+  .selection-help {
+    margin-top: 40px;
+    margin-bottom: 40px;
     &__container {
       padding-top: 32px;
       padding-left: 20px;
       padding-right: 20px;
+      padding-bottom: 24px;
     }
+
     &__discount-text {
       font-size: 12px;
     }
@@ -1801,11 +1836,15 @@ img {
       font-size: 32px;
       line-height: 42px;
     }
+
     &__subtitle {
       font-size: 18px;
     }
+
     &__features {
       flex-direction: column;
+      margin-top: 32px;
+      margin-bottom: 32px;
     }
 
     &__input {
