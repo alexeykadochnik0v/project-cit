@@ -155,3 +155,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+/// Подключаем header, footer к страницам
+
+async function loadComponent(containerId, url) {
+  const container = document.getElementById(containerId);
+  if (container) {
+    try {
+      const response = await fetch(url);
+      if (response.ok) {
+        const content = await response.text();
+        container.innerHTML = content;
+      } else {
+        console.error(`Error loading ${url}: ${response.statusText}`);
+      }
+    } catch (error) {
+      console.error(`Fetch error for ${url}: ${error}`);
+    }
+  }
+}
+
+// Загрузка header и footer
+loadComponent('header', '../header.html');
+loadComponent('footer', '../footer.html');
+
+

@@ -81,6 +81,9 @@ input {
     background: var(--White, #FFF);
     box-shadow: -3px 3px 0px 0px #000;
   }
+  &_w100 {
+    width: 100%;
+  }
 
   &:hover {
     cursor: pointer;

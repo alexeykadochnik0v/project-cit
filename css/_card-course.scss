@@ -851,7 +851,6 @@
   margin-bottom: 64px;
 
   &__card {
-
     &_gray {
       display: flex;
       gap: 24px;
@@ -1106,6 +1105,8 @@
     // Сетка для карточек
     display: flex;
     gap: 24px;
+    justify-content: center;
+    flex-wrap: wrap;
   }
 
   &__card {
@@ -1367,5 +1368,409 @@
     max-height: 500px;
     /* Задайте достаточно большое значение */
     opacity: 1;
+  }
+}
+
+@media (max-width: 1080px) {
+  .course {
+    &__container {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    &__info {
+      grid-column: span 1;
+    }
+  }
+
+  .mentor {
+    background-size: contain;
+    background-position: 60% 0;
+
+    &-achievements__achievement {
+      width: 236px;
+    }
+  }
+
+  .reasons__items {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .training {
+    &__items {
+      flex-direction: column;
+    }
+
+    &__item {
+      width: 100%;
+    }
+  }
+
+  .call-to-action {
+    &__container {
+      flex-direction: column;
+      padding-bottom: 113px;
+      background: url(../images/call-plane.svg) no-repeat 2% 100%, linear-gradient(112deg, #FFF5F5 21.92%, #E7EAFC 76.74%);
+    }
+  }
+
+  .reviews {
+    & .center {
+      mask-image: none;
+    }
+
+    &__item {
+      flex: 0 0 75%; // Каждый отзыв занимает половину видимой области
+      max-width: 75%; // Гарантируем корректную ширину
+    }
+  }
+
+  .learning-outcomes__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .comparison {
+    &__table {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    &__cell {
+      &_empty {
+        display: none;
+      }
+
+      &_label {
+        display: none;
+      }
+    }
+  }
+
+  .portfolio {
+    &__info {
+      margin-bottom: 64px;
+    }
+
+    &__slide {
+      flex-direction: column;
+    }
+
+    &__description {
+      width: 100%;
+    }
+
+    &__buttons {
+      display: flex;
+    }
+  }
+
+  .course-target {
+    grid-template-columns: repeat(2, 1fr);
+
+    &__card {
+      &_head {
+        grid-column: span 2;
+      }
+
+      &_image {
+        grid-column: span 2;
+        display: flex;
+        justify-content: center;
+        grid-row: 5 / 6;
+      }
+    }
+  }
+
+  .technologies__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .certificate__grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-flow: dense;
+  }
+
+  .pricing {
+    &__grid {
+      flex-direction: column;
+    }
+
+    &__card {
+      padding-bottom: 36px;
+
+      &_test {
+        padding-bottom: 180px;
+      }
+    }
+  }
+
+  .installment {
+    &__container {
+      flex-direction: column;
+      gap: 64px;
+      align-items: center;
+    }
+
+    &__content {
+      width: 100%;
+    }
+
+    &__description {
+      width: 100%;
+    }
+
+    &__features {
+      max-width: 100%;
+    }
+
+    &__feature {
+      align-items: center;
+    }
+  }
+}
+
+@media (max-width: 996px) {
+  .reviews {
+    &__item {
+      flex: 0 0 90%; // Каждый отзыв занимает половину видимой области
+      max-width: 90%; // Гарантируем корректную ширину
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .breadcrumb__li:not(:last-child):after {
+    padding-left: 2px;
+    padding-right: 4px;
+  }
+
+  .mentor-achievements {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 32px;
+  }
+
+  .course {
+    padding-bottom: 40px;
+
+    &__container {
+      gap: 16px;
+    }
+
+    &__info {
+      padding: 24px;
+    }
+
+    &__actions {
+      flex-direction: column;
+    }
+
+    &__title {
+      font-size: 32px;
+    }
+
+    &__description {
+      font-size: 18px;
+    }
+
+    &__technologies-title {
+      font-size: 14px;
+      margin-bottom: 40px;
+      margin-bottom: 16px;
+    }
+
+    &__technologies-list {
+      max-width: 80%;
+    }
+  }
+
+  .button_course {
+    width: 100%;
+  }
+
+  .mentor {
+    background-position: right bottom;
+
+    &__name {
+      font-size: 32px;
+    }
+
+    &-achievements__achievement {
+      width: 100%;
+    }
+  }
+
+  .reasons {
+    padding-top: 0;
+    padding-bottom: 48px;
+
+    &__title {
+      font-size: 32px;
+      margin-bottom: 32px;
+    }
+
+    &__items {
+      grid-template-columns: repeat(6, 334px);
+      overflow: scroll;
+      scrollbar-width: none;
+
+      &::-webkit-scrollbar {
+        display: none;
+        /* Webkit */
+      }
+    }
+
+    &__item {
+      padding: 0;
+    }
+
+    &__content {
+      padding: 16px;
+    }
+  }
+
+  .training {
+    &__container {
+      padding: 32px;
+    }
+
+    &__title {
+      font-size: 32px;
+    }
+
+    &__items {
+      margin-top: 32px;
+      gap: 16px;
+    }
+
+    &__item {
+      padding: 16px;
+    }
+
+    &__text {
+      font-size: 16px;
+    }
+  }
+
+  .reviews {
+    padding-bottom: 48px;
+
+    &__controls {
+      display: none;
+    }
+  }
+
+  .learning-outcomes {
+    &__content {
+      padding: 32px 24px 24px;
+    }
+
+    &__grid {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    &__item {
+      padding: 24px;
+    }
+  }
+
+  .call-to-action {
+    &__container {
+      padding: 24px 24px 125px;
+    }
+
+    &__title {
+      font-size: 20px;
+    }
+
+    &__subtitle {
+      font-size: 18px;
+      margin-bottom: 64px;
+    }
+
+    &__phone {
+      font-size: 32px;
+    }
+  }
+
+  .comparison {
+    &__header {
+      flex-direction: column;
+    }
+    &__title {
+      width: 100%;
+    }
+    &__table {
+      overflow: scroll;
+      grid-template-columns: repeat(2, 334px);
+      scrollbar-width: none;
+
+      &::-webkit-scrollbar {
+        display: none;
+        /* Webkit */
+      }
+    }
+  }
+
+  .site-types__container {
+    padding: 32px 24px;
+  }
+
+  .heading {
+    font-size: 32px;
+  }
+
+  .portfolio__buttons {
+    display: none;
+  }
+
+  .course-target {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 16px;
+
+    &__card_head {
+      grid-column: span 1;
+    }
+
+    &__card_image {
+      grid-column: span 1;
+      grid-row: 8 / 9;
+    }
+  }
+
+  .technologies__grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .text {
+    font-size: 16px;
+  }
+
+  .certificate {
+    &__grid {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    &__details-title {
+      width: 100%;
+      font-size: 24px;
+    }
+
+    &__details-description {
+      width: 100%;
+    }
+
+    &__note {
+      width: 100%;
+    }
+
+    &__block {
+      padding: 24px;
+
+      &_big {
+        grid-column: span 1;
+        grid-row: 3 / 4;
+        background: url(../images/arrow-certificat.svg) no-repeat 580px,
+          url(../images/certificat-mob.png) no-repeat center 295px / 70%,
+          linear-gradient(112deg, rgba(255, 203, 203, 0.2) 21.92%, rgba(135, 149, 242, 0.2) 76.74%);
+      }
+    }
   }
 }

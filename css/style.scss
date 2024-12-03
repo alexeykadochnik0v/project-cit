@@ -27,7 +27,8 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 19px;
+  padding-top: 19px;
+  padding-bottom: 19px;
 
   &__logo {
     z-index: 10000;
@@ -1695,6 +1696,9 @@ img {
       justify-content: flex-start;
       gap: 8px;
       scrollbar-width: none;
+      &::-webkit-scrollbar {
+        display: none; /* Webkit */
+      }
     }
   }
 
