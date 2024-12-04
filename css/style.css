@@ -2773,6 +2773,22 @@ img {
   .reviews {
     padding-bottom: 48px;
   }
+  .reviews__item {
+    padding: 16px;
+    flex-direction: column;
+  }
+  .reviews__text {
+    padding-left: 64px;
+    background-size: 32px;
+  }
+  .reviews__link {
+    font-size: 14px;
+    margin-left: 32px;
+    margin-top: 0;
+  }
+  .reviews__video {
+    align-self: center;
+  }
   .reviews__controls {
     display: none;
   }
@@ -2796,16 +2812,18 @@ img {
     margin-bottom: 64px;
   }
   .call-to-action__phone {
-    font-size: 32px;
+    font-size: 28px;
   }
   .comparison__header {
     flex-direction: column;
+    margin-bottom: 32px;
   }
   .comparison__title {
     width: 100%;
   }
   .comparison__table {
     overflow: scroll;
+    gap: 8px;
     grid-template-columns: repeat(2, 334px);
     scrollbar-width: none;
   }
@@ -2813,11 +2831,35 @@ img {
     display: none;
     /* Webkit */
   }
+  .comparison__description {
+    width: 100%;
+  }
+  .comparison__cell {
+    height: auto;
+    padding: 16px;
+  }
   .site-types__container {
     padding: 32px 24px;
   }
+  .site-types__image {
+    display: none;
+  }
+  .site-types__item {
+    font-size: 18px;
+  }
+  .site-types__item_mini {
+    order: -1;
+  }
   .heading {
     font-size: 32px;
+  }
+  .portfolio__slides {
+    gap: 8px;
+  }
+  .portfolio__slide {
+    padding: 16px;
+    flex: 0 0 95%;
+    max-width: 95%;
   }
   .portfolio__buttons {
     display: none;
@@ -2835,6 +2877,7 @@ img {
   }
   .technologies__grid {
     grid-template-columns: repeat(1, 1fr);
+    gap: 16px;
   }
   .text {
     font-size: 16px;
@@ -2859,6 +2902,62 @@ img {
     grid-column: span 1;
     grid-row: 3/4;
     background: url(../images/arrow-certificat.svg) no-repeat 580px, url(../images/certificat-mob.png) no-repeat center 295px/70%, linear-gradient(112deg, rgba(255, 203, 203, 0.2) 21.92%, rgba(135, 149, 242, 0.2) 76.74%);
+  }
+  .program {
+    margin-top: 40px;
+  }
+  .program__container {
+    padding: 32px 24px;
+  }
+  .program__block {
+    padding: 16px;
+  }
+  .program__block-description {
+    font-size: 18px;
+    margin-top: 8px;
+  }
+  .program__toggle {
+    width: 40px;
+    height: 40px;
+  }
+  .pricing__container {
+    padding: 32px 24px;
+    gap: 32px;
+  }
+  .pricing__name {
+    font-size: 24px;
+  }
+  .pricing__card {
+    width: 100%;
+  }
+  .pricing-all {
+    margin-bottom: 40px;
+  }
+  .button-border_price {
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+  .installment__container {
+    padding: 32px 24px;
+  }
+  .form-card_install {
+    width: 100%;
+  }
+  .faq {
+    margin-top: 0;
+  }
+  .faq__container {
+    gap: 32px;
+  }
+  .faq__question {
+    font-size: 18px;
+  }
+  .faq__content p {
+    padding-top: 16px;
+  }
+  .faq__toggle {
+    width: 40px;
+    height: 40px;
   }
 }
 @media (max-width: 1440px) {
