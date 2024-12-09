@@ -292,6 +292,10 @@
 .reviews {
   padding-bottom: 64px;
 
+  &__preview {
+    border-radius: 32px;
+  }
+
   & .center {
     overflow: hidden;
     mask-image: linear-gradient(to right,
@@ -577,14 +581,6 @@
     padding: 32px;
     background: #F1F3FF;
   }
-
-  &__icon {
-    // Стили для иконок
-  }
-
-  &__text {
-    // Стили для текста в каждом элементе
-  }
 }
 
 .comparison {
@@ -680,6 +676,8 @@
 
     &_last {
       border-bottom: 0;
+      border-bottom-left-radius: 16px;
+      border-bottom-right-radius: 16px;
     }
   }
 }
@@ -691,14 +689,6 @@
     border-radius: 32px;
     background: #413B83;
     padding: 64px;
-  }
-
-  &__content {
-    // Стили для текстового контента
-  }
-
-  &__title {
-    // Стили для заголовка
   }
 
   &__list {
@@ -941,18 +931,25 @@
   }
 
   &__toggle {
-    background-image: url(../images/openbutton.svg);
+    background-image: url(../images/close.svg);
+    background-size: 50%;
+    background-color: #fff;
+    border: 1px solid black;
     width: 54px;
     height: 54px;
     flex-shrink: 0;
     /* Запретить сжимание кнопки */
-    border: none;
-    background-size: cover;
     background-repeat: no-repeat;
     cursor: pointer;
+    background-position: center;
+    border-radius: 50%;
+    filter: drop-shadow(0px 3px 0px #000);
+    transform: rotate(45deg);
+    transition: transform .3s;
 
     &[aria-expanded="true"] {
-      background-image: url(../images/closebutton.svg);
+      transform: rotate(90deg);
+      filter: none
     }
   }
 
@@ -1223,8 +1220,6 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-
-    & .pricing__feature {}
   }
 }
 
@@ -1238,8 +1233,6 @@
     padding: 64px;
     justify-content: space-between;
   }
-
-  &__content {}
 
   &__description {
     width: 522px;
@@ -1274,10 +1267,6 @@
     justify-content: center;
     align-items: center;
   }
-
-  &__feature-icon_delay {}
-
-  &__feature-icon_confirmation {}
 
   &__feature-text {
     flex: 1 0 0;
@@ -1332,17 +1321,25 @@
   }
 
   &__toggle {
-    background-image: url(../images/openbutton.svg);
+    background-image: url(../images/close.svg);
+    background-size: 50%;
+    background-color: #fff;
+    border: 1px solid black;
     width: 54px;
     height: 54px;
     flex-shrink: 0;
-    border: none;
-    background-size: cover;
+    /* Запретить сжимание кнопки */
     background-repeat: no-repeat;
     cursor: pointer;
+    background-position: center;
+    border-radius: 50%;
+    filter: drop-shadow(0px 3px 0px #000);
+    transform: rotate(45deg);
+    transition: transform .3s;
 
     &[aria-expanded="true"] {
-      background-image: url(../images/closebutton.svg);
+      transform: rotate(90deg);
+      filter: none
     }
   }
 
@@ -1893,15 +1890,19 @@
 
   .faq {
     margin-top: 0;
+
     &__container {
       gap: 32px;
     }
+
     &__question {
       font-size: 18px;
     }
+
     &__content p {
       padding-top: 16px;
     }
+
     &__toggle {
       width: 40px;
       height: 40px;

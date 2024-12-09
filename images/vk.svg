@@ -1,20 +1,3 @@
-<svg width="51" height="51" viewBox="0 0 51 51" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g id="socials" filter="url(#filter0_d_1_3624)">
-<g id="Rectangle 1">
-<rect x="3" width="48" height="48" rx="24" fill="black"/>
-<rect x="3" width="48" height="48" rx="24" fill="white"/>
-</g>
-<path id="Vector" d="M28.1788 32.4001C19.159 32.4001 14.0142 26.0938 13.7998 15.6001H18.318C18.4664 23.3022 21.7973 26.5647 24.4357 27.2373V15.6001H28.69V22.2427C31.2954 21.9569 34.0327 18.9298 34.9561 15.6001H39.2104C38.8625 17.327 38.1688 18.9621 37.1729 20.4031C36.177 21.8441 34.9003 23.0601 33.4225 23.9749C35.072 24.8108 36.529 25.9939 37.6972 27.4462C38.8654 28.8985 39.7184 30.5869 40.1998 32.4001H35.5167C35.0846 30.8252 34.2063 29.4155 32.9919 28.3475C31.7775 27.2795 30.281 26.6008 28.69 26.3965V32.4001H28.1788Z" fill="black"/>
-</g>
-<defs>
-<filter id="filter0_d_1_3624" x="0" y="0" width="51" height="51" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-<feFlood flood-opacity="0" result="BackgroundImageFix"/>
-<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-<feOffset dx="-3" dy="3"/>
-<feComposite in2="hardAlpha" operator="out"/>
-<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0"/>
-<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1_3624"/>
-<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1_3624" result="shape"/>
-</filter>
-</defs>
+<svg width="27" height="17" viewBox="0 0 27 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M14.379 16.8C5.35915 16.8 0.214366 10.4937 0 0H4.51818C4.66658 7.7021 7.9975 10.9646 10.6359 11.6372V0H14.8902V6.64264C17.4956 6.35676 20.2329 3.32973 21.1563 0H25.4106C25.0627 1.72689 24.369 3.36198 23.3731 4.803C22.3772 6.24402 21.1005 7.45996 19.6227 8.37477C21.2722 9.21067 22.7292 10.3938 23.8974 11.8461C25.0656 13.2984 25.9186 14.9868 26.4 16.8H21.7169C21.2848 15.2251 20.4065 13.8154 19.1921 12.7474C17.9777 11.6794 16.4812 11.0007 14.8902 10.7964V16.8H14.379V16.8Z" fill="black"/>
 </svg>

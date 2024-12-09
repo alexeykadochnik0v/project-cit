@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <p class="program__block-description">${block.description}</p>
           <div class="program__content">${block.content}</div>
         </div>
-        <button class="program__toggle" aria-expanded="false" data-index="${index}">+</button>
+        <button class="program__toggle" aria-expanded="false" data-index="${index}"></button>
       </div>
     `;
 
