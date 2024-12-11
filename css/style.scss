@@ -104,7 +104,6 @@ img {
     font-size: 24px;
     font-weight: 600;
     text-decoration: none;
-    text-transform: capitalize;
     transition: color 0.3s;
 
     &:hover {
@@ -150,8 +149,8 @@ img {
       gap: 16px;
 
       &-icon img {
-        width: 48px;
-        height: 48px;
+        width: 32px;
+        height: 32px;
       }
     }
   }
@@ -1260,6 +1259,7 @@ img {
 
 // Всторая страница 
 @import 'card-course';
+@import 'blog';
 
 @media (max-width: 1440px) {
   .center {
@@ -1715,11 +1715,10 @@ img {
     }
 
     &__filters {
-      display: grid;
-      grid-template-columns: repeat(3, 170px);
       overflow: scroll;
       justify-content: flex-start;
       gap: 8px;
+      white-space: nowrap;
       scrollbar-width: none;
 
       &::-webkit-scrollbar {

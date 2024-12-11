@@ -1,3 +1,88 @@
+// Функция для инициализации скриптов для хедера
+function initHeaderScripts() {
+  const burger = document.querySelector(".burger");
+  const nav = document.querySelector(".nav");
+
+  if (!burger || !nav) return;
+
+  // Открытие/закрытие меню
+  burger.addEventListener("click", () => {
+    nav.classList.toggle("nav--active");
+    burger.classList.toggle("burger--active");
+  });
+
+  // Закрытие меню при клике вне области меню
+  document.addEventListener("click", (event) => {
+    if (!nav.contains(event.target) && !burger.contains(event.target)) {
+      nav.classList.remove("nav--active");
+      burger.classList.remove("burger--active");
+    }
+  });
+}
+
+// Функция для инициализации скриптов для футера
+function initFooterScripts() {
+  const accordions = document.querySelectorAll(".footer__accordion-header");
+  if (!accordions.length) return;
+
+  accordions.forEach((accordion) => {
+    accordion.addEventListener("click", () => {
+      const content = accordion.nextElementSibling; // Контент под кнопкой
+      const icon = accordion.querySelector(".footer__accordion-icon");
+
+      // Закрываем все остальные аккордеоны
+      document.querySelectorAll(".footer__accordion-content").forEach((item) => {
+        if (item !== content) {
+          item.classList.remove("open");
+          item.style.maxHeight = null;
+        }
+      });
+
+      // Переключаем текущий аккордеон
+      if (content.classList.contains("open")) {
+        content.classList.remove("open");
+        content.style.maxHeight = null; // Скрываем
+        icon.textContent = "+"; // Меняем значок на "+"
+      } else {
+        content.classList.add("open");
+        content.style.maxHeight = content.scrollHeight + "px"; // Открываем
+        icon.textContent = "−"; // Меняем значок на "−"
+      }
+    });
+  });
+}
+
+// Экранирующая функция для безопасности
+const sanitizeHTML = text => {
+  const div = document.createElement('div');
+  div.textContent = text;
+  return div.innerHTML;
+};
+
+// Подключаем header, footer к страницам
+document.addEventListener('DOMContentLoaded', () => {
+  const headerContainer = document.getElementById('header-container');
+  const footerContainer = document.getElementById('footer-container');
+
+  // Загрузка хедера
+  fetch('header.html')
+    .then(response => response.text())
+    .then(data => {
+      headerContainer.innerHTML = data;
+      initHeaderScripts(); // Инициализируем скрипты для хедера после загрузки
+    })
+    .catch(error => console.error('Ошибка загрузки шапки:', error));
+
+  // Загрузка футера
+  fetch('footer.html')
+    .then(response => response.text())
+    .then(data => {
+      footerContainer.innerHTML = data;
+      initFooterScripts(); // Инициализируем скрипты для футера после загрузки
+    })
+    .catch(error => console.error('Ошибка загрузки футера:', error));
+});
+
 // Получаем все кнопки фильтров
 const filterButtons = document.querySelectorAll('.programs__filter');
 
@@ -16,8 +101,7 @@ filterButtons.forEach(button => {
   });
 });
 
-
-// Маска для поля ввода 
+// Маска для поля ввода
 document.addEventListener("DOMContentLoaded", function () {
   const phoneInputs = document.querySelectorAll(".phone-number");
 
@@ -55,11 +139,11 @@ function addHoverEffect() {
       });
     });
   });
-};
+}
 
 addHoverEffect();
 
-// ПОказать скрыть контент отзыва
+// Показать/скрыть контент отзыва
 document.addEventListener("DOMContentLoaded", () => {
   const reviewLinks = document.querySelectorAll(".reviews__link");
 
@@ -91,91 +175,3 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
-
-
-// Экранирующая функция для безопасности
-const sanitizeHTML = text => {
-  const div = document.createElement('div');
-  div.textContent = text;
-  return div.innerHTML;
-};
-
-
-document.addEventListener("DOMContentLoaded", () => {
-  const burger = document.querySelector(".burger");
-  const nav = document.querySelector(".nav");
-
-  // Открытие/закрытие меню
-  burger.addEventListener("click", () => {
-    nav.classList.toggle("nav--active");
-    burger.classList.toggle("burger--active");
-  });
-
-  // Закрытие меню при клике вне области меню
-  document.addEventListener("click", (event) => {
-    if (!nav.contains(event.target) && !burger.contains(event.target)) {
-      nav.classList.remove("nav--active");
-      burger.classList.remove("burger--active");
-    }
-  });
-});
-
-
-/// Footer accordion 
-
-document.addEventListener("DOMContentLoaded", () => {
-  const accordions = document.querySelectorAll(".footer__accordion-header");
-
-  accordions.forEach((accordion) => {
-    accordion.addEventListener("click", () => {
-      const content = accordion.nextElementSibling; // Контент под кнопкой
-      const icon = accordion.querySelector(".footer__accordion-icon");
-
-      // Закрываем все остальные аккордеоны
-      document.querySelectorAll(".footer__accordion-content").forEach((item) => {
-        if (item !== content) {
-          item.classList.remove("open");
-          item.style.maxHeight = null;
-        }
-      });
-
-      // Переключаем текущий аккордеон
-      if (content.classList.contains("open")) {
-        content.classList.remove("open");
-        content.style.maxHeight = null; // Скрываем
-        icon.textContent = "+"; // Меняем значок на "+"
-      } else {
-        content.classList.add("open");
-        content.style.maxHeight = content.scrollHeight + "px"; // Открываем
-        icon.textContent = "−"; // Меняем значок на "−"
-      }
-    });
-  });
-});
-
-
-
-/// Подключаем header, footer к страницам
-
-async function loadComponent(containerId, url) {
-  const container = document.getElementById(containerId);
-  if (container) {
-    try {
-      const response = await fetch(url);
-      if (response.ok) {
-        const content = await response.text();
-        container.innerHTML = content;
-      } else {
-        console.error(`Error loading ${url}: ${response.statusText}`);
-      }
-    } catch (error) {
-      console.error(`Fetch error for ${url}: ${error}`);
-    }
-  }
-}
-
-// Загрузка header и footer
-loadComponent('header', '../header.html');
-loadComponent('footer', '../footer.html');
-
-

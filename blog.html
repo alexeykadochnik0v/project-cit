@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+  <title>IT-курсы от веб-студии Профессионал</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&family=Wix+Madefor+Text:ital,wght@0,400..800;1,400..800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div id="header-container"></div>
+  <nav class="breadcrumb center">
+    <ul class="breadcrumb__ul">
+      <li class="breadcrumb__li"><a class="breadcrumb__link" href="index.html">Главная</a></li>
+      <li class="breadcrumb__li"><a class="breadcrumb__link" href="#">Блог</a></li>
+    </ul>
+  </nav>
+  <section class="blog-hero center">
+    <div class="blog-hero__container">
+      <div class="blog-hero__content">
+        <div class="blog-hero__left">
+          <span class="block-border">Блог</span>
+          <h1 class="title">Ваш гид в&nbsp;мире&nbsp;IT:</h1>
+          <div class="blog-hero__subtitle">советы, профессии, развитие</div>
+        </div>
+        <p class="blog-hero__description">
+          Здесь вы найдете честные и понятные материалы о карьере в IT. Мы помогаем разобраться в профессиях,
+          сделать первые шаги в новой сфере и уверенно двигаться к профессиональному росту
+        </p>
+      </div>
+      <button class="button blog-hero__button" type="button">Подписаться на рассылку</button>
+    </div>
+  </section>
+  <div class="filters center">
+    <button class="filters__button filters__button_active" data-filter="all">Все статьи</button>
+    <button class="filters__button" data-filter="student-cases">Кейсы студентов</button>
+    <button class="filters__button" data-filter="web-dev">Разработка сайтов</button>
+    <button class="filters__button" data-filter="seo">SEO-продвижению</button>
+    <button class="filters__button" data-filter="marketing">Маркетинг</button>
+    <button class="filters__button" data-filter="citprofi">ЦИТпрофи</button>
+  </div>
+  <section class="cards center">
+    <article class="article-card">
+      <figure class="article-card__image-wrapper">
+        <img class="article-card__image" src="images/card1.png" alt="Превью статьи" />
+      </figure>
+      <div class="article-card__content">
+        <time class="article-card__date" datetime="2024-11">Ноябрь, 2024</time>
+        <div class="article-card__tags">
+          <span class="article-card__tag">web-разработка</span>
+        </div>
+        <h2 class="article-card__title">Разработка сайтов в 2024 году: тренды и новейшие технологии</h2>
+        <p class="article-card__excerpt">
+          В 2024 году разработка сайтов продолжает развиваться с упором на инновации. Тренды Frontend и Backend
+          открывают
+          новые возможности для улучшения интерфейсов и функционала.
+        </p>
+      </div>
+      <a class="article-card__link" href="article.html">Читать статью <svg xmlns="http://www.w3.org/2000/svg" width="24"
+          height="24" viewBox="0 0 24 24" fill="none">
+          <path
+            d="M17.7719 5C18.4502 5 19 5.54983 19 6.22807V15.0702C19 15.7484 18.4502 16.2982 17.7719 16.2982C17.0937 16.2982 16.5439 15.7484 16.5439 15.0702L16.543 9.193L7.09645 18.6403C6.64883 19.0879 5.94164 19.1178 5.45941 18.7298L5.35969 18.6403C4.8801 18.1607 4.8801 17.3831 5.35969 16.9036L14.806 7.456L8.92982 7.45614C8.29397 7.45614 7.77098 6.9729 7.70809 6.35363L7.70175 6.22807C7.70175 5.54983 8.25158 5 8.92982 5H17.7719Z"
+            fill="#5E53D8" />
+        </svg></a>
+    </article>
+
+    <article class="article-card">
+      <figure class="article-card__image-wrapper">
+        <img class="article-card__image" src="images/card2.png" alt="Превью статьи" />
+      </figure>
+      <time class="article-card__date" datetime="2024-11">Ноябрь, 2024</time>
+      <div class="article-card__tags">
+        <span class="article-card__tag">Маркетинг</span>
+        <span class="article-card__tag">Технологии</span>
+        <span class="article-card__tag">Тренды</span>
+      </div>
+      <h2 class="article-card__title">Как создать сайт, который выделяется: практические советы</h2>
+      <p class="article-card__excerpt">
+        В 2024 году разработка сайтов продолжает развиваться с упором на инновации. Тренды Frontend и Backend открывают
+        новые возможности для улучшения интерфейсов и функционала.
+      </p>
+      <a class="article-card__link" href="article.html">Читать статью <svg xmlns="http://www.w3.org/2000/svg" width="24"
+          height="24" viewBox="0 0 24 24" fill="none">
+          <path
+            d="M17.7719 5C18.4502 5 19 5.54983 19 6.22807V15.0702C19 15.7484 18.4502 16.2982 17.7719 16.2982C17.0937 16.2982 16.5439 15.7484 16.5439 15.0702L16.543 9.193L7.09645 18.6403C6.64883 19.0879 5.94164 19.1178 5.45941 18.7298L5.35969 18.6403C4.8801 18.1607 4.8801 17.3831 5.35969 16.9036L14.806 7.456L8.92982 7.45614C8.29397 7.45614 7.77098 6.9729 7.70809 6.35363L7.70175 6.22807C7.70175 5.54983 8.25158 5 8.92982 5H17.7719Z"
+            fill="#5E53D8" />
+        </svg></a>
+    </article>
+
+    <article class="article-card">
+      <figure class="article-card__image-wrapper">
+        <img class="article-card__image" src="images/card3.png" alt="Превью статьи" />
+      </figure>
+      <time class="article-card__date" datetime="2024-11">Ноябрь, 2024</time>
+      <div class="article-card__tags">
+        <span class="article-card__tag">Тренды</span>
+        <span class="article-card__tag">ИИ</span>
+      </div>
+      <h2 class="article-card__title">Искусственный интеллект: как технологии меняют мир</h2>
+      <p class="article-card__excerpt">
+        В 2024 году разработка сайтов продолжает развиваться с упором на инновации. Тренды Frontend и Backend открывают
+        новые возможности для улучшения интерфейсов и функционала.
+      </p>
+      <a class="article-card__link" href="article.html">Читать статью <svg xmlns="http://www.w3.org/2000/svg" width="24"
+          height="24" viewBox="0 0 24 24" fill="none">
+          <path
+            d="M17.7719 5C18.4502 5 19 5.54983 19 6.22807V15.0702C19 15.7484 18.4502 16.2982 17.7719 16.2982C17.0937 16.2982 16.5439 15.7484 16.5439 15.0702L16.543 9.193L7.09645 18.6403C6.64883 19.0879 5.94164 19.1178 5.45941 18.7298L5.35969 18.6403C4.8801 18.1607 4.8801 17.3831 5.35969 16.9036L14.806 7.456L8.92982 7.45614C8.29397 7.45614 7.77098 6.9729 7.70809 6.35363L7.70175 6.22807C7.70175 5.54983 8.25158 5 8.92982 5H17.7719Z"
+            fill="#5E53D8" />
+        </svg></a>
+    </article>
+  </section>
+  <section class="subscribe center">
+    <div class="subscribe__container">
+      <div class="subscribe__content">
+        <h2 class="heading heading_white heading_mob">Подписаться<br> на новые статьи</h2>
+        <p class="subscribe__description">
+          Получайте еженедельные обновления о трендах в разработке, дизайне и маркетинге в сфере IT прямо в свой
+          почтовый ящик
+        </p>
+      </div>
+      <form class="subscribe__form">
+        <div class="subscribe__input-wrapper">
+          <input type="email" class="subscribe__input" placeholder="Email" required />
+          <button type="submit" class="button button_w100">Подписаться</button>
+        </div>
+        <div class="subscribe__consent">
+          <label class="selection-help__consent">
+            <input type="checkbox" class="selection-help__checkbox custom-checkbox">
+            <span>Отправляя заявку, вы даете согласие на обработку своих персональных данных в соответствии с политикой
+              конфиденциальности</span>
+          </label>
+        </div>
+      </form>
+    </div>
+  </section>
+  <div class="box-articles center">
+    <section class="cards ">
+      <article class="article-card">
+        <figure class="article-card__image-wrapper">
+          <img class="article-card__image" src="images/card4.png" alt="Превью статьи" />
+        </figure>
+        <div class="article-card__content">
+          <time class="article-card__date" datetime="2024-11">Ноябрь, 2024</time>
+          <div class="article-card__tags">
+            <span class="article-card__tag">web-разработка</span>
+          </div>
+          <h2 class="article-card__title">Разработка сайтов в 2024 году: тренды и новейшие технологии</h2>
+          <p class="article-card__excerpt">
+            В 2024 году разработка сайтов продолжает развиваться с упором на инновации. Тренды Frontend и Backend
+            открывают новые возможности для улучшения интерфейсов и функционала.
+          </p>
+        </div>
+        <a class="article-card__link" href="article.html">Читать статью <svg xmlns="http://www.w3.org/2000/svg"
+            width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path
+              d="M17.7719 5C18.4502 5 19 5.54983 19 6.22807V15.0702C19 15.7484 18.4502 16.2982 17.7719 16.2982C17.0937 16.2982 16.5439 15.7484 16.5439 15.0702L16.543 9.193L7.09645 18.6403C6.64883 19.0879 5.94164 19.1178 5.45941 18.7298L5.35969 18.6403C4.8801 18.1607 4.8801 17.3831 5.35969 16.9036L14.806 7.456L8.92982 7.45614C8.29397 7.45614 7.77098 6.9729 7.70809 6.35363L7.70175 6.22807C7.70175 5.54983 8.25158 5 8.92982 5H17.7719Z"
+              fill="#5E53D8" />
+          </svg></a>
+      </article>
+
+      <article class="article-card">
+        <figure class="article-card__image-wrapper">
+          <img class="article-card__image" src="images/card5.png" alt="Превью статьи" />
+        </figure>
+        <div class="article-card__content">
+          <time class="article-card__date" datetime="2024-11">Ноябрь, 2024</time>
+          <div class="article-card__tags">
+            <span class="article-card__tag">Тренды</span>
+            <span class="article-card__tag">ИИ</span>
+          </div>
+          <h2 class="article-card__title">Искусственный интеллект: как технологии меняют мир</h2>
+          <p class="article-card__excerpt">
+            Искусственный интеллект открывает новые возможности в технологиях и бизнесе, ускоряя процессы автоматизации
+            и анализа данных.
+          </p>
+        </div>
+        <a class="article-card__link" href="article.html">Читать статью <svg xmlns="http://www.w3.org/2000/svg"
+            width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path
+              d="M17.7719 5C18.4502 5 19 5.54983 19 6.22807V15.0702C19 15.7484 18.4502 16.2982 17.7719 16.2982C17.0937 16.2982 16.5439 15.7484 16.5439 15.0702L16.543 9.193L7.09645 18.6403C6.64883 19.0879 5.94164 19.1178 5.45941 18.7298L5.35969 18.6403C4.8801 18.1607 4.8801 17.3831 5.35969 16.9036L14.806 7.456L8.92982 7.45614C8.29397 7.45614 7.77098 6.9729 7.70809 6.35363L7.70175 6.22807C7.70175 5.54983 8.25158 5 8.92982 5H17.7719Z"
+              fill="#5E53D8" />
+          </svg></a>
+      </article>
+
+      <article class="article-card">
+        <figure class="article-card__image-wrapper">
+          <img class="article-card__image" src="images/card6.png" alt="Превью статьи" />
+        </figure>
+        <div class="article-card__content">
+          <time class="article-card__date" datetime="2024-11">Ноябрь, 2024</time>
+          <div class="article-card__tags">
+            <span class="article-card__tag">Технологии</span>
+            <span class="article-card__tag">Тренды</span>
+          </div>
+          <h2 class="article-card__title">Как создать сайт, который выделяется: практические советы</h2>
+          <p class="article-card__excerpt">
+            Советы по созданию уникальных сайтов, которые привлекают внимание и удовлетворяют современные требования.
+          </p>
+        </div>
+        <a class="article-card__link" href="article.html">Читать статью <svg xmlns="http://www.w3.org/2000/svg"
+            width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path
+              d="M17.7719 5C18.4502 5 19 5.54983 19 6.22807V15.0702C19 15.7484 18.4502 16.2982 17.7719 16.2982C17.0937 16.2982 16.5439 15.7484 16.5439 15.0702L16.543 9.193L7.09645 18.6403C6.64883 19.0879 5.94164 19.1178 5.45941 18.7298L5.35969 18.6403C4.8801 18.1607 4.8801 17.3831 5.35969 16.9036L14.806 7.456L8.92982 7.45614C8.29397 7.45614 7.77098 6.9729 7.70809 6.35363L7.70175 6.22807C7.70175 5.54983 8.25158 5 8.92982 5H17.7719Z"
+              fill="#5E53D8" />
+          </svg></a>
+      </article>
+      <article class="article-card">
+        <figure class="article-card__image-wrapper">
+          <img class="article-card__image" src="images/card7.png" alt="Превью статьи" />
+        </figure>
+        <div class="article-card__content">
+          <time class="article-card__date" datetime="2024-11">Ноябрь, 2024</time>
+          <div class="article-card__tags">
+            <span class="article-card__tag">web-разработка</span>
+          </div>
+          <h2 class="article-card__title">Разработка сайтов в 2024 году: тренды и новейшие технологии</h2>
+          <p class="article-card__excerpt">
+            В 2024 году разработка сайтов продолжает развиваться с упором на инновации. Тренды Frontend и Backend
+            открывают новые возможности для улучшения интерфейсов и функционала.
+          </p>
+        </div>
+        <a class="article-card__link" href="article.html">Читать статью <svg xmlns="http://www.w3.org/2000/svg"
+            width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path
+              d="M17.7719 5C18.4502 5 19 5.54983 19 6.22807V15.0702C19 15.7484 18.4502 16.2982 17.7719 16.2982C17.0937 16.2982 16.5439 15.7484 16.5439 15.0702L16.543 9.193L7.09645 18.6403C6.64883 19.0879 5.94164 19.1178 5.45941 18.7298L5.35969 18.6403C4.8801 18.1607 4.8801 17.3831 5.35969 16.9036L14.806 7.456L8.92982 7.45614C8.29397 7.45614 7.77098 6.9729 7.70809 6.35363L7.70175 6.22807C7.70175 5.54983 8.25158 5 8.92982 5H17.7719Z"
+              fill="#5E53D8" />
+          </svg></a>
+      </article>
+
+      <article class="article-card">
+        <figure class="article-card__image-wrapper">
+          <img class="article-card__image" src="images/card8.png" alt="Превью статьи" />
+        </figure>
+        <div class="article-card__content">
+          <time class="article-card__date" datetime="2024-11">Ноябрь, 2024</time>
+          <div class="article-card__tags">
+            <span class="article-card__tag">Тренды</span>
+            <span class="article-card__tag">ИИ</span>
+          </div>
+          <h2 class="article-card__title">Искусственный интеллект: как технологии меняют мир</h2>
+          <p class="article-card__excerpt">
+            Искусственный интеллект открывает новые возможности в технологиях и бизнесе, ускоряя процессы автоматизации
+            и анализа данных.
+          </p>
+        </div>
+        <a class="article-card__link" href="article.html">Читать статью <svg xmlns="http://www.w3.org/2000/svg"
+            width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path
+              d="M17.7719 5C18.4502 5 19 5.54983 19 6.22807V15.0702C19 15.7484 18.4502 16.2982 17.7719 16.2982C17.0937 16.2982 16.5439 15.7484 16.5439 15.0702L16.543 9.193L7.09645 18.6403C6.64883 19.0879 5.94164 19.1178 5.45941 18.7298L5.35969 18.6403C4.8801 18.1607 4.8801 17.3831 5.35969 16.9036L14.806 7.456L8.92982 7.45614C8.29397 7.45614 7.77098 6.9729 7.70809 6.35363L7.70175 6.22807C7.70175 5.54983 8.25158 5 8.92982 5H17.7719Z"
+              fill="#5E53D8" />
+          </svg></a>
+      </article>
+
+      <article class="article-card">
+        <figure class="article-card__image-wrapper">
+          <img class="article-card__image" src="images/card9.png" alt="Превью статьи" />
+        </figure>
+        <div class="article-card__content">
+          <time class="article-card__date" datetime="2024-11">Ноябрь, 2024</time>
+          <div class="article-card__tags">
+            <span class="article-card__tag">Технологии</span>
+            <span class="article-card__tag">Тренды</span>
+          </div>
+          <h2 class="article-card__title">Как создать сайт, который выделяется: практические советы</h2>
+          <p class="article-card__excerpt">
+            Советы по созданию уникальных сайтов, которые привлекают внимание и удовлетворяют современные требования.
+          </p>
+        </div>
+        <a class="article-card__link" href="article.html">Читать статью <svg xmlns="http://www.w3.org/2000/svg"
+            width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path
+              d="M17.7719 5C18.4502 5 19 5.54983 19 6.22807V15.0702C19 15.7484 18.4502 16.2982 17.7719 16.2982C17.0937 16.2982 16.5439 15.7484 16.5439 15.0702L16.543 9.193L7.09645 18.6403C6.64883 19.0879 5.94164 19.1178 5.45941 18.7298L5.35969 18.6403C4.8801 18.1607 4.8801 17.3831 5.35969 16.9036L14.806 7.456L8.92982 7.45614C8.29397 7.45614 7.77098 6.9729 7.70809 6.35363L7.70175 6.22807C7.70175 5.54983 8.25158 5 8.92982 5H17.7719Z"
+              fill="#5E53D8" />
+          </svg></a>
+      </article>
+    </section>
+    <div class="show-all">
+      <button class="button-border button-border_show">Показать больше</button>
+    </div>
+    <div class="pagination">
+      <div class="pagination__left">
+        <div class="pagination__numbers">
+          <span class="pagination__current pagination__current_selected">1</span>
+          <span class="pagination__current">2</span>
+          <span class="pagination__current">3</span>
+          <span class="pagination__current">4</span>
+          <span class="pagination__current">...</span>
+          <span class="pagination__current">6</span>
+        </div>
+        <div class="pagination__controls">
+          <button class="pagination__button pagination__button_prev" aria-label="Previous page">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M12.1112 6.22481C12.3553 6.46888 12.3553 6.86461 12.1112 7.10869L9.21982 10.0001L12.1112 12.8915C12.3553 13.1356 12.3553 13.5313 12.1112 13.7754C11.8671 14.0194 11.4714 14.0194 11.2273 13.7754L7.894 10.442C7.64992 10.1979 7.64992 9.80222 7.894 9.55814L11.2273 6.22481C11.4714 5.98073 11.8671 5.98073 12.1112 6.22481Z"
+                fill="#A5A8B1" />
+            </svg>
+          </button>
+          <button class="pagination__button pagination__button_next" aria-label="Next page">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M7.894 6.22481C8.13807 5.98073 8.5338 5.98073 8.77788 6.22481L12.1112 9.55814C12.3553 9.80222 12.3553 10.1979 12.1112 10.442L8.77788 13.7754C8.5338 14.0194 8.13807 14.0194 7.894 13.7754C7.64992 13.5313 7.64992 13.1356 7.894 12.8915L10.7854 10.0001L7.894 7.10869C7.64992 6.86461 7.64992 6.46888 7.894 6.22481Z"
+                fill="#5E53D8" />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="pagination__items-per-page">
+        <label class="pagination__label" for="items-per-page">Показывать по:</label>
+        <select class="pagination__select" id="items-per-page">
+          <option value="12" selected>12</option>
+          <option value="24">24</option>
+          <option value="48">48</option>
+        </select>
+      </div>
+    </div>
+
+  </div>
+
+
+
+
+  <div id="footer-container"></div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/imask@6.4.2/dist/imask.min.js"></script>
+  <script src="scripts/script.js"></script>
+  <script src="scripts/script-index.js"></script>
+  <script src="scripts/footer-accordion.js"></script>
+</body>
+
+</html>

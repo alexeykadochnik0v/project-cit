@@ -15,6 +15,27 @@ input {
   }
 }
 
+.title {
+  color: #000;
+  font-family: Unbounded;
+  font-size: 56px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.block-border {
+  border-radius: 24px;
+  border: 1px solid var(--Text-Black, #000);
+  padding: 6px 12px;
+  gap: 10px;
+  color: #2E2E2E;
+  font-family: "Wix Madefor Text";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+}
+
 .button {
   display: flex;
   width: 419px;
@@ -49,6 +70,10 @@ input {
     width: 376px;
   }
 
+  &_w100 {
+    width: 100%;
+  }
+
   &:hover {
     background-position: 100% 50%;
     /* Сдвигаем фон вправо */
@@ -81,13 +106,19 @@ input {
     background: var(--White, #FFF);
     box-shadow: -3px 3px 0px 0px #000;
   }
+
   &_w100 {
     width: 100%;
   }
 
+  &_show {
+    width: 586px;
+    height: 60px;
+  }
+
   &:hover {
     cursor: pointer;
-    background: #535bed ;
+    background: #535bed;
     color: white;
     box-shadow: 0px 0px 0px 0px #000;
   }
@@ -153,6 +184,96 @@ input {
   }
 }
 
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.article-card {
+  display: flex;
+  width: 464px;
+  padding: 16px;
+  flex-direction: column;
+  gap: 16px;
+  border-radius: 24px;
+  border: 1px solid var(--Micro-Gray, #EFF0F5);
+  background: var(--White, #FFF);
+
+  &__title {
+    color: var(--Secondary-800, #181A2A);
+    font-family: "Wix Madefor Text";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  &__image {
+    height: 240px;
+    border-radius: 16px;
+  }
+
+  &__content {
+    display: flex;
+    padding: 8px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    align-self: stretch;
+  }
+
+  &__date {
+    color: var(--Secondary-400, #97989F);
+    font-family: "Wix Madefor Text";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  &__tags {
+    display: flex;
+    gap: 8px;
+  }
+
+  &__tag {
+    display: flex;
+    height: 22px;
+    padding: 2px 10px 4px 10px;
+    align-items: center;
+    gap: 4px;
+    border-radius: 24px;
+    background: var(--Micro-Gray, #EFF0F5);
+  }
+
+  &__excerpt {
+    color: var(--Secondary-800, #181A2A);
+    font-family: "Wix Madefor Text";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  &__link {
+    color: var(--accent, #5E53D8);
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+    text-decoration: none;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
 .form-card {
   border-radius: 24px;
   background: #413B83;
@@ -192,6 +313,7 @@ input {
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+
     &_mb32 {
       margin-bottom: 32px;
     }
@@ -268,4 +390,143 @@ input {
     font-weight: 400;
     line-height: 14px;
   }
+}
+
+.subscribe {
+  margin-bottom: 80px;
+  margin-top: 64px;
+
+  &__container {
+    padding: 64px;
+    border-radius: 24px;
+    background: #413B83;
+    background-image: url(../images/white-plane.svg);
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: space-between;
+    background-position: center 70%;
+  }
+
+  &__content {
+    width: 522px;
+  }
+
+  &__description {
+    margin-top: 24px;
+    color: var(--White, #FFF);
+    font-family: "Wix Madefor Text";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  &__icon {
+    // Стили для иконки (самолётик)
+  }
+
+  &__form {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px
+  }
+
+  &__input-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__input {
+    width: 100%;
+    height: 48px;
+    flex-shrink: 0;
+    border-radius: 12px;
+    padding: 12px 16px;
+    color: black;
+    font-family: "Open Sans", sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  &__consent {
+    // Стили для чекбокса и описания согласия
+  }
+
+  &__checkbox {
+    // Стили для чекбокса
+  }
+
+  &__label {
+    // Стили для текста согласия
+  }
+}
+
+
+@media (max-width: 1140px) {}
+
+@media (max-width: 1080px) {
+  .subscribe {
+    &__container {
+      background-image: none;
+      gap: 32px;
+    }
+  }
+}
+
+@media (max-width: 996px) {
+  .article-card {
+    width: 100%;
+
+    &__image {
+      height: auto;
+      width: 100%;
+    }
+  }
+
+  .subscribe {
+    &__container {
+      flex-direction: column;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .title {
+    font-size: 32px;
+  }
+
+  .cards {
+    gap: 16px;
+  }
+
+  .subscribe {
+    margin-top: 32px;
+    margin-bottom: 48px;
+
+    &__container {
+      padding: 32px 24px;
+    }
+
+    &__content {
+      width: 100%;
+    }
+
+    &__form {
+      width: 100%;
+    }
+
+  }
+
+  .heading {
+    font-size: 32px;
+
+    &_mob {
+      font-size: 22px;
+    }
+  }
+
 }

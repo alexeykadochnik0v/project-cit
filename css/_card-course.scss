@@ -63,33 +63,6 @@
     margin-bottom: 24px;
   }
 
-  &__lessons {
-    border-radius: 24px;
-    border: 1px solid var(--Text-Black, #000);
-    display: flex;
-    height: 32px;
-    padding: 6px 12px;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    color: #2E2E2E;
-    font-family: "Wix Madefor Text";
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-  }
-
-  &__title {
-    color: var(--Text-Black, #000);
-    font-family: Unbounded;
-    font-size: 56px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    margin-bottom: 32px;
-  }
-
   &__description {
     color: #000;
     font-family: "Wix Madefor Text";
@@ -97,6 +70,7 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    margin-top: 32px;
   }
 
   &__technologies-title {
@@ -1559,10 +1533,6 @@
       flex-direction: column;
     }
 
-    &__title {
-      font-size: 32px;
-    }
-
     &__description {
       font-size: 18px;
     }
@@ -1757,9 +1727,7 @@
     }
   }
 
-  .heading {
-    font-size: 32px;
-  }
+
 
   .portfolio {
     &__slides {

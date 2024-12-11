@@ -1,0 +1,252 @@
+.blog-hero {
+  &__container {
+    padding: 48px;
+    border-radius: 24px;
+    background: var(--Soft-Gradient, linear-gradient(112deg, #FFF5F5 21.92%, #E7EAFC 76.74%));
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: start;
+  }
+
+  &__subtitle {
+    color: #000;
+    font-family: "Wix Madefor Text";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 24px;
+  }
+
+  &__description {
+    color: var(--Text-Light-Gray, #2E2E2E);
+    font-family: "Wix Madefor Text";
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    width: 537px;
+  }
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 64px;
+  margin-bottom: 24px;
+
+  &__button {
+    display: flex;
+    height: 48px;
+    padding: 0px 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border-radius: 24px;
+    background: #fff;
+    border: 1px solid #413B83;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+    color: var(--Text-Light-Gray, #2E2E2E);
+    font-family: "Wix Madefor Text";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    &:hover {
+      background-color: #413B83;
+      color: #fff;
+    }
+
+    &.filters__button_active {
+      background-color: #413B83;
+      color: #fff;
+    }
+  }
+}
+
+.show-all {
+  padding-top: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 48px;
+}
+
+.box-articles {
+  padding-bottom: 64px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__controls {
+    display: flex;
+  }
+
+  &__left {
+    display: flex;
+    gap: 24px;
+  }
+
+  &__button {
+    display: flex;
+    width: 48px;
+    height: 48px;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+    flex-shrink: 0;
+    border: 1px solid #EFF0F5;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background-color: #fff;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #EFF0F5;
+    }
+
+    &.pagination__button_prev {
+      // Стили для кнопки "Предыдущая страница"
+    }
+
+    &.pagination__button_next {
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+  }
+
+  &__numbers {
+    display: flex;
+  }
+
+  &__current {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    cursor: pointer;
+
+    &_selected {
+      border: 1px solid #EFF0F5;
+    }
+
+    &:hover {
+      border: 1px solid #EFF0F5;
+    }
+  }
+
+  &__items-per-page {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+  }
+
+  &__label {
+    color: var(--Neutral-Gray, #A5A8B1);
+    text-align: right;
+    font-family: "Wix Madefor Text";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+
+  &__select {
+    display: flex;
+    padding: 8px 16px;
+    align-items: center;
+    gap: 8px;
+    align-self: stretch;
+    border-radius: 12px;
+    border: 1px solid var(--Micro-Gray, #EFF0F5);
+    color: var(--Neutral-Gray, #A5A8B1);
+    font-family: "Wix Madefor Text";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+}
+
+@media (max-width: 1140px) {}
+
+@media (max-width: 1080px) {
+  .subscribe {
+    &__container {
+      background-image: none;
+      gap: 32px;
+    }
+  }
+}
+
+@media (max-width: 996px) {
+  .pagination {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .blog-hero {
+    &__container {
+      padding: 32px 24px;
+    }
+
+    &__left {
+      gap: 16px;
+    }
+
+    &__description {
+      width: 100%;
+      font-size: 18px;
+    }
+
+    &__button {
+      width: 100%;
+      padding: 12px 20px;
+    }
+  }
+
+  .filters {
+    overflow: scroll;
+    scrollbar-width: none;
+    flex-wrap: nowrap;
+    margin-top: 40px;
+    margin-bottom: 24px;
+
+    &__button {
+      white-space: nowrap; // Предотвращает перенос текста на новую строку
+    }
+  }
+
+  .show-all {
+    padding-top: 32px;
+    padding-bottom: 48px;
+  }
+
+  .box-articles {
+    padding-bottom: 0;
+  }
+}
