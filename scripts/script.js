@@ -175,3 +175,94 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+/// Слайдер статьи 
+
+document.addEventListener("DOMContentLoaded", () => {
+  const container = document.querySelector(".slider-articles__container");
+  const articles = Array.from(container.querySelectorAll(".slider-articles__card")); // Только карточки с модификатором
+  const prevButton = document.querySelector(".slider-articles__arrow--prev");
+  const nextButton = document.querySelector(".slider-articles__arrow--next");
+
+  let currentIndex = 0;
+
+  // Рассчитываем ширину одной карточки
+  const getCardWidth = () => {
+    if (window.innerWidth > 1024) return 100 / 3; // На десктопе 3 карточки видны
+    if (window.innerWidth > 767) return 100 / 2; // На планшете 2 карточки видны
+    return 90; // На мобильных ширина карточки 90%
+  };
+
+  // Обновляем transform для плавного перелистывания
+  const updateSlider = () => {
+    const offset = -currentIndex * getCardWidth(); // Смещение на одну карточку
+    container.style.transform = `translateX(${offset}%)`;
+  };
+
+  // Обработчик для кнопки Next
+  const nextSlide = () => {
+    if (currentIndex < articles.length - 1) {
+      currentIndex++; // Листаем вперёд на одну карточку
+    } else {
+      currentIndex = 0; // Зацикливание: возвращаемся к началу
+    }
+    updateSlider();
+  };
+
+  // Обработчик для кнопки Prev
+  const prevSlide = () => {
+    if (currentIndex > 0) {
+      currentIndex--; // Листаем назад на одну карточку
+    } else {
+      currentIndex = articles.length - 1; // Зацикливание: переходим к последней карточке
+    }
+    updateSlider();
+  };
+
+  // Привязка событий к кнопкам
+  nextButton.addEventListener("click", nextSlide);
+  prevButton.addEventListener("click", prevSlide);
+
+  // Свайп на мобильных устройствах
+  let startX = 0;
+  let endX = 0;
+
+  container.addEventListener("touchstart", (event) => {
+    startX = event.touches[0].clientX;
+  });
+
+  container.addEventListener("touchend", (event) => {
+    endX = event.changedTouches[0].clientX;
+    handleSwipe();
+  });
+
+  const handleSwipe = () => {
+    const swipeThreshold = 50; // Минимальное расстояние для свайпа
+
+    if (startX - endX > swipeThreshold) {
+      nextSlide(); // Свайп влево
+    } else if (endX - startX > swipeThreshold) {
+      prevSlide(); // Свайп вправо
+    }
+  };
+
+  // Автоматическое листание
+  const autoScroll = () => {
+    nextSlide(); // Листаем вперёд по одной карточке
+  };
+
+  let autoScrollInterval = setInterval(autoScroll, 5000); // Листаем каждые 5 секунд
+
+  // Останавливаем авто-прокрутку при взаимодействии
+  [nextButton, prevButton, container].forEach((element) => {
+    element.addEventListener("mouseenter", () => clearInterval(autoScrollInterval));
+    element.addEventListener("mouseleave", () => {
+      autoScrollInterval = setInterval(autoScroll, 5000);
+    });
+  });
+
+  // Инициализация
+  updateSlider();
+});
+
+

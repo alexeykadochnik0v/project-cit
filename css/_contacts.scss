@@ -1,0 +1,107 @@
+.contacts {
+  padding-top: 16px;
+  &__title-big {
+    grid-column: span 2;
+  }
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr) 708px;
+    row-gap: 32px;
+  }
+
+  &__section {
+    &_requisites {
+      grid-row: span 2;
+    }
+  }
+
+  &__title {
+    color: var(--Text-Light-Gray, #2E2E2E);
+    font-family: "Wix Madefor Text";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 16px;
+  }
+
+  &__item {
+    color: var(--Neutral-Gray, #A5A8B1);
+    font-family: "Wix Madefor Text";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 12px;
+  }
+
+  &__link {
+    color: inherit;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__map {
+    grid-row: span 4;
+  }
+
+  &__map-frame {
+    width: 100%;
+    height: 100%;
+    border-radius: 32px;
+    border: none;
+  }
+}
+
+@media (max-width: 1140px) {}
+
+@media (max-width: 1080px) {
+  .subscribe {
+    &__container {
+      background-image: none;
+      gap: 32px;
+    }
+  }
+  .contacts {
+    &__container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    &__map {
+      order: 100;
+      grid-column: span 2;
+      height: 430px;
+    }
+  }
+}
+
+@media (max-width: 996px) {
+ 
+}
+
+@media (max-width: 767px) {
+  
+  .contacts {
+    &__container {
+      grid-template-columns: repeat(1, 1fr);
+      gap: 16px;
+    }
+
+    &__title-big {
+      grid-column: span 1;
+    }
+
+    &__section_socials {
+      order: 50
+    }
+
+    &__map {
+      margin-top: 16px;
+      order: 100;
+      grid-column: span 1;
+      height: 230px;
+    }
+  }
+}
