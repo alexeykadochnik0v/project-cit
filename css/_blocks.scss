@@ -332,6 +332,10 @@ input {
   background: #413B83;
   padding: 24px;
 
+  &_index {
+    grid-row: span 3;
+  }
+
   &_about {
     grid-column: span 3;
   }

@@ -384,6 +384,9 @@ input::placeholder {
   background: #413B83;
   padding: 24px;
 }
+.form-card_index {
+  grid-row: span 3;
+}
 .form-card_about {
   grid-column: span 3;
 }
