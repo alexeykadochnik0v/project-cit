@@ -419,6 +419,15 @@ input::placeholder {
   line-height: normal;
 }
 .form-card__title_mb32 {
+  margin-bottom: 16px;
+}
+.form-card__text {
+  color: var(--Micro-Gray, #EFF0F5);
+  font-family: "Wix Madefor Text";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
   margin-bottom: 32px;
 }
 .form-card__description {
@@ -619,6 +628,40 @@ input::placeholder {
   margin-top: 24px;
 }
 
+.top__container {
+  border-radius: 32px;
+  background: #F1F3FF;
+  padding: 40px;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 64px;
+}
+.top__content {
+  grid-column: 1/7;
+}
+.top__video {
+  grid-column: 8/13;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.top__video-thumbnail {
+  width: 100%;
+}
+.top__play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+.top__play-button:hover circle {
+  fill: black;
+}
 @media (max-width: 1080px) {
   .subscribe__container {
     background-image: none;
@@ -628,6 +671,9 @@ input::placeholder {
     flex: 0 0 48%;
   }
   .slider-articles__controls {
+    display: none;
+  }
+  .form-card_about {
     display: none;
   }
 }
@@ -675,6 +721,17 @@ input::placeholder {
   .slider-articles__card {
     flex: 0 0 calc(90% - 8px);
     gap: 8px;
+  }
+  .top__container {
+    padding: 24px;
+    grid-template-columns: repeat(4, 1fr);
+    margin-bottom: 24px;
+  }
+  .top__content {
+    grid-column: 1/-1;
+  }
+  .top__video {
+    grid-column: 1/-1;
   }
 }
 img {
@@ -3584,40 +3641,6 @@ img {
     height: 230px;
   }
 }
-.student-case__container {
-  border-radius: 32px;
-  background: #F1F3FF;
-  padding: 40px;
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  justify-content: space-between;
-  gap: 16px;
-  margin-bottom: 64px;
-}
-.student-case__content {
-  grid-column: 1/7;
-}
-.student-case__video {
-  grid-column: 8/13;
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-.student-case__video-thumbnail {
-  width: 100%;
-}
-.student-case__play-button {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
-}
-.student-case__play-button:hover circle {
-  fill: black;
-}
 .quote {
   display: flex;
   align-items: center;
@@ -3729,6 +3752,7 @@ img {
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  margin-bottom: 24px;
 }
 .about-student__skills-list {
   list-style-type: none;
@@ -3764,6 +3788,9 @@ img {
   line-height: 40px;
   grid-column: span 12;
 }
+.interview__title_vr {
+  grid-column: span 6;
+}
 .interview__content {
   grid-column: span 9;
   margin-top: 48px;
@@ -3796,6 +3823,157 @@ img {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+}
+
+.video-review__container {
+  border-radius: 32px;
+  background: var(--Background-Light, #F1F3FF);
+  padding: 40px;
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+}
+.video-review__content {
+  grid-column: 1/-1;
+  margin-top: 32px;
+}
+.video-review__text {
+  color: var(--Text-Light-Gray, #2E2E2E);
+  font-family: "Wix Madefor Text";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+.video-review__video {
+  background-image: url(../images/video-preview.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 24px;
+  grid-column: span 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.video-review__link {
+  color: var(--White, #FFF);
+  font-family: "Wix Madefor Text";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration: none;
+}
+.video-review__link:hover {
+  text-decoration: underline;
+}
+.video-review__cta {
+  padding: 24px;
+  align-items: center;
+  border-radius: 24px;
+  background: var(--White, #FFF);
+  grid-column: 1/-1;
+}
+.video-review__cta-title {
+  color: var(--Text-Light-Gray, #2E2E2E);
+  font-family: "Wix Madefor Text";
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin-bottom: 10px;
+}
+.video-review__cta-description {
+  color: var(--Text-Light-Gray, #2E2E2E);
+  font-family: "Wix Madefor Text";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.video-review__cta-link {
+  color: #5E53D8;
+  text-decoration: none;
+}
+.video-review__cta-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 1080px) {
+  .about-student__container {
+    grid-template-columns: repeat(9, 1fr);
+  }
+  .interview {
+    grid-template-columns: repeat(9, 1fr);
+  }
+  .interview__title_vr {
+    grid-column: span 9;
+  }
+}
+@media (max-width: 996px) {
+  .about-student__content {
+    flex-direction: column;
+  }
+  .video-review__video {
+    grid-column: span 9;
+    height: 120px;
+    margin-top: 16px;
+  }
+}
+@media (max-width: 767px) {
+  .box-top__title {
+    font-size: 32px;
+  }
+  .quote__img {
+    width: 61px;
+  }
+  .quote__text {
+    font-size: 18px;
+  }
+  .about-student__info {
+    padding: 24px;
+  }
+  .about-student__content {
+    gap: 16px;
+  }
+  .about-student__photo-img {
+    width: 100%;
+  }
+  .about-student__prof {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 16px;
+  }
+  .about-student__scroll {
+    overflow: scroll;
+    scrollbar-width: none;
+  }
+  .about-student__skills-list {
+    width: 668px;
+  }
+  .interview__content {
+    gap: 16px;
+  }
+  .interview__title_vr {
+    font-size: 24px;
+    line-height: normal;
+  }
+  .video-review__video {
+    height: 80px;
+  }
+  .video-review__container {
+    padding: 24px;
+  }
+}
+.article-box__container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+.article-box__info {
+  grid-column: span 9;
 }
 
 @media (max-width: 1440px) {

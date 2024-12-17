@@ -1,0 +1,10 @@
+.article-box {
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  &__info {
+    grid-column: span 9;
+  }
+}

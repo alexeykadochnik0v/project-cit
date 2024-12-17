@@ -372,8 +372,18 @@ input {
     line-height: normal;
 
     &_mb32 {
-      margin-bottom: 32px;
+      margin-bottom: 16px;
     }
+  }
+
+  &__text {
+    color: var(--Micro-Gray, #EFF0F5);
+    font-family: "Wix Madefor Text";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 32px;
   }
 
   &__description {
@@ -605,8 +615,54 @@ input {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    margin-top:  24px;
+    margin-top: 24px;
   }
+}
+
+.top {
+  &__container {
+    border-radius: 32px;
+    background: #F1F3FF;
+    padding: 40px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 64px;
+  }
+
+  &__content {
+    grid-column: 1 / 7;
+  }
+
+  &__video {
+    grid-column: 8 / 13;
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  &__video-thumbnail {
+    width: 100%;
+  }
+
+  &__play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+
+    &:hover circle {
+      fill: black;
+    }
+  }
+
+  &__play-icon {}
 }
 
 
@@ -628,6 +684,10 @@ input {
     &__controls {
       display: none;
     }
+  }
+
+  .form-card_about {
+    display: none;
   }
 }
 
@@ -691,6 +751,22 @@ input {
     &__card {
       flex: 0 0 calc(90% - 8px);
       gap: 8px;
+    }
+  }
+
+  .top {
+    &__container {
+      padding: 24px;
+      grid-template-columns: repeat(4, 1fr);
+      margin-bottom: 24px;
+    }
+
+    &__content {
+      grid-column: 1 / -1;
+    }
+
+    &__video {
+      grid-column: 1 / -1;
     }
   }
 

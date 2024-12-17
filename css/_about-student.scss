@@ -1,48 +1,4 @@
-.student-case {
-  &__container {
-    border-radius: 32px;
-    background: #F1F3FF;
-    padding: 40px;
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    justify-content: space-between;
-    gap: 16px;
-    margin-bottom: 64px;
-  }
 
-  &__content {
-    grid-column: 1 / 7;
-  }
-
-  &__video {
-    grid-column: 8 / 13;
-    position: relative;
-    display: flex;
-    align-items: center;
-  }
-
-  &__video-thumbnail {
-    width: 100%;
-  }
-
-  &__play-button {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
-
-    &:hover circle {
-      fill: black;
-    }
-  }
-
-  &__play-icon {}
-}
 
 .quote {
   display: flex;
@@ -167,6 +123,7 @@
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+    margin-bottom: 24px;
   }
 
   &__skills-list {
@@ -195,6 +152,7 @@
 .interview {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
+
   &__title {
     color: var(--Primary-Blue, #413B83);
     font-family: "Wix Madefor Text";
@@ -203,6 +161,10 @@
     font-weight: 700;
     line-height: 40px;
     grid-column: span 12;
+
+    &_vr {
+      grid-column: span 6;
+    }
   }
 
   &__content {
@@ -240,5 +202,187 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+  }
+}
+
+.video-review {
+  &__container {
+    border-radius: 32px;
+    background: var(--Background-Light, #F1F3FF);
+    padding: 40px;
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+  }
+
+  &__content {
+    grid-column: 1 / -1;
+    margin-top: 32px;
+  }
+
+  &__text {
+    color: var(--Text-Light-Gray, #2E2E2E);
+    font-family: "Wix Madefor Text";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+
+  &__video {
+    background-image: url(../images/video-preview.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 24px;
+    ;
+    grid-column: span 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__link {
+    color: var(--White, #FFF);
+    font-family: "Wix Madefor Text";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__cta {
+    padding: 24px;
+    align-items: center;
+    border-radius: 24px;
+    background: var(--White, #FFF);
+    grid-column: 1 / -1;
+  }
+
+  &__cta-title {
+    color: var(--Text-Light-Gray, #2E2E2E);
+    font-family: "Wix Madefor Text";
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-bottom: 10px;
+  }
+
+  &__cta-description {
+    color: var(--Text-Light-Gray, #2E2E2E);
+    font-family: "Wix Madefor Text";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  &__cta-link {
+    color: #5E53D8;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+@media (max-width: 1080px) {
+  .about-student {
+    &__container {
+      grid-template-columns: repeat(9, 1fr);
+    }
+  }
+
+  .interview {
+    grid-template-columns: repeat(9, 1fr);
+  }
+
+  .interview__title_vr {
+    grid-column: span 9;
+  }
+}
+
+@media (max-width: 996px) {
+  .about-student {
+    &__content {
+      flex-direction: column;
+    }
+  }
+
+  .video-review__video {
+    grid-column: span 9;
+    height: 120px;
+    margin-top: 16px;
+  }
+}
+
+@media (max-width: 767px) {
+
+  .box-top__title {
+    font-size: 32px;
+  }
+
+  .quote {
+    &__img {
+      width: 61px;
+    }
+    &__text {
+      font-size: 18px;
+    }
+  }
+
+  .about-student {
+    &__info {
+      padding: 24px;
+    }
+
+    &__content {
+      gap: 16px;
+    }
+
+    &__photo-img {
+      width: 100%;
+    }
+
+    &__prof {
+      grid-template-columns: repeat(1, 1fr);
+      gap: 16px;
+    }
+
+    &__scroll {
+      overflow: scroll;
+      scrollbar-width: none;
+    }
+
+    &__skills-list {
+      width: 668px;
+    }
+  }
+
+  .interview__content {
+    gap: 16px;
+  }
+
+  .interview__title_vr {
+    font-size: 24px;
+    line-height: normal;
+  }
+
+  .video-review__video {
+    height: 80px;
+  }
+
+  .video-review__container {
+    padding: 24px;
   }
 }
