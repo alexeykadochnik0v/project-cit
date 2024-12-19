@@ -18,6 +18,10 @@ img {
   max-width: 100%;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .center {
   padding-left: calc(50% - 720px);
   padding-right: calc(50% - 720px);
@@ -95,6 +99,7 @@ img {
 
   &__li {
     list-style: none;
+    position: relative;
   }
 
   &__link {
@@ -154,6 +159,63 @@ img {
       }
     }
   }
+
+  &__li_courses {
+    position: relative;
+    /* Для позиционирования меню */
+  }
+
+  &__dropdown {
+    position: absolute;
+    top: 100%; /* Под родительским элементом */
+    right: 0;
+    display: none; /* Скрываем меню по умолчанию */
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    padding: 32px;
+    z-index: 10000;
+    display: none; /* Для колонок */
+    gap: 16px;
+    border-radius: 24px;
+  }
+  
+  &__dropdown-column {
+    list-style: none;
+  }
+  
+  &__dropdown-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  &__dropdown-link {
+    padding: 16px;
+    color: #000;
+    font-size: 18px;
+    text-decoration: none;
+    display: block;
+    transition: color 0.3s;
+    border-radius: 12px;
+    &:hover {
+      background-color: #eee;
+    }
+  }
+  
+  &__dropdown-link:hover {
+    color: #413b83;
+  }
+  
+  /* Показываем меню при наведении */
+  &__li:hover .nav__dropdown {
+    display: flex; /* Меню будет видно */
+  }  
+
 }
 
 

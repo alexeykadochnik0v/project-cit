@@ -18,6 +18,48 @@ function initHeaderScripts() {
       burger.classList.remove("burger--active");
     }
   });
+
+  // Находим выпадающее меню
+  const dropdown = document.querySelector('.nav__dropdown');
+
+  // Убедимся, что элемент существует
+  if (dropdown) {
+    dropdown.textContent = ''; // Очищаем меню
+
+    // Количество элементов в одной колонке
+    const itemsPerColumn = 3;
+
+    // Разбиваем курсы на группы по `itemsPerColumn`
+    for (let i = 0; i < courses.length; i += itemsPerColumn) {
+      // Создаём элемент `<li>` для колонки
+      const columnItem = document.createElement('li');
+      columnItem.className = 'nav__dropdown-column';
+
+      // Внутри `<li>` создаём вложенный `<ul>`
+      const columnList = document.createElement('ul');
+      columnList.className = 'nav__dropdown-list';
+
+      // Добавляем курсы в эту колонку
+      courses.slice(i, i + itemsPerColumn).forEach(course => {
+        const listItem = document.createElement('li');
+        listItem.className = 'nav__dropdown-item';
+
+        const link = document.createElement('a');
+        link.className = 'nav__dropdown-link';
+        link.href = 'card-course.html'; // Здесь можно добавить динамические ссылки
+        link.textContent = course.title;
+
+        listItem.appendChild(link);
+        columnList.appendChild(listItem);
+      });
+
+      // Добавляем `<ul>` внутрь колонки `<li>`
+      columnItem.appendChild(columnList);
+      dropdown.appendChild(columnItem);
+    }
+  } else {
+    console.warn('Выпадающее меню не найдено.');
+  }
 }
 
 // Функция для инициализации скриптов для футера

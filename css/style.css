@@ -755,6 +755,10 @@ img {
   max-width: 100%;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .center {
   padding-left: calc(50% - 720px);
   padding-right: calc(50% - 720px);
@@ -814,6 +818,7 @@ img {
   /* По умолчанию горизонтальное меню на десктопе */
   gap: 48px;
   /* Дополнительные элементы только для мобильной версии */
+  /* Показываем меню при наведении */
 }
 .nav__list {
   display: flex;
@@ -822,6 +827,7 @@ img {
 }
 .nav__li {
   list-style: none;
+  position: relative;
 }
 .nav__link {
   position: relative;
@@ -871,6 +877,54 @@ img {
 .nav__mobile-extra .nav__social-icon img {
   width: 32px;
   height: 32px;
+}
+.nav__li_courses {
+  position: relative;
+  /* Для позиционирования меню */
+}
+.nav__dropdown {
+  position: absolute;
+  top: 100%; /* Под родительским элементом */
+  right: 0;
+  display: none; /* Скрываем меню по умолчанию */
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  padding: 32px;
+  z-index: 10000;
+  display: none; /* Для колонок */
+  gap: 16px;
+  border-radius: 24px;
+}
+.nav__dropdown-column {
+  list-style: none;
+}
+.nav__dropdown-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+.nav__dropdown-link {
+  padding: 16px;
+  color: #000;
+  font-size: 18px;
+  text-decoration: none;
+  display: block;
+  transition: color 0.3s;
+  border-radius: 12px;
+}
+.nav__dropdown-link:hover {
+  background-color: #eee;
+}
+.nav__dropdown-link:hover {
+  color: #413b83;
+}
+.nav__li:hover .nav__dropdown {
+  display: flex; /* Меню будет видно */
 }
 
 .hero__container {
@@ -3984,6 +4038,9 @@ img {
   .video-review__container {
     padding: 24px;
   }
+}
+.article-box {
+  scroll-behavior: smooth;
 }
 .article-box__container {
   display: grid;

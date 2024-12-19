@@ -75,7 +75,6 @@ const courses = [
 ];
 
 
-
 // Функция для форматирования цены с валютой
 const formatPrice = (amount, currency) => `${amount.toLocaleString()} ${currency}`;
 
