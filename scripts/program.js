@@ -122,7 +122,7 @@ document.addEventListener("DOMContentLoaded", () => {
     blockElement.innerHTML = `
       <div class="faq__header">
         <h3 class="faq__question" data-index="${index}">${item.question}</h3>
-        <button class="faq__toggle" aria-expanded="false" data-index="${index}">+</button>
+        <button class="faq__toggle" aria-expanded="false" data-index="${index}"></button>
       </div>
       <div class="faq__content">
         <p>${item.answer}</p>
