@@ -3974,11 +3974,83 @@ img {
 .article-box__container {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
+  gap: 24px;
 }
 .article-box__info {
   grid-column: span 9;
 }
+.article-box__text {
+  color: var(--Text-Light-Gray, #2E2E2E);
+  font-family: "Wix Madefor Text";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.article-box__text-i {
+  color: var(--Text-Light-Gray, #2E2E2E);
+  font-family: "Wix Madefor Text";
+  font-size: 16px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+.article-box__heading {
+  color: var(--Primary-Blue, #413B83);
+  font-family: "Wix Madefor Text";
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 40px;
+  margin-bottom: 24px;
+  margin-top: 16px;
+}
 
+.contents {
+  margin-bottom: 32px;
+}
+.contents__heading {
+  color: var(--Text-Black, #000);
+  font-family: "Wix Madefor Text";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.contents__list {
+  margin-top: 32px;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.contents__link {
+  margin-left: 20px;
+  color: var(--Neutral-Gray, #A5A8B1);
+  font-family: "Wix Madefor Text";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  -webkit-text-decoration-skip-ink: none;
+          text-decoration-skip-ink: none;
+  text-decoration-thickness: auto;
+  text-underline-offset: auto;
+  text-underline-position: from-font;
+}
+.contents__link:hover {
+  text-decoration: none;
+}
+
+@media (max-width: 996px) {
+  .article-box__container {
+    grid-template-columns: repeat(9, 1fr);
+  }
+}
 @media (max-width: 1440px) {
   .center {
     padding-left: calc(50% - 636px);
