@@ -241,10 +241,22 @@ input::placeholder {
   font-size: 24px;
 }
 
+.mt-64 {
+  margin-top: 64px;
+}
+
+.mb-48 {
+  margin-bottom: 48px;
+}
+
+.mb-24 {
+  margin-bottom: 24px;
+}
+
 .text {
   color: #2E2E2E;
   font-family: "Wix Madefor Text";
-  font-size: 18px;
+  font-size: 16px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -389,6 +401,8 @@ input::placeholder {
 }
 .form-card_about {
   grid-column: span 3;
+  position: sticky;
+  top: 16px;
 }
 .form-card_install {
   width: 464px;
@@ -3975,6 +3989,8 @@ img {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   gap: 24px;
+  align-items: start;
+  padding-top: 16px;
 }
 .article-box__info {
   grid-column: span 9;
@@ -4046,9 +4062,195 @@ img {
   text-decoration: none;
 }
 
-@media (max-width: 996px) {
+.template-block {
+  border-radius: 32px;
+  background: var(--Background-Light, #F1F3FF);
+  padding: 40px;
+  margin-top: 32px;
+}
+.template-block .section:last-of-type {
+  margin-bottom: 0;
+}
+.template-block_mb-64 {
+  margin-bottom: 48px;
+}
+.template-block_mini {
+  padding: 32px;
+}
+.template-block_color {
+  background: rgba(255, 203, 203, 0.2);
+}
+
+.section {
+  margin-bottom: 32px;
+}
+
+.title-section {
+  color: var(--Text-Black, #000);
+  font-family: "Wix Madefor Text";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 24px;
+}
+
+.subtitle {
+  color: var(--Text-Light-Gray, #2E2E2E);
+  font-family: "Wix Madefor Text";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 22px;
+  margin-bottom: 16px;
+}
+
+.approaches-list {
+  color: var(--Text-Light-Gray, #2E2E2E);
+  font-family: "Wix Madefor Text";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  padding-left: 22px;
+}
+
+.white-box {
+  border-radius: 24px;
+  background: var(--White, #FFF);
+  padding: 24px;
+}
+
+.approach {
+  display: inline-flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+.approach__content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.approach__img {
+  width: 278px;
+  border-radius: 12px;
+}
+
+.article-list-box {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 32px;
+  margin-bottom: 32px;
+}
+
+.article-list {
+  width: 424px;
+}
+
+.info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-left: 22px;
+  color: var(--Text-Light-Gray, #2E2E2E);
+  font-family: "Wix Madefor Text";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.subtitle-18 {
+  color: var(--Text-Light-Gray, #2E2E2E);
+  font-family: "Wix Madefor Text";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 24px;
+}
+.subtitle-18_mb-16 {
+  margin-bottom: 16px;
+}
+
+.subtitle-24 {
+  color: var(--Text-Light-Gray, #2E2E2E);
+  font-family: "Wix Madefor Text";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 24px;
+}
+
+.aticle-big-img {
+  display: flex;
+  justify-content: center;
+  display: flex;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 32px;
+  background: var(--Gray-light, #F4F6F7);
+  margin-top: 32px;
+}
+
+.mini-articles__caption {
+  color: var(--Primary-Blue, #413B83);
+  font-family: "Wix Madefor Text";
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin-bottom: 16px;
+}
+
+.mini-articles {
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+.mini-articles__box {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.mini-articles__item {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.reasons_article .reasons__option:last-of-type {
+  margin-bottom: 0;
+}
+
+@media (max-width: 1080px) {
   .article-box__container {
     grid-template-columns: repeat(9, 1fr);
+  }
+}
+@media (max-width: 767px) {
+  .contents__link {
+    margin-left: 0;
+  }
+  .article-box__heading {
+    font-size: 28px;
+  }
+  .template-block {
+    padding: 24px;
+  }
+  .approach {
+    flex-direction: column;
+  }
+  .mini-articles__item {
+    flex-direction: column;
+  }
+  .reasons_article {
+    margin-top: 24px;
   }
 }
 @media (max-width: 1440px) {

@@ -163,10 +163,22 @@ input {
   }
 }
 
+.mt-64 {
+  margin-top: 64px;
+}
+
+.mb-48 {
+  margin-bottom: 48px;
+}
+
+.mb-24 {
+  margin-bottom: 24px;
+}
+
 .text {
   color: #2E2E2E;
   font-family: "Wix Madefor Text";
-  font-size: 18px;
+  font-size: 16px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -338,6 +350,8 @@ input {
 
   &_about {
     grid-column: span 3;
+    position: sticky;
+    top: 16px;
   }
 
   &_install {
