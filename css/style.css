@@ -884,16 +884,19 @@ html {
 }
 .nav__dropdown {
   position: absolute;
-  top: 100%; /* Под родительским элементом */
+  top: 100%;
+  /* Под родительским элементом */
   right: 0;
-  display: none; /* Скрываем меню по умолчанию */
+  display: none;
+  /* Скрываем меню по умолчанию */
   background-color: #fff;
   border: 1px solid #ccc;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
   padding: 32px;
   z-index: 10000;
-  display: none; /* Для колонок */
+  display: none;
+  /* Для колонок */
   gap: 16px;
   border-radius: 24px;
 }
@@ -924,7 +927,8 @@ html {
   color: #413b83;
 }
 .nav__li:hover .nav__dropdown {
-  display: flex; /* Меню будет видно */
+  display: flex;
+  /* Меню будет видно */
 }
 
 .hero__container {
@@ -1039,10 +1043,14 @@ html {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  transition: all 0.1s;
 }
 .programs__filter_active {
   background-color: #413B83;
   color: #fff;
+}
+.programs__filter:hover {
+  outline: 2px solid #413B83;
 }
 .programs__list {
   display: grid;
@@ -1359,7 +1367,10 @@ html {
   background-color: #fff;
   padding: 20px;
   border-radius: 10px;
-  transition: background-color 0.4s ease, transform 0.4s ease;
+  background-color: #fff;
+}
+.step-card:hover {
+  background-image: url(../images/gradient-bg.png);
 }
 .step-card_big {
   grid-column: span 2;
@@ -1367,6 +1378,9 @@ html {
   background-repeat: no-repeat;
   border-radius: 20px;
   background-size: cover;
+}
+.step-card_big:hover {
+  background-color: #FFF5F5;
 }
 .step-card__header {
   display: flex;
