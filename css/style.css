@@ -326,6 +326,16 @@ input::placeholder {
   border: 1px solid var(--Micro-Gray, #EFF0F5);
   background: var(--White, #FFF);
 }
+.article-card:hover .article-card__image {
+  transform: scale(1.05);
+  filter: brightness(1);
+}
+.article-card__image {
+  height: 240px;
+  border-radius: 16px;
+  transition: all 0.4s;
+  filter: brightness(0.8);
+}
 .article-card__title {
   color: var(--Secondary-800, #181A2A);
   font-family: "Wix Madefor Text";
@@ -334,8 +344,8 @@ input::placeholder {
   font-weight: 700;
   line-height: normal;
 }
-.article-card__image {
-  height: 240px;
+.article-card__image-wrapper {
+  overflow: hidden;
   border-radius: 16px;
 }
 .article-card__content {
@@ -823,7 +833,7 @@ html {
 .nav__list {
   display: flex;
   list-style: none;
-  gap: 48px;
+  gap: 12px;
 }
 .nav__li {
   list-style: none;
@@ -837,6 +847,10 @@ html {
   font-weight: 600;
   text-decoration: none;
   transition: color 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px;
   /* Анимация подчеркивания */
 }
 .nav__link:hover {
@@ -854,6 +868,12 @@ html {
 }
 .nav__link:hover::after {
   width: 100%;
+}
+.nav__link_it::after {
+  display: none;
+}
+.nav__link_it:hover .nav__img {
+  transform: rotate(180deg);
 }
 .nav__mobile-extra {
   display: none;
@@ -1439,6 +1459,8 @@ html {
 }
 .about-expert__cta-link {
   margin-left: auto;
+  position: relative;
+  z-index: 100;
 }
 .about-expert__fullname {
   color: var(--Text-Black, #000);
@@ -1488,6 +1510,28 @@ html {
   padding: 24px;
   display: flex;
   gap: 24px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  transition: width 0.6s ease, height 0.6s ease;
+}
+.about-expert__cta::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(65, 59, 131, 0.1);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+.about-expert__cta:hover::before {
+  transition: width 0.6s ease, height 0.6s ease;
+}
+.about-expert__cta:hover::before {
+  width: 300%;
+  height: 300%;
 }
 .about-expert__cta-title {
   max-width: 245px;
@@ -1511,6 +1555,28 @@ html {
   border-radius: 24px;
   background: #F1F3FF;
   max-width: 293px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  transition: width 0.6s ease, height 0.6s ease;
+}
+.info-card::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(65, 59, 131, 0.1);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+.info-card:hover::before {
+  transition: width 0.6s ease, height 0.6s ease;
+}
+.info-card:hover::before {
+  width: 300%;
+  height: 300%;
 }
 .info-card_height {
   flex-grow: 1;

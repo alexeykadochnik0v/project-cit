@@ -3,5 +3,6 @@
     "workbench.editor.pinnedTabSizing": "compact",
     "editor.tabSize": 2,
     "editor.lineNumbers": "off",
-    "workbench.editor.labelFormat": "default"
+    "workbench.editor.labelFormat": "default",
+    "liveServer.settings.port": 5501
 }

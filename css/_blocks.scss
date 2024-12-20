@@ -265,6 +265,18 @@ input {
   border: 1px solid var(--Micro-Gray, #EFF0F5);
   background: var(--White, #FFF);
 
+  &:hover .article-card__image {
+    transform: scale(1.05);
+    filter: brightness(1);
+  }
+
+  &__image {
+    height: 240px;
+    border-radius: 16px;
+    transition: all 0.4s;
+    filter: brightness(0.8);
+  }
+
   &__title {
     color: var(--Secondary-800, #181A2A);
     font-family: "Wix Madefor Text";
@@ -274,8 +286,8 @@ input {
     line-height: normal;
   }
 
-  &__image {
-    height: 240px;
+  &__image-wrapper {
+    overflow: hidden;
     border-radius: 16px;
   }
 
