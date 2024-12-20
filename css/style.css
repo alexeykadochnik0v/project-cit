@@ -4820,6 +4820,9 @@ html {
     display: flex;
     flex-direction: column;
   }
+  .programs__filter:hover {
+    box-shadow: none;
+  }
   .step-card_big {
     grid-column: span 1;
   }
