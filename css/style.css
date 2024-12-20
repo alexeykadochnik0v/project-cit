@@ -1070,7 +1070,7 @@ html {
   color: #fff;
 }
 .programs__filter:hover {
-  outline: 2px solid #413B83;
+  box-shadow: 0 0 3px #413B83;
 }
 .programs__list {
   display: grid;
@@ -1104,6 +1104,7 @@ html {
 .course-card__top {
   position: relative;
   z-index: 2;
+  flex: 1 0 0;
 }
 .course-card .flame {
   position: absolute;
@@ -4390,6 +4391,14 @@ html {
     margin-top: 24px;
   }
 }
+@media (min-width: 1441px) {
+  .hero__container {
+    width: 100%;
+  }
+  .hero__title {
+    background: url(../images/back-top1.svg) no-repeat 20% 70%, url(../images/back-top2.svg) no-repeat 90% 29px;
+  }
+}
 @media (max-width: 1440px) {
   .center {
     padding-left: calc(50% - 636px);
@@ -4441,6 +4450,11 @@ html {
   }
   .footer__columns {
     gap: 130px;
+  }
+}
+@media (min-width: 1141px) and (max-width: 1440px) {
+  .hero__container {
+    width: 100%;
   }
 }
 @media (max-width: 1140px) {
@@ -4503,6 +4517,9 @@ html {
     line-height: 18px;
     transform: rotate(0);
     top: 52px;
+  }
+  .education-stages__container {
+    width: 100%;
   }
   .education-stages__steps {
     grid-template-columns: repeat(2, 1fr);
@@ -4640,6 +4657,14 @@ html {
     margin-left: auto;
     margin-right: auto;
   }
+  .education-stages__steps {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .education-stages {
+    padding-left: calc(50% - 348px);
+    padding-right: calc(50% - 348px);
+  }
   .education-stages__title {
     padding-left: 32px;
     padding-right: 32px;
@@ -4767,7 +4792,7 @@ html {
   .education-stages {
     padding-left: 20px;
     padding-right: 20px;
-    margin-bottom: 24px;
+    margin-bottom: 40px;
   }
   .education-stages__container {
     padding-top: 32px;
@@ -4787,20 +4812,28 @@ html {
   .education-stages__grid {
     padding-left: 0;
     padding-right: 0;
+    margin-top: 32px;
   }
   .education-stages__steps {
     padding-left: 0;
     padding-right: 0;
-    grid-template-columns: repeat(1, 1fr);
+    display: flex;
+    flex-direction: column;
   }
   .step-card_big {
     grid-column: span 1;
+  }
+  .step-card__img-last {
+    display: none;
   }
   .about-expert__container {
     padding: 32px 24px;
   }
   .about-expert__name {
     font-size: 12px;
+  }
+  .about-expert__info {
+    padding-bottom: 32px;
   }
   .about-expert__fullname {
     font-size: 32px;
