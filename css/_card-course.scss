@@ -1518,6 +1518,10 @@
     gap: 32px;
   }
 
+  .breadcrumb {
+    display: none;
+  }
+
   .course {
     padding-bottom: 40px;
 
@@ -1875,5 +1879,11 @@
       width: 40px;
       height: 40px;
     }
+  }
+}
+
+@media (max-width: 375px) {
+  .course__technologies-list {
+    max-width: 100%;
   }
 }

@@ -1423,16 +1423,18 @@ html {
 
 .about-expert__container {
   padding: 48px;
+  padding-bottom: 24px;
   border-radius: 32px;
   border: 1px solid #A5A8B1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 0 auto;
-  padding-bottom: 64px;
+}
+.about-expert__content {
+  display: grid;
+  grid-template-columns: 293px 293px 1fr;
+  -moz-column-gap: 24px;
+       column-gap: 24px;
 }
 .about-expert__info {
-  padding-top: 64px;
+  padding-top: 12px;
   display: flex;
   justify-content: center;
   gap: 24px;
@@ -1481,30 +1483,15 @@ html {
   line-height: normal;
   max-width: 700px;
 }
-.about-expert__flex {
-  display: flex;
-  gap: 24px;
-}
-.about-expert__top {
-  display: flex;
-}
-.about-expert__bottom {
-  display: flex;
-  gap: 24px;
-}
-.about-expert__content {
-  display: flex;
-  flex-direction: column;
-}
 .about-expert__image {
   display: grid;
   align-items: end;
+  grid-row: span 2;
 }
 .about-expert__image_photo {
   min-height: 525px;
 }
 .about-expert__cta {
-  width: 714px;
   height: 132px;
   border-radius: 24px;
   background: #F1F3FF;
@@ -1550,8 +1537,9 @@ html {
 .info-card {
   display: flex;
   padding: 24px;
+  margin-bottom: 24px;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: flex-start;
   border-radius: 24px;
   background: #F1F3FF;
@@ -1837,6 +1825,12 @@ html {
   flex-direction: column;
   gap: 12px;
 }
+.footer__text-link {
+  color: inherit;
+}
+.footer__text-link:hover {
+  text-decoration: none;
+}
 .footer__link {
   color: #F1F3FF;
   font-family: "Wix Madefor Text";
@@ -1916,7 +1910,7 @@ html {
 }
 .footer__mobile .footer__accordion {
   border-bottom: 1px solid #a5a8b1;
-  margin-bottom: 16px;
+  margin-bottom: 0;
 }
 .footer__mobile .footer__accordion-header {
   background: none;
@@ -3240,6 +3234,9 @@ html {
     grid-template-columns: repeat(1, 1fr);
     gap: 32px;
   }
+  .breadcrumb {
+    display: none;
+  }
   .course {
     padding-bottom: 40px;
   }
@@ -3499,6 +3496,11 @@ html {
   .faq__toggle {
     width: 40px;
     height: 40px;
+  }
+}
+@media (max-width: 375px) {
+  .course__technologies-list {
+    max-width: 100%;
   }
 }
 .blog-hero__container {
@@ -4413,16 +4415,6 @@ html {
   .course-card__title {
     font-size: 32px;
   }
-  .info-card {
-    max-width: 253px;
-    flex-grow: 1;
-  }
-  .info-card_1280 {
-    max-width: 361px;
-  }
-  .info-card__number {
-    font-size: 52px;
-  }
   .education-stages {
     padding-left: calc(50% - 636px);
     padding-right: calc(50% - 636px);
@@ -4438,15 +4430,23 @@ html {
     justify-content: end;
     flex-grow: 1;
   }
+  .about-expert__content {
+    grid-template-columns: 265px 255px 1fr;
+  }
   .about-expert__photo {
     height: auto;
   }
-  .about-expert__container {
-    padding-left: 48px;
-    padding-right: 48px;
-  }
   .about-expert__details {
     margin-bottom: 24px;
+  }
+  .about-expert__cta-title {
+    max-width: 207px;
+  }
+  .info-card__title {
+    font-size: 20px;
+  }
+  .info-card__number {
+    font-size: 48px;
   }
   .footer__columns {
     gap: 130px;
@@ -4527,28 +4527,16 @@ html {
     padding-left: 32px;
     padding-right: 32px;
   }
-  .about-expert__image_photo {
+  .about-expert__content {
+    grid-template-columns: 288px 288px;
     justify-content: center;
   }
-  .about-expert__top {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .about-expert__bottom {
-    flex-wrap: wrap-reverse;
-    justify-content: center;
-  }
-  .info-card {
-    max-width: 288px;
-  }
-  .info-card_1024 {
-    max-width: 228px;
-  }
-  .info-card_1280 {
-    max-width: 348px;
+  .about-expert__image {
+    grid-column: span 2;
+    grid-row: 4/5;
   }
   .about-expert__cta {
-    width: 600px;
+    grid-column: span 2;
   }
   .selection-help__content {
     flex-wrap: wrap;
@@ -4603,13 +4591,24 @@ html {
   }
   .nav.nav--active {
     display: flex;
-    /* Показываем меню */
   }
   .nav__list {
     text-align: center;
     flex-direction: column;
-    /* Вертикальное расположение ссылок */
-    gap: 24px;
+    gap: 0;
+  }
+  .nav__link {
+    justify-content: center;
+  }
+  .nav__dropdown {
+    position: static;
+    flex-direction: column;
+    gap: 0;
+    align-items: center;
+    padding: 16px;
+  }
+  .nav__dropdown-link {
+    padding: 4px;
   }
   .nav__mobile-extra {
     display: flex;
@@ -4668,9 +4667,6 @@ html {
   .education-stages__title {
     padding-left: 32px;
     padding-right: 32px;
-  }
-  .about-expert__info {
-    padding-top: 0;
   }
 }
 @media (max-width: 767px) {
@@ -4829,8 +4825,21 @@ html {
   .step-card__img-last {
     display: none;
   }
+  .social-icons {
+    order: 1;
+  }
   .about-expert__container {
-    padding: 32px 24px;
+    padding: 20px 24px;
+  }
+  .about-expert__content {
+    grid-template-columns: 1fr;
+  }
+  .about-expert__image {
+    grid-column: span 1;
+    grid-row: 8/7;
+  }
+  .about-expert__cta {
+    grid-column: span 1;
   }
   .about-expert__name {
     font-size: 12px;
@@ -4857,14 +4866,11 @@ html {
     height: auto;
     gap: 16px;
   }
+  .about-expert__cta-link {
+    margin-left: 0;
+  }
   .about-expert__image_photo {
     min-height: auto;
-  }
-  .info-card {
-    max-width: 100%;
-  }
-  .info-card__box {
-    gap: 16px;
   }
   .selection-help {
     margin-top: 40px;
@@ -4893,5 +4899,23 @@ html {
   }
   .selection-help__input {
     max-width: 100%;
+  }
+  .info-card {
+    max-width: 100%;
+    margin-bottom: 16px;
+  }
+}
+@media (max-width: 375px) {
+  .selection-help__subtitle {
+    font-size: 14px;
+  }
+  .selection-help__discount {
+    padding: 6px;
+  }
+  .selection-help__discount-text {
+    font-size: 10px;
+  }
+  .selection-help__subtitle {
+    font-size: 14px;
   }
 }/*# sourceMappingURL=style.css.map */
