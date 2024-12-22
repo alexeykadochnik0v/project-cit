@@ -801,3 +801,14 @@ input {
   }
 
 }
+
+@media (max-width: 375px) {
+  .heading {
+    font-size: 28px;
+    line-height: 38px;
+  }
+
+  .form-card {
+    border-radius: 16px;
+  }
+}

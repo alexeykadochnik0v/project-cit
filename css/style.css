@@ -761,6 +761,15 @@ input::placeholder {
     grid-column: 1/-1;
   }
 }
+@media (max-width: 375px) {
+  .heading {
+    font-size: 28px;
+    line-height: 38px;
+  }
+  .form-card {
+    border-radius: 16px;
+  }
+}
 img {
   max-width: 100%;
 }
@@ -2805,6 +2814,9 @@ html {
   font-weight: 400;
   line-height: normal;
 }
+.technologies__icon {
+  margin-right: -20px;
+}
 
 .certificate {
   margin-bottom: 64px;
@@ -3187,6 +3199,10 @@ html {
   }
   .technologies__grid {
     grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 40px;
+  }
+  .technologies__card {
+    border-radius: 24px;
   }
   .certificate__grid {
     grid-template-columns: repeat(2, 1fr);
@@ -3233,6 +3249,8 @@ html {
   .mentor-achievements {
     grid-template-columns: repeat(1, 1fr);
     gap: 32px;
+    border-radius: 16px;
+    padding: 16px;
   }
   .breadcrumb {
     display: none;
@@ -3264,7 +3282,9 @@ html {
     width: 100%;
   }
   .mentor {
-    background-position: right bottom;
+    padding: 24px;
+    min-height: 348px;
+    background-position: 8px bottom;
   }
   .mentor__name {
     font-size: 32px;
@@ -3277,7 +3297,7 @@ html {
     padding-bottom: 48px;
   }
   .reasons__title {
-    font-size: 32px;
+    font-size: 28px;
     margin-bottom: 32px;
   }
   .reasons__items {
@@ -3296,10 +3316,10 @@ html {
     padding: 16px;
   }
   .training__container {
-    padding: 32px;
+    padding: 32px 24px 24px;
   }
   .training__title {
-    font-size: 32px;
+    font-size: 28px;
   }
   .training__items {
     margin-top: 32px;
@@ -3333,14 +3353,24 @@ html {
   .reviews__controls {
     display: none;
   }
+  .learning-outcomes {
+    margin-bottom: 48px;
+  }
   .learning-outcomes__content {
     padding: 32px 24px 24px;
   }
+  .learning-outcomes__content_mt {
+    margin-top: 32px;
+  }
   .learning-outcomes__grid {
     grid-template-columns: repeat(1, 1fr);
+    gap: 16px;
   }
   .learning-outcomes__item {
     padding: 24px;
+  }
+  .learning-outcomes__text {
+    flex: 1 0 0;
   }
   .call-to-action__container {
     padding: 24px 24px 125px;
@@ -3355,6 +3385,9 @@ html {
   .call-to-action__phone {
     font-size: 28px;
   }
+  .comparison {
+    margin-bottom: 40px;
+  }
   .comparison__header {
     flex-direction: column;
     margin-bottom: 32px;
@@ -3367,10 +3400,14 @@ html {
     gap: 8px;
     grid-template-columns: repeat(2, 334px);
     scrollbar-width: none;
+    grid-auto-flow: dense;
   }
   .comparison__table::-webkit-scrollbar {
     display: none;
     /* Webkit */
+  }
+  .comparison__cell_pink, .comparison__cell_constructor {
+    grid-column: 2/3;
   }
   .comparison__description {
     width: 100%;
@@ -3378,6 +3415,9 @@ html {
   .comparison__cell {
     height: auto;
     padding: 16px;
+  }
+  .site-types {
+    margin-bottom: 40px;
   }
   .site-types__container {
     padding: 32px 24px;
@@ -3393,6 +3433,7 @@ html {
   }
   .portfolio__slides {
     gap: 8px;
+    margin-bottom: 0;
   }
   .portfolio__slide {
     padding: 16px;
@@ -3405,6 +3446,7 @@ html {
   .course-target {
     grid-template-columns: repeat(1, 1fr);
     gap: 16px;
+    margin-bottom: 40px;
   }
   .course-target__card_head {
     grid-column: span 1;
@@ -3420,6 +3462,9 @@ html {
   .text {
     font-size: 16px;
   }
+  .certificate {
+    margin-bottom: 48px;
+  }
   .certificate__grid {
     grid-template-columns: repeat(1, 1fr);
   }
@@ -3433,34 +3478,64 @@ html {
   .certificate__note {
     width: 100%;
   }
+  .certificate__subtitle {
+    margin-top: 24px;
+  }
+  .certificate__image {
+    max-width: 150%;
+  }
   .certificate__block {
     padding: 24px;
+    overflow: hidden;
   }
   .certificate__block_big {
+    border-radius: 24px;
     grid-column: span 1;
     grid-row: 3/4;
     background: url(../images/arrow-certificat.svg) no-repeat 580px, url(../images/certificat-mob.png) no-repeat center 295px/70%, linear-gradient(112deg, rgba(255, 203, 203, 0.2) 21.92%, rgba(135, 149, 242, 0.2) 76.74%);
   }
   .program {
     margin-top: 40px;
+    margin-bottom: 40px;
+  }
+  .program__container {
+    border-radius: 24px;
+  }
+  .program__header {
+    position: relative;
   }
   .program__container {
     padding: 32px 24px;
+    gap: 32px;
   }
   .program__block {
     padding: 16px;
+    border-radius: 16px;
   }
   .program__block-description {
     font-size: 18px;
     margin-top: 8px;
+    max-width: calc(100% - 50px);
   }
   .program__toggle {
     width: 40px;
     height: 40px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+  }
+  .program__text {
+    max-width: 100%;
+  }
+  .pricing {
+    border-radius: 24px;
   }
   .pricing__container {
     padding: 32px 24px;
     gap: 32px;
+  }
+  .pricing__card_test {
+    padding-bottom: 24px;
   }
   .pricing__name {
     font-size: 24px;
@@ -3475,6 +3550,9 @@ html {
     padding-top: 8px;
     padding-bottom: 8px;
   }
+  .installment {
+    padding-bottom: 48px;
+  }
   .installment__container {
     padding: 32px 24px;
   }
@@ -3484,6 +3562,10 @@ html {
   .faq {
     margin-top: 0;
   }
+  .faq__block {
+    border-radius: 24px;
+    padding: 16px;
+  }
   .faq__container {
     gap: 32px;
   }
@@ -3492,15 +3574,129 @@ html {
   }
   .faq__content p {
     padding-top: 16px;
+    font-size: 16px;
   }
   .faq__toggle {
     width: 40px;
     height: 40px;
   }
+  .call-to-action__content {
+    gap: 12px;
+  }
 }
 @media (max-width: 375px) {
   .course__technologies-list {
     max-width: 100%;
+  }
+  .title {
+    font-size: 28px;
+    line-height: 39px;
+  }
+  .course__description {
+    margin-top: 20px;
+  }
+  .course__technologies-title {
+    margin-top: 32px;
+  }
+  .course__technologies-list {
+    margin-bottom: 40px;
+  }
+  .mentor {
+    background-position: 28px bottom;
+  }
+  .mentor__name {
+    font-size: 28px;
+  }
+  .reasons__title {
+    font-size: 28px;
+    line-height: 38px;
+  }
+  .reasons__items {
+    grid-template-columns: repeat(6, 294px);
+  }
+  .training__container {
+    border-radius: 24px;
+    padding: 32px 16px 16px;
+    margin-bottom: 24px;
+  }
+  .training__title {
+    font-size: 28px;
+    line-height: 39px;
+  }
+  .reviews {
+    padding-bottom: 40px;
+  }
+  .reviews__slider {
+    margin-top: 32px;
+  }
+  .call-to-action__container {
+    padding-left: 16px;
+    padding-right: 16px;
+    border-radius: 24px;
+  }
+  .reviews__text {
+    padding-left: 40px;
+    background-position: left top;
+  }
+  .learning-outcomes {
+    margin-bottom: 40px;
+  }
+  .learning-outcomes__content {
+    padding: 24px 16px 16px;
+    gap: 24px;
+  }
+  .site-types__container {
+    padding: 24px 16px;
+    border-radius: 24px;
+  }
+  .site-types__list {
+    margin-top: 32px;
+  }
+  .site-types__item {
+    padding: 8px;
+  }
+  .program__container {
+    padding: 24px 16px 16px;
+    gap: 32px;
+  }
+  .program__block-description {
+    font-size: 16px;
+  }
+  .certificate {
+    margin-bottom: 40px;
+  }
+  .certificate__block_big {
+    border-radius: 24px;
+    padding-left: 16px;
+    padding-right: 16px;
+    background: url(../images/arrow-certificat.svg) no-repeat 580px, url(../images/certificat-mob.png) no-repeat center 275px/80%, linear-gradient(112deg, rgba(255, 203, 203, 0.2) 21.92%, rgba(135, 149, 242, 0.2) 76.74%);
+  }
+  .pricing__container {
+    padding: 24px 16px;
+    gap: 24px;
+  }
+  .installment {
+    padding-bottom: 40px;
+  }
+  .installment__container {
+    padding: 24px 16px;
+    gap: 32px;
+    border-radius: 24px;
+  }
+  .installment__features {
+    gap: 24px;
+  }
+  .installment__description {
+    font-size: 20px;
+    margin-bottom: 32px;
+  }
+  .faq__block {
+    position: relative;
+  }
+  .faq__toggle {
+    position: absolute;
+    top: 16px;
+    right: 16px;
   }
 }
 .blog-hero__container {
@@ -4869,6 +5065,12 @@ html {
   .about-expert__cta-link {
     margin-left: 0;
   }
+  .about-expert__cta-title {
+    min-width: 100%;
+  }
+  .about-expert__cta-description {
+    max-width: 100%;
+  }
   .about-expert__image_photo {
     min-height: auto;
   }
@@ -4906,6 +5108,14 @@ html {
   }
 }
 @media (max-width: 375px) {
+  .center, .hero, .education-stages {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .education-stages__container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
   .selection-help__subtitle {
     font-size: 14px;
   }

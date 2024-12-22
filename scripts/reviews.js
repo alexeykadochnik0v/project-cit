@@ -9,6 +9,7 @@ const reviewsData = [
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae asperiores nobis provident nostrum.",
     ],
     video: "images/slider-photo-1.jpg",
+    mobileVideo: "images/rew-mob.png",
   },
   {
     avatar: "/images/avatar2.svg",
@@ -22,6 +23,7 @@ const reviewsData = [
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae asperiores nobis provident nostrum.",
     ],
     video: "images/slider-photo-2.png",
+    mobileVideo: "images/rew-mob.png",
   },
   {
     avatar: "images/avatar1.png",
@@ -33,6 +35,7 @@ const reviewsData = [
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae asperiores nobis provident nostrum.",
     ],
     video: "images/slider-photo-1.jpg",
+    mobileVideo: "images/rew-mob.png",
   },
   {
     avatar: "/images/avatar2.svg",
@@ -46,6 +49,7 @@ const reviewsData = [
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae asperiores nobis provident nostrum.",
     ],
     video: "images/slider-photo-2.png",
+    mobileVideo: "images/rew-mob.png",
   },
 ];
 
@@ -73,7 +77,16 @@ reviewsData.forEach(review => {
         <button class="reviews__play">
           <img src="images/play.svg" alt="Play video" />
         </button>
-        <img class="reviews__preview" src="${sanitizeHTML(review.video)}" alt="slider photo" />
+        <picture>
+          <source 
+            srcset="${sanitizeHTML(review.mobileVideo)}" 
+            media="(max-width: 767px)">
+          <img 
+            class="reviews__preview" 
+            src="${sanitizeHTML(review.video)}" 
+            alt="slider photo">
+        </picture>
+  
   </div>
     </div>
   `;

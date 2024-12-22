@@ -986,6 +986,10 @@
     font-weight: 400;
     line-height: normal;
   }
+
+  &__icon {
+    margin-right: -20px;
+  }
 }
 
 .certificate {
@@ -1452,6 +1456,11 @@
 
   .technologies__grid {
     grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 40px;
+  }
+
+  .technologies__card {
+    border-radius: 24px;
   }
 
   .certificate__grid {
@@ -1516,6 +1525,8 @@
   .mentor-achievements {
     grid-template-columns: repeat(1, 1fr);
     gap: 32px;
+    border-radius: 16px;
+    padding: 16px;
   }
 
   .breadcrumb {
@@ -1557,7 +1568,9 @@
   }
 
   .mentor {
-    background-position: right bottom;
+    padding: 24px;
+    min-height: 348px;
+    background-position: 8px bottom;
 
     &__name {
       font-size: 32px;
@@ -1573,7 +1586,7 @@
     padding-bottom: 48px;
 
     &__title {
-      font-size: 32px;
+      font-size: 28px;
       margin-bottom: 32px;
     }
 
@@ -1599,11 +1612,11 @@
 
   .training {
     &__container {
-      padding: 32px;
+      padding: 32px 24px 24px;
     }
 
     &__title {
-      font-size: 32px;
+      font-size: 28px;
     }
 
     &__items {
@@ -1649,16 +1662,27 @@
   }
 
   .learning-outcomes {
+    margin-bottom: 48px;
+
     &__content {
       padding: 32px 24px 24px;
+
+      &_mt {
+        margin-top: 32px;
+      }
     }
 
     &__grid {
       grid-template-columns: repeat(1, 1fr);
+      gap: 16px;
     }
 
     &__item {
       padding: 24px;
+    }
+
+    &__text {
+      flex: 1 0 0;
     }
   }
 
@@ -1682,6 +1706,8 @@
   }
 
   .comparison {
+    margin-bottom: 40px;
+
     &__header {
       flex-direction: column;
       margin-bottom: 32px;
@@ -1696,11 +1722,17 @@
       gap: 8px;
       grid-template-columns: repeat(2, 334px);
       scrollbar-width: none;
+      grid-auto-flow: dense;
 
       &::-webkit-scrollbar {
         display: none;
         /* Webkit */
       }
+    }
+
+    &__cell_pink,
+    &__cell_constructor {
+      grid-column: 2 / 3;
     }
 
     &__description {
@@ -1714,6 +1746,8 @@
   }
 
   .site-types {
+    margin-bottom: 40px;
+
     &__container {
       padding: 32px 24px;
     }
@@ -1731,11 +1765,10 @@
     }
   }
 
-
-
   .portfolio {
     &__slides {
       gap: 8px;
+      margin-bottom: 0;
     }
 
     &__slide {
@@ -1752,6 +1785,7 @@
   .course-target {
     grid-template-columns: repeat(1, 1fr);
     gap: 16px;
+    margin-bottom: 40px;
 
     &__card_head {
       grid-column: span 1;
@@ -1773,6 +1807,8 @@
   }
 
   .certificate {
+    margin-bottom: 48px;
+
     &__grid {
       grid-template-columns: repeat(1, 1fr);
     }
@@ -1790,10 +1826,20 @@
       width: 100%;
     }
 
+    &__subtitle {
+      margin-top: 24px;
+    }
+
+    &__image {
+      max-width: 150%;
+    }
+
     &__block {
       padding: 24px;
+      overflow: hidden;
 
       &_big {
+        border-radius: 24px;
         grid-column: span 1;
         grid-row: 3 / 4;
         background: url(../images/arrow-certificat.svg) no-repeat 580px,
@@ -1805,31 +1851,55 @@
 
   .program {
     margin-top: 40px;
+    margin-bottom: 40px;
+
+    &__container {
+      border-radius: 24px;
+    }
+
+    &__header {
+      position: relative;
+    }
 
     &__container {
       padding: 32px 24px;
+      gap: 32px;
     }
 
     &__block {
       padding: 16px;
+      border-radius: 16px;
 
       &-description {
         font-size: 18px;
         margin-top: 8px;
+        max-width: calc(100% - 50px);
       }
     }
 
     &__toggle {
       width: 40px;
       height: 40px;
+      position: absolute;
+      right: 0px;
+      top: 0px;
+    }
 
+    &__text {
+      max-width: 100%;
     }
   }
 
   .pricing {
+    border-radius: 24px;
+
     &__container {
       padding: 32px 24px;
       gap: 32px;
+    }
+
+    &__card_test {
+      padding-bottom: 24px;
     }
 
     &__name {
@@ -1851,6 +1921,7 @@
   }
 
   .installment {
+    padding-bottom: 48px;
     &__container {
       padding: 32px 24px;
     }
@@ -1863,6 +1934,11 @@
   .faq {
     margin-top: 0;
 
+    &__block {
+      border-radius: 24px;
+      padding: 16px;
+    }
+
     &__container {
       gap: 32px;
     }
@@ -1873,6 +1949,7 @@
 
     &__content p {
       padding-top: 16px;
+      font-size: 16px;
     }
 
     &__toggle {
@@ -1880,10 +1957,162 @@
       height: 40px;
     }
   }
+
+  .call-to-action__content {
+    gap: 12px;
+  }
 }
 
 @media (max-width: 375px) {
   .course__technologies-list {
     max-width: 100%;
+  }
+
+  .title {
+    font-size: 28px;
+    line-height: 39px;
+  }
+
+  .course__description {
+    margin-top: 20px;
+  }
+
+  .course__technologies-title {
+    margin-top: 32px;
+  }
+
+  .course__technologies-list {
+    margin-bottom: 40px;
+  }
+
+  .mentor {
+    background-position: 28px bottom;
+  }
+
+  .mentor__name {
+    font-size: 28px;
+  }
+
+  .reasons__title {
+    font-size: 28px;
+    line-height: 38px;
+  }
+
+  .reasons__items {
+    grid-template-columns: repeat(6, 294px);
+  }
+
+  .training__container {
+    border-radius: 24px;
+    padding: 32px 16px 16px;
+    margin-bottom: 24px;
+  }
+
+  .training__title {
+    font-size: 28px;
+    line-height: 39px;
+  }
+
+  .reviews {
+    padding-bottom: 40px;
+  }
+
+  .reviews__slider {
+    margin-top: 32px;
+  }
+
+  .call-to-action__container {
+    padding-left: 16px;
+    padding-right: 16px;
+    border-radius: 24px;
+  }
+
+  .reviews__text {
+    padding-left: 40px;
+    background-position: left top;
+  }
+
+  .learning-outcomes {
+    margin-bottom: 40px;
+
+    &__content {
+      padding: 24px 16px 16px;
+      gap: 24px;
+    }
+  }
+
+  .site-types__container {
+    padding: 24px 16px;
+    border-radius: 24px;
+  }
+
+  .site-types__list {
+    margin-top: 32px;
+  }
+
+  .site-types__item {
+    padding: 8px;
+  }
+
+  .program {
+    &__container {
+      padding: 24px 16px 16px;
+      gap: 32px;
+    }
+
+    &__block-description {
+      font-size: 16px;
+    }
+  }
+
+  .certificate {
+    margin-bottom: 40px;
+
+    &__block {
+
+      &_big {
+        border-radius: 24px;
+        padding-left: 16px;
+        padding-right: 16px;
+        background: url(../images/arrow-certificat.svg) no-repeat 580px, url(../images/certificat-mob.png) no-repeat center 275px / 80%, linear-gradient(112deg, rgba(255, 203, 203, 0.2) 21.92%, rgba(135, 149, 242, 0.2) 76.74%);
+      }
+    }
+  }
+
+  .pricing {
+    &__container {
+      padding: 24px 16px;
+      gap: 24px;
+    }
+
+  }
+
+  .installment {
+    padding-bottom: 40px;
+    &__container {
+      padding: 24px 16px;
+      gap: 32px;
+      border-radius: 24px;
+    }
+
+    &__features {
+      gap: 24px;
+    }
+
+    &__description {
+      font-size: 20px;
+      margin-bottom: 32px;
+    }
+  }
+
+  .faq {
+    &__block {
+      position: relative;
+    }
+    &__toggle {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+    }
   }
 }
