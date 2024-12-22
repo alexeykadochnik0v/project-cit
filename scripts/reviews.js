@@ -71,7 +71,7 @@ reviewsData.forEach(review => {
             ${review.text.map(paragraph => `<p>${sanitizeHTML(paragraph)}</p>`).join("")}
           </div>
         </blockquote>
-        <a href="#" class="reviews__link">Открыть благодарственное письмо <img src="images/link-24.svg" alt="link" /></a>
+        <a href="#" class="reviews__link">Читать полностью<img src="images/link-24.svg" alt="link" /></a>
       </div>
       <div class="reviews__video">
         <button class="reviews__play">

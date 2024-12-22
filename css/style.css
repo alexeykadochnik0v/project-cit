@@ -742,6 +742,9 @@ input::placeholder {
   .heading {
     font-size: 32px;
   }
+  .heading_lang {
+    font-size: 28px;
+  }
   .heading_mob {
     font-size: 22px;
   }
@@ -3358,6 +3361,7 @@ html {
   }
   .learning-outcomes__content {
     padding: 32px 24px 24px;
+    border-radius: 24px;
   }
   .learning-outcomes__content_mt {
     margin-top: 32px;
@@ -3374,13 +3378,17 @@ html {
   }
   .call-to-action__container {
     padding: 24px 24px 125px;
+    background-position: 0 calc(100% - 12px);
   }
   .call-to-action__title {
     font-size: 20px;
   }
+  .call-to-action__contacts {
+    gap: 24px;
+  }
   .call-to-action__subtitle {
     font-size: 18px;
-    margin-bottom: 64px;
+    margin-bottom: 48px;
   }
   .call-to-action__phone {
     font-size: 28px;
@@ -3447,6 +3455,12 @@ html {
     grid-template-columns: repeat(1, 1fr);
     gap: 16px;
     margin-bottom: 40px;
+  }
+  .course-target__card {
+    gap: 16px;
+  }
+  .course-target__card-title {
+    font-size: 22px;
   }
   .course-target__card_head {
     grid-column: span 1;
@@ -3583,6 +3597,9 @@ html {
   .call-to-action__content {
     gap: 12px;
   }
+  .mentor-achievements__achievement img {
+    width: 32px;
+  }
 }
 @media (max-width: 375px) {
   .course__technologies-list {
@@ -3690,6 +3707,9 @@ html {
     font-size: 20px;
     margin-bottom: 32px;
   }
+  .faq {
+    margin-bottom: 40px;
+  }
   .faq__block {
     position: relative;
   }
@@ -3697,6 +3717,12 @@ html {
     position: absolute;
     top: 16px;
     right: 16px;
+  }
+  .faq__content {
+    width: 100%;
+  }
+  .call-to-action {
+    margin-bottom: 40px;
   }
 }
 .blog-hero__container {
