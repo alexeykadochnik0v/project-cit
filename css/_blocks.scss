@@ -817,7 +817,7 @@ input {
   }
 
   .slider-articles__title {
-    font-size: 26px;
+    font-size: 28px;
   }
 
 }
@@ -826,6 +826,10 @@ input {
   .heading {
     font-size: 28px;
     line-height: 38px;
+    &_lang {
+      font-size: 24px;
+      line-height: 30px;
+    }
   }
 
   .form-card {

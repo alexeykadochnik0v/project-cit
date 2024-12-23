@@ -772,13 +772,17 @@ input::placeholder {
     margin-bottom: 32px;
   }
   .slider-articles__title {
-    font-size: 26px;
+    font-size: 28px;
   }
 }
 @media (max-width: 375px) {
   .heading {
     font-size: 28px;
     line-height: 38px;
+  }
+  .heading_lang {
+    font-size: 24px;
+    line-height: 30px;
   }
   .form-card {
     border-radius: 16px;
@@ -3587,6 +3591,9 @@ html {
   .faq__question {
     font-size: 18px;
   }
+  .faq__content {
+    width: 100%;
+  }
   .faq__content p {
     padding-top: 16px;
     font-size: 16px;
@@ -5173,5 +5180,9 @@ html {
   }
   .selection-help__subtitle {
     font-size: 14px;
+  }
+  .programs__filter {
+    padding-left: 8px;
+    padding-right: 8px;
   }
 }/*# sourceMappingURL=style.css.map */
