@@ -1722,10 +1722,15 @@
     &__title {
       width: 100%;
     }
+    &__cell_professional,
+    &__cell_content {
+      margin-right: 16px;
+    }
 
+    
     &__table {
       overflow: scroll;
-      gap: 8px;
+      gap: 0;
       grid-template-columns: repeat(2, 334px);
       scrollbar-width: none;
       grid-auto-flow: dense;
@@ -1775,6 +1780,10 @@
     &__slides {
       gap: 8px;
       margin-bottom: 0;
+    }
+
+    &__slider {
+      margin-bottom: 40px;
     }
 
     &__slide {

@@ -698,8 +698,9 @@ input::placeholder {
   .slider-articles__card {
     flex: 0 0 48%;
   }
-  .slider-articles__controls {
-    display: none;
+  .slider-articles__arrow svg {
+    width: 48px;
+    margin-right: -4px;
   }
   .form-card_about {
     display: none;
@@ -764,6 +765,15 @@ input::placeholder {
   .top__video {
     grid-column: 1/-1;
   }
+  .box-top__tags {
+    flex-wrap: wrap;
+  }
+  .mb-48 {
+    margin-bottom: 32px;
+  }
+  .slider-articles__title {
+    font-size: 26px;
+  }
 }
 @media (max-width: 375px) {
   .heading {
@@ -772,6 +782,9 @@ input::placeholder {
   }
   .form-card {
     border-radius: 16px;
+  }
+  .subscribe {
+    margin-bottom: 40px;
   }
 }
 img {
@@ -3385,9 +3398,12 @@ html {
   .comparison__title {
     width: 100%;
   }
+  .comparison__cell_professional, .comparison__cell_content {
+    margin-right: 16px;
+  }
   .comparison__table {
     overflow: scroll;
-    gap: 8px;
+    gap: 0;
     grid-template-columns: repeat(2, 334px);
     scrollbar-width: none;
     grid-auto-flow: dense;
@@ -3424,6 +3440,9 @@ html {
   .portfolio__slides {
     gap: 8px;
     margin-bottom: 0;
+  }
+  .portfolio__slider {
+    margin-bottom: 40px;
   }
   .portfolio__slide {
     padding: 16px;
@@ -4595,6 +4614,10 @@ html {
   }
   .reasons_article {
     margin-top: 24px;
+    padding-bottom: 16px;
+  }
+  .reasons__items {
+    gap: 12px;
   }
 }
 @media (min-width: 1441px) {
@@ -5055,6 +5078,17 @@ html {
   }
   .about-expert__cta {
     grid-column: span 1;
+    margin-top: -12px;
+    width: 100%;
+    flex-direction: column;
+    height: auto;
+    gap: 16px;
+    padding-bottom: 0;
+  }
+  .about-expert__cta-link {
+    margin-left: -20px;
+    margin-bottom: -8px;
+    margin-top: -8px;
   }
   .about-expert__name {
     font-size: 12px;
@@ -5074,15 +5108,6 @@ html {
   }
   .about-expert__bottom {
     gap: 16px;
-  }
-  .about-expert__cta {
-    width: 100%;
-    flex-direction: column;
-    height: auto;
-    gap: 16px;
-  }
-  .about-expert__cta-link {
-    margin-left: 0;
   }
   .about-expert__cta-title {
     min-width: 100%;

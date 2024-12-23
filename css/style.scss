@@ -2009,6 +2009,18 @@ html {
 
     &__cta {
       grid-column: span 1;
+      margin-top: -12px;
+      width: 100%;
+      flex-direction: column;
+      height: auto;
+      gap: 16px;
+      padding-bottom: 0;
+
+      &-link {
+        margin-left: -20px;
+        margin-bottom: -8px;
+        margin-top: -8px;
+      }
     }
 
     &__name {
@@ -2034,17 +2046,6 @@ html {
 
     &__bottom {
       gap: 16px;
-    }
-
-    &__cta {
-      width: 100%;
-      flex-direction: column;
-      height: auto;
-      gap: 16px;
-
-      &-link {
-        margin-left: 0;
-      }
     }
 
     &__cta-title {

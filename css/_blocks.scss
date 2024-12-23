@@ -712,8 +712,9 @@ input {
       flex: 0 0 48%;
     }
 
-    &__controls {
-      display: none;
+    &__arrow svg {
+      width: 48px;
+      margin-right: -4px;
     }
   }
 
@@ -772,6 +773,7 @@ input {
 
   .heading {
     font-size: 32px;
+
     &_lang {
       font-size: 28px;
     }
@@ -804,6 +806,20 @@ input {
     }
   }
 
+  .box-top {
+    &__tags {
+      flex-wrap: wrap;
+    }
+  }
+
+  .mb-48 {
+    margin-bottom: 32px;
+  }
+
+  .slider-articles__title {
+    font-size: 26px;
+  }
+
 }
 
 @media (max-width: 375px) {
@@ -814,5 +830,9 @@ input {
 
   .form-card {
     border-radius: 16px;
+  }
+
+  .subscribe {
+    margin-bottom: 40px;
   }
 }
