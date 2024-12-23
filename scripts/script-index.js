@@ -126,3 +126,29 @@ document.querySelectorAll('.programs__filter').forEach(button => {
 
 // Инициализация отображения всех курсов
 renderCourses();
+
+document.addEventListener('DOMContentLoaded', () => {
+  const stepCards = document.querySelectorAll('.step-card'); // Выбираем все шаги
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('visible'); // Добавляем класс для анимации
+          }, index * 300); // Увеличиваем задержку для каждого блока
+        } else {
+          // Убираем класс, чтобы анимация могла повторяться
+          entry.target.classList.remove('visible');
+        }
+      });
+    },
+    {
+      threshold: 0.1, // Элемент считается видимым, если 10% его области находится в зоне видимости
+    }
+  );
+
+  stepCards.forEach(card => {
+    observer.observe(card); // Добавляем наблюдатель для каждого блока
+  });
+});

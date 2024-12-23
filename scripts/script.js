@@ -306,5 +306,3 @@ document.addEventListener("DOMContentLoaded", () => {
   // Инициализация
   updateSlider();
 });
-
-

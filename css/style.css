@@ -884,6 +884,9 @@ html {
 .nav__link_it::after {
   display: none;
 }
+.nav__link .nav__img {
+  transition: all 0.3s;
+}
 .nav__link_it:hover .nav__img {
   transform: rotate(180deg);
 }
@@ -917,7 +920,6 @@ html {
 .nav__dropdown {
   position: absolute;
   top: 100%;
-  /* Под родительским элементом */
   right: 0;
   display: none;
   /* Скрываем меню по умолчанию */
@@ -960,7 +962,6 @@ html {
 }
 .nav__li:hover .nav__dropdown {
   display: flex;
-  /* Меню будет видно */
 }
 
 .hero__container {
@@ -1401,9 +1402,18 @@ html {
   padding: 20px;
   border-radius: 10px;
   background-color: #fff;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.step-card.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 .step-card:hover {
   background-image: url(../images/gradient-bg.png);
+  background-size: cover;
+  transition: background-size 0.3s ease, background-position 0.3s ease;
 }
 .step-card_big {
   grid-column: span 2;
@@ -1515,24 +1525,6 @@ html {
   transition: all 0.3s ease;
   transition: width 0.6s ease, height 0.6s ease;
 }
-.about-expert__cta::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  background: rgba(65, 59, 131, 0.1);
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-}
-.about-expert__cta:hover::before {
-  transition: width 0.6s ease, height 0.6s ease;
-}
-.about-expert__cta:hover::before {
-  width: 300%;
-  height: 300%;
-}
 .about-expert__cta-title {
   max-width: 245px;
 }
@@ -1558,26 +1550,15 @@ html {
   max-width: 293px;
   position: relative;
   overflow: hidden;
-  transition: all 0.3s ease;
-  transition: width 0.6s ease, height 0.6s ease;
+  transition: top 0.3s ease;
+  position: relative;
+  top: 0;
 }
-.info-card::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  background: rgba(65, 59, 131, 0.1);
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
+.info-card:hover {
+  top: -5px;
 }
 .info-card:hover::before {
   transition: width 0.6s ease, height 0.6s ease;
-}
-.info-card:hover::before {
-  width: 300%;
-  height: 300%;
 }
 .info-card_height {
   flex-grow: 1;
@@ -4803,10 +4784,10 @@ html {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    min-height: 100%;
     background: #f5f5f5;
     flex-direction: column;
-    padding-top: 30%;
+    padding-top: 100px;
     z-index: 10000;
     justify-content: space-between;
     padding-bottom: 20%;
@@ -4815,19 +4796,30 @@ html {
     display: flex;
   }
   .nav__list {
-    text-align: center;
     flex-direction: column;
     gap: 0;
+    align-items: flex-start;
+    padding-left: 28px;
   }
   .nav__link {
-    justify-content: center;
+    padding-top: 8px;
+    padding-bottom: 8px;
   }
   .nav__dropdown {
     position: static;
+    display: flex;
     flex-direction: column;
     gap: 0;
     align-items: center;
     padding: 16px;
+    border: none;
+    background-color: #f5f5f5;
+    box-shadow: none;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .nav__img {
+    display: none;
   }
   .nav__dropdown-link {
     padding: 4px;
@@ -5134,7 +5126,9 @@ html {
   }
 }
 @media (max-width: 375px) {
-  .center, .hero, .education-stages {
+  .center,
+  .hero,
+  .education-stages {
     padding-left: 12px;
     padding-right: 12px;
   }
