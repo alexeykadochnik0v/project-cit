@@ -745,6 +745,10 @@ html {
     transform: translateY(0);
   }
 
+  &:hover .step-card__img {
+    animation: wobble-hor-bottom 0.8s both;
+  }
+
   &:hover {
     background-image: url(../images/gradient-bg.png);
     background-size: cover;
