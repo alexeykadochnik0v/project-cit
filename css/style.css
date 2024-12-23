@@ -928,8 +928,8 @@ html {
   gap: 16px;
 }
 .nav__mobile-extra .nav__social-icon img {
-  width: 32px;
-  height: 32px;
+  width: 24px;
+  height: 24px;
 }
 .nav__li_courses {
   position: relative;
@@ -4352,6 +4352,20 @@ html {
     padding: 24px;
   }
 }
+@media (max-width: 375px) {
+  .box-top__title {
+    font-size: 30px;
+  }
+  .about-student__container {
+    margin-bottom: 40px;
+  }
+  .interview__title_vr {
+    line-height: 30px;
+  }
+  .interview__content {
+    margin-top: 32px;
+  }
+}
 .article-box {
   scroll-behavior: smooth;
 }
@@ -4816,7 +4830,7 @@ html {
     left: 0;
     width: 100%;
     min-height: 100%;
-    background: #f5f5f5;
+    background: #F1F3FF;
     flex-direction: column;
     padding-top: 100px;
     z-index: 10000;
@@ -4844,7 +4858,7 @@ html {
     align-items: center;
     padding: 16px;
     border: none;
-    background-color: #f5f5f5;
+    background-color: #F1F3FF;
     box-shadow: none;
     padding-top: 0;
     padding-bottom: 0;
@@ -4852,12 +4866,26 @@ html {
   .nav__img {
     display: none;
   }
+  .nav__social-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    background-color: #fff;
+    border: 1px solid #aaa;
+    filter: drop-shadow(-3px 3px 0px #000);
+    transition: filter 0.3s;
+  }
+  .nav__social-icon img {
+    width: 28px;
+  }
   .nav__dropdown-link {
     padding: 4px;
   }
   .nav__mobile-extra {
     display: flex;
-    /* Показываем номер телефона и соцсети */
   }
   .hero__container {
     padding-top: 0;
@@ -5180,6 +5208,9 @@ html {
   }
   .selection-help__subtitle {
     font-size: 14px;
+  }
+  .programs {
+    padding-top: 40px;
   }
   .programs__filter {
     padding-left: 8px;

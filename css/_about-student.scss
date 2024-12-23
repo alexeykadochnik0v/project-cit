@@ -386,3 +386,21 @@
     padding: 24px;
   }
 }
+
+@media (max-width: 375px) {
+  .box-top__title {
+    font-size: 30px;
+  }
+
+  .about-student__container {
+    margin-bottom: 40px;
+  }
+
+  .interview__title_vr {
+    line-height: 30px;
+  }
+
+  .interview__content {
+    margin-top: 32px;
+  }
+}
