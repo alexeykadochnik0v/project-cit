@@ -312,6 +312,7 @@ input {
   &__tags {
     display: flex;
     gap: 8px;
+    flex-wrap: wrap;
   }
 
   &__tag {

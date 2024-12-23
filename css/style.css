@@ -367,6 +367,7 @@ input::placeholder {
 .article-card__tags {
   display: flex;
   gap: 8px;
+  flex-wrap: wrap;
 }
 .article-card__tag {
   display: flex;
