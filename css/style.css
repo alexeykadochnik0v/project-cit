@@ -3359,7 +3359,7 @@ html {
   }
   .call-to-action__container {
     padding: 24px 24px 125px;
-    background-position: 0 calc(100% - 12px);
+    background: url(../images/call-plane.svg) no-repeat 2% calc(100% - 12px), linear-gradient(112deg, #FFF5F5 21.92%, #E7EAFC 76.74%);
   }
   .call-to-action__title {
     font-size: 20px;
