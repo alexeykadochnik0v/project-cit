@@ -19,48 +19,105 @@ function initHeaderScripts() {
     }
   });
 
-  // Находим выпадающее меню
-  const dropdown = document.querySelector('.nav__dropdown');
+  // Выпадающее меню динамическое
+  //   const dropdown = document.querySelector('.nav__dropdown');
 
-  // Убедимся, что элемент существует
-  if (dropdown) {
-    dropdown.textContent = ''; // Очищаем меню
+  //   // Убедимся, что элемент существует
+  //   if (dropdown) {
+  //     dropdown.textContent = ''; // Очищаем меню
 
-    // Количество элементов в одной колонке
-    const itemsPerColumn = 3;
+  //     // Количество элементов в одной колонке
+  //     const itemsPerColumn = 3;
 
-    // Разбиваем курсы на группы по `itemsPerColumn`
-    for (let i = 0; i < courses.length; i += itemsPerColumn) {
-      // Создаём элемент `<li>` для колонки
-      const columnItem = document.createElement('li');
-      columnItem.className = 'nav__dropdown-column';
+  //     // Разбиваем курсы на группы по `itemsPerColumn`
+  //     for (let i = 0; i < courses.length; i += itemsPerColumn) {
+  //       // Создаём элемент `<li>` для колонки
+  //       const columnItem = document.createElement('li');
+  //       columnItem.className = 'nav__dropdown-column';
 
-      // Внутри `<li>` создаём вложенный `<ul>`
-      const columnList = document.createElement('ul');
-      columnList.className = 'nav__dropdown-list';
+  //       // Внутри `<li>` создаём вложенный `<ul>`
+  //       const columnList = document.createElement('ul');
+  //       columnList.className = 'nav__dropdown-list';
 
-      // Добавляем курсы в эту колонку
-      courses.slice(i, i + itemsPerColumn).forEach(course => {
-        const listItem = document.createElement('li');
-        listItem.className = 'nav__dropdown-item';
+  //       // Добавляем курсы в эту колонку
+  //       courses.slice(i, i + itemsPerColumn).forEach(course => {
+  //         const listItem = document.createElement('li');
+  //         listItem.className = 'nav__dropdown-item';
 
-        const link = document.createElement('a');
-        link.className = 'nav__dropdown-link';
-        link.href = 'card-course.html'; // Здесь можно добавить динамические ссылки
-        link.textContent = course.title;
+  //         const link = document.createElement('a');
+  //         link.className = 'nav__dropdown-link';
+  //         link.href = 'card-course.html'; // Здесь можно добавить динамические ссылки
+  //         link.textContent = course.title;
 
-        listItem.appendChild(link);
-        columnList.appendChild(listItem);
+  //         listItem.appendChild(link);
+  //         columnList.appendChild(listItem);
+  //       });
+
+  //       // Добавляем `<ul>` внутрь колонки `<li>`
+  //       columnItem.appendChild(columnList);
+  //       dropdown.appendChild(columnItem);
+  //     }
+  //   } else {
+  //     console.warn('Выпадающее меню не найдено.');
+  //   }
+}
+
+initHeaderScripts();
+// Мобильное меню выпадающее 
+document.addEventListener("DOMContentLoaded", () => {
+  const headings = document.querySelectorAll(".nav__mob-heading");
+
+  headings.forEach((heading) => {
+    heading.addEventListener("click", () => {
+      const parentItem = heading.parentElement;
+      const content = parentItem.querySelector("ul");
+      const icon = heading.querySelector(".nav__mob-icon");
+      const isActive = parentItem.classList.contains("active");
+
+      // Закрываем все элементы, кроме текущего
+      document.querySelectorAll(".nav__dropdown-item").forEach((item) => {
+        const itemContent = item.querySelector("ul");
+        const itemIcon = item.querySelector(".nav__mob-icon");
+        if (itemContent && itemIcon) {
+          itemContent.style.maxHeight = 0;
+          item.classList.remove("active");
+          itemIcon.textContent = "+";
+          itemIcon.classList.remove("active");
+        }
       });
 
-      // Добавляем `<ul>` внутрь колонки `<li>`
-      columnItem.appendChild(columnList);
-      dropdown.appendChild(columnItem);
+      // Если текущий элемент не активен, открываем его
+      if (isActive) {
+        const contentHeight = content.scrollHeight;
+        content.style.maxHeight = `${contentHeight}px`;
+        parentItem.classList.add("active");
+        icon.textContent = "−";
+        icon.classList.add("active");
+      }
+    });
+  });
+});
+
+
+
+const headings = document.querySelectorAll(".nav__mob-heading");
+
+headings.forEach((heading) => {
+  heading.addEventListener("click", () => {
+    const parentItem = heading.parentElement;
+    const isActive = parentItem.classList.contains("active");
+
+    // Закрываем все остальные элементы
+    document.querySelectorAll(".nav__dropdown-item.active").forEach((item) => {
+      item.classList.remove("active");
+    });
+
+    // Если текущий элемент не был активен, открываем его
+    if (!isActive) {
+      parentItem.classList.add("active");
     }
-  } else {
-    console.warn('Выпадающее меню не найдено.');
-  }
-}
+  });
+});
 
 // Функция для инициализации скриптов для футера
 function initFooterScripts() {
@@ -102,28 +159,28 @@ const sanitizeHTML = text => {
 };
 
 // Подключаем header, footer к страницам
-document.addEventListener('DOMContentLoaded', () => {
-  const headerContainer = document.getElementById('header-container');
-  const footerContainer = document.getElementById('footer-container');
+// document.addEventListener('DOMContentLoaded', () => {
+//   const headerContainer = document.getElementById('header-container');
+//   const footerContainer = document.getElementById('footer-container');
 
-  // Загрузка хедера
-  fetch('header.html')
-    .then(response => response.text())
-    .then(data => {
-      headerContainer.innerHTML = data;
-      initHeaderScripts(); // Инициализируем скрипты для хедера после загрузки
-    })
-    .catch(error => console.error('Ошибка загрузки шапки:', error));
+//   // Загрузка хедера
+//   fetch('header.html')
+//     .then(response => response.text())
+//     .then(data => {
+//       headerContainer.innerHTML = data;
+//       initHeaderScripts(); // Инициализируем скрипты для хедера после загрузки
+//     })
+//     .catch(error => console.error('Ошибка загрузки шапки:', error));
 
-  // Загрузка футера
-  fetch('footer.html')
-    .then(response => response.text())
-    .then(data => {
-      footerContainer.innerHTML = data;
-      initFooterScripts(); // Инициализируем скрипты для футера после загрузки
-    })
-    .catch(error => console.error('Ошибка загрузки футера:', error));
-});
+//   // Загрузка футера
+//   fetch('footer.html')
+//     .then(response => response.text())
+//     .then(data => {
+//       footerContainer.innerHTML = data;
+//       initFooterScripts(); // Инициализируем скрипты для футера после загрузки
+//     })
+//     .catch(error => console.error('Ошибка загрузки футера:', error));
+// });
 
 // Получаем все кнопки фильтров
 const filterButtons = document.querySelectorAll('.programs__filter');
@@ -182,7 +239,6 @@ function addHoverEffect() {
     });
   });
 }
-
 addHoverEffect();
 
 // Показать/скрыть контент отзыва
@@ -219,7 +275,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /// Слайдер статьи 
-
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.querySelector(".slider-articles__container");
   const articles = Array.from(container.querySelectorAll(".slider-articles__card")); // Только карточки с модификатором
@@ -306,3 +361,42 @@ document.addEventListener("DOMContentLoaded", () => {
   // Инициализация
   updateSlider();
 });
+
+// Функция для добавления кнопки в DOM
+function createScrollTopButton() {
+  const button = document.createElement('button');
+  button.id = 'scrollTopBtn';
+  button.classList.add('scroll-top-btn');
+  button.textContent = '↑'; // Текст на кнопке
+
+  // Добавляем кнопку в body
+  document.body.appendChild(button);
+
+  // Плавная прокрутка наверх
+  button.addEventListener('click', function () {
+      window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+      });
+  });
+
+  // Управление видимостью кнопки в зависимости от прокрутки
+  window.onscroll = function () {
+      if (document.body.scrollTop > 1000 || document.documentElement.scrollTop > 1000) {
+          button.style.display = "flex";
+      } else {
+          button.style.display = "none";
+      }
+  };
+}
+
+// Функция для проверки, должен ли быть добавлен элемент
+function checkAndCreateButton() {
+  // Проверяем, есть ли класс 'has-scroll-btn' на body
+  if (document.body.classList.contains('has-scroll-btn')) {
+      createScrollTopButton();
+  }
+}
+
+// Запускаем проверку при загрузке страницы
+document.addEventListener('DOMContentLoaded', checkAndCreateButton);

@@ -22,6 +22,10 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  position: relative;
+}
+
 .center {
   padding-left: calc(50% - 720px);
   padding-right: calc(50% - 720px);
@@ -181,24 +185,6 @@ html {
     /* Для позиционирования меню */
   }
 
-  &__dropdown {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    display: none;
-    /* Скрываем меню по умолчанию */
-    background-color: #fff;
-    border: 1px solid #ccc;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 4px;
-    padding: 32px;
-    z-index: 10000;
-    display: none;
-    /* Для колонок */
-    gap: 16px;
-    border-radius: 24px;
-  }
-
   &__dropdown-column {
     list-style: none;
   }
@@ -228,11 +214,6 @@ html {
 
   &__dropdown-link:hover {
     color: #413b83;
-  }
-
-  /* Показываем меню при наведении */
-  &__li:hover .nav__dropdown {
-    display: flex;
   }
 
 }
@@ -935,6 +916,7 @@ html {
   transition: top 0.3s ease;
   position: relative;
   top: 0;
+
   &:hover {
     top: -5px;
   }
@@ -1397,12 +1379,38 @@ html {
   }
 }
 
+/* Стили для кнопки "Вверх" */
+.scroll-top-btn {
+  position: fixed;
+  width: 48px;
+  height: 48px;
+  bottom: 20px; /* Отступ от нижнего края */
+  right: 20px; /* Отступ от правого края */
+  background-color: #413B83; /* Цвет фона кнопки */
+  color: #fff; /* Цвет текста */
+  border: none; /* Убираем обводку */
+  border-radius: 50%; /* Круглая форма */
+  font-size: 28px; /* Размер текста */
+  cursor: pointer;
+  display: none; /* Скрываем кнопку по умолчанию */
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Кнопка будет поверх других элементов */
+  transition: opacity 0.3s ease-in-out; /* Плавное появление */
+}
+
+.scroll-top-btn:hover {
+  background-color: #413B83; /* Цвет при наведении */
+}
+
 // Остальные страницы
 @import 'card-course';
 @import 'blog';
 @import 'contacts';
 @import 'about-student';
 @import 'article';
+
+
 
 @media (min-width: 1441px) {
   .hero__container {
@@ -1411,6 +1419,37 @@ html {
 
   .hero__title {
     background: url(../images/back-top1.svg) no-repeat 20% 70%, url(../images/back-top2.svg) no-repeat 90% 29px;
+  }
+}
+
+@media (min-width: 997px) {
+  .nav {
+    &__dropdown {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      display: none;
+      /* Скрываем меню по умолчанию */
+      background-color: #fff;
+      border: 1px solid #ccc;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 4px;
+      padding: 32px;
+      z-index: 10000;
+      display: none;
+      /* Для колонок */
+      gap: 16px;
+      border-radius: 24px;
+    }
+
+    /* Показываем меню при наведении */
+    &__li:hover .nav__dropdown {
+      display: flex;
+    }
+
+    &__dropdown-mob {
+      display: none;
+    }
   }
 }
 
@@ -1641,7 +1680,22 @@ html {
     display: flex;
     /* Показываем бургер на мобильных */
     z-index: 11000;
-    /* Поверх меню */
+    position: fixed;
+    top: 29px;
+    right: 16px;
+    background-color: #fff;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    &--active {
+      background-color: #F1F3FF;
+    }
+    &__line {
+      align-self: start;
+      margin-left: 6px;
+    }
   }
 
   .header__logo {
@@ -1653,22 +1707,23 @@ html {
   }
 
   .nav {
-    display: none;
-    /* Скрываем меню по умолчанию */
     position: fixed;
     top: 0;
-    left: 0;
+    right: 0;
     width: 100%;
     min-height: 100%;
     background: #F1F3FF;
+    display: flex;
     flex-direction: column;
     padding-top: 100px;
     z-index: 10000;
     justify-content: space-between;
     padding-bottom: 20%;
+    clip-path: inset(0 0 0 100%); /* Скрываем блок */
+    transition: clip-path 0.5s ease; /* Плавное появление */
 
     &.nav--active {
-      display: flex;
+      clip-path: inset(0 0 0 0); /* Показываем блок */
     }
 
     &__list {
@@ -1685,7 +1740,7 @@ html {
 
     &__dropdown {
       position: static;
-      display: flex;
+      display: none;
       flex-direction: column;
       gap: 0;
       align-items: center;
@@ -1695,6 +1750,50 @@ html {
       box-shadow: none;
       padding-top: 0;
       padding-bottom: 0;
+    }
+
+    &__dropdown-mob {
+      padding-left: 40px;
+      width: 100%;
+      list-style-type: none;
+    }
+
+    &__dropdown-item {
+      & ul {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+    }
+
+    &__li {
+      width: 100%;
+      padding-right: 40px;
+    }
+
+
+    &__mob-heading {
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+
+    &__mob-icon {
+      margin-left: 10px;
+      font-size: 1.2em;
+      transition: transform 0.3s ease;
+    }
+
+    &__mob-link {
+      text-decoration: none;
+      color: inherit;
+      padding: 4px 8px;
     }
 
     &__img {
@@ -1712,6 +1811,7 @@ html {
       border: 1px solid #aaa;
       filter: drop-shadow(-3px 3px 0px #000);
       transition: filter 0.3s;
+
       & img {
         width: 28px;
       }
@@ -1802,6 +1902,10 @@ html {
     padding-left: 32px;
     padding-right: 32px;
   }
+
+  .scroll-top-btn {
+    display: none; /* Скрываем кнопку на маленьких экранах */
+}
 }
 
 @media (max-width: 767px) {
