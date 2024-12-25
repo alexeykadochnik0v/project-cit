@@ -7,6 +7,16 @@
     background-position: 0% 50%;
   }
 }
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
 @keyframes tracking-in-contract {
   0% {
     letter-spacing: 1em;
@@ -438,6 +448,9 @@ input::placeholder {
   border-radius: 24px;
   background: #413B83;
   padding: 24px;
+}
+.form-card_modal {
+  padding: 0;
 }
 .form-card_index {
   grid-row: span 3;
@@ -1979,28 +1992,135 @@ body {
   transform: scaleY(1);
 }
 
+.modal-overlay {
+  position: fixed;
+  display: flex;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Затемнение */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  /* Поверх всех элементов */
+}
+.modal-overlay.active {
+  display: flex;
+}
+
+.modal {
+  display: none;
+  gap: 24px;
+  animation: fadeIn 0.3s ease-in-out;
+  width: 830px;
+  border-radius: 24px;
+  background: var(--Primary-Blue, #413B83);
+  padding: 32px;
+  z-index: 1010;
+  flex-direction: row;
+}
+.modal__form {
+  flex: 1 0 0;
+  width: 400px;
+}
+.modal__caption {
+  color: #FFF;
+  font-family: "Wix Madefor Text";
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 32px;
+}
+.modal__sale {
+  width: 342px;
+  border-radius: 16px;
+  background: #F1F3FF;
+  padding: 24px;
+}
+.modal__subheading {
+  color: #12131A;
+  font-family: "Wix Madefor Text";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 23px;
+  margin-bottom: 32px;
+  margin-top: 12px;
+}
+.modal__plus {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.modal__item {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.modal__text {
+  flex: 1 0 0;
+  color: #12131A;
+  font-family: "Wix Madefor Text";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.modal__icon {
+  width: 48px;
+  height: 48px;
+  background-color: #413B83;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+.modal__close {
+  display: none;
+}
+
+.no-scroll {
+  position: fixed;
+  overflow: hidden;
+  width: 100%;
+}
+
 /* Стили для кнопки "Вверх" */
 .scroll-top-btn {
   position: fixed;
   width: 48px;
   height: 48px;
-  bottom: 20px; /* Отступ от нижнего края */
-  right: 20px; /* Отступ от правого края */
-  background-color: #413B83; /* Цвет фона кнопки */
-  color: #fff; /* Цвет текста */
-  border: none; /* Убираем обводку */
-  border-radius: 50%; /* Круглая форма */
-  font-size: 28px; /* Размер текста */
+  bottom: 20px;
+  /* Отступ от нижнего края */
+  right: 20px;
+  /* Отступ от правого края */
+  background-color: #413B83;
+  /* Цвет фона кнопки */
+  color: #fff;
+  /* Цвет текста */
+  border: none;
+  /* Убираем обводку */
+  border-radius: 50%;
+  /* Круглая форма */
+  font-size: 28px;
+  /* Размер текста */
   cursor: pointer;
-  display: none; /* Скрываем кнопку по умолчанию */
+  display: none;
+  /* Скрываем кнопку по умолчанию */
   justify-content: center;
   align-items: center;
-  z-index: 9999; /* Кнопка будет поверх других элементов */
-  transition: opacity 0.3s ease-in-out; /* Плавное появление */
+  z-index: 9999;
+  /* Кнопка будет поверх других элементов */
+  transition: opacity 0.3s ease-in-out;
+  /* Плавное появление */
 }
 
 .scroll-top-btn:hover {
-  background-color: #413B83; /* Цвет при наведении */
+  background-color: #413B83;
+  /* Цвет при наведении */
 }
 
 .breadcrumb__ul {
@@ -4921,14 +5041,17 @@ body {
     justify-content: space-between;
     padding-bottom: 20%;
     -webkit-clip-path: inset(0 0 0 100%);
-            clip-path: inset(0 0 0 100%); /* Скрываем блок */
+            clip-path: inset(0 0 0 100%);
+    /* Скрываем блок */
     transition: -webkit-clip-path 0.5s ease;
     transition: clip-path 0.5s ease;
-    transition: clip-path 0.5s ease, -webkit-clip-path 0.5s ease; /* Плавное появление */
+    transition: clip-path 0.5s ease, -webkit-clip-path 0.5s ease;
+    /* Плавное появление */
   }
   .nav.nav--active {
     -webkit-clip-path: inset(0 0 0 0);
-            clip-path: inset(0 0 0 0); /* Показываем блок */
+            clip-path: inset(0 0 0 0);
+    /* Показываем блок */
   }
   .nav__list {
     flex-direction: column;
@@ -5066,8 +5189,16 @@ body {
     padding-left: 32px;
     padding-right: 32px;
   }
+  .modal {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    width: auto;
+  }
   .scroll-top-btn {
-    display: none; /* Скрываем кнопку на маленьких экранах */
+    display: none !important;
+    /* Скрываем кнопку на маленьких экранах */
   }
 }
 @media (max-width: 767px) {
@@ -5313,6 +5444,46 @@ body {
     max-width: 100%;
     margin-bottom: 16px;
   }
+  .modal-overlay {
+    min-height: 100%;
+    height: auto;
+  }
+  .modal-overlay {
+    z-index: 12000;
+  }
+  .modal {
+    max-height: 90vh;
+    overflow-y: auto;
+    justify-content: flex-start;
+    padding: 16px;
+    margin-left: 8px;
+    margin-right: 8px;
+    position: relative;
+    z-index: 120000;
+  }
+  .modal__caption {
+    font-size: 24px;
+    padding-right: 24px;
+  }
+  .modal__close {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: #F4F2F5;
+  }
+  .modal__sale {
+    width: 100%;
+  }
+  .modal__form {
+    width: 100%;
+  }
 }
 @media (max-width: 375px) {
   .center,
@@ -5343,5 +5514,8 @@ body {
   .programs__filter {
     padding-left: 8px;
     padding-right: 8px;
+  }
+  .modal__caption {
+    font-size: 20px;
   }
 }/*# sourceMappingURL=style.css.map */

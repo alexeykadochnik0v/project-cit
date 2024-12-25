@@ -400,3 +400,51 @@ function checkAndCreateButton() {
 
 // Запускаем проверку при загрузке страницы
 document.addEventListener('DOMContentLoaded', checkAndCreateButton);
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const modal = document.querySelector('.modal'); // Находим модальное окно
+  const showModalButtons = document.querySelectorAll('.show-modal'); // Все кнопки с классом "show-modal"
+  const closeModalButton = modal.querySelector('.modal__close'); // Кнопка закрытия модального окна
+  const body = document.body; // Для управления прокруткой страницы
+
+  // Функция открытия модального окна
+  function openModal() {
+    modal.style.display = 'flex'; // Показываем модальное окно
+    modal.parentElement.classList.add('modal-overlay'); // Добавляем фон-затемнение
+    body.style.overflow = 'hidden'; // Отключаем прокрутку страницы
+  }
+
+  // Функция закрытия модального окна
+  function closeModal() {
+    modal.style.display = 'none'; // Скрываем модальное окно
+    modal.parentElement.classList.remove('modal-overlay'); // Убираем фон-затемнение
+    body.style.overflow = ''; // Восстанавливаем прокрутку страницы
+  }
+
+  // Назначаем обработчики событий для кнопок открытия
+  showModalButtons.forEach(button => {
+    button.addEventListener('click', openModal);
+  });
+
+  // Закрытие модального окна при клике вне его содержимого
+  modal.parentElement.addEventListener('click', (event) => {
+    if (event.target.classList.contains('modal-overlay')) { // Проверяем, что клик был по фону
+      closeModal();
+    }
+  });
+
+  // Закрытие окна при нажатии на клавишу Escape
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && modal.style.display === 'flex') {
+      closeModal();
+    }
+  });
+
+  // Закрытие окна по клику на кнопку с классом "modal__close"
+  if (closeModalButton) {
+    closeModalButton.addEventListener('click', closeModal);
+  }
+});
+
+

@@ -357,6 +357,10 @@ input {
   background: #413B83;
   padding: 24px;
 
+  &_modal {
+    padding: 0;
+  }
+
   &_index {
     grid-row: span 3;
   }
