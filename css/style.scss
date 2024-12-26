@@ -1523,6 +1523,19 @@ body {
   /* Цвет при наведении */
 }
 
+/* Исходное состояние всех элементов */
+.animate-block > * {
+  opacity: 0;
+  transform: translateY(20px); // Легкое смещение вниз
+  transition: opacity 0.5s ease, transform 0.5s ease; // Плавная анимация
+}
+
+/* Анимация появления */
+.animate-block > *.animate {
+  opacity: 1;
+  transform: translateY(0); // Возвращение в исходное положение
+}
+
 // Остальные страницы
 @import 'card-course';
 @import 'blog';

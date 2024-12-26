@@ -151,6 +151,8 @@ function initFooterScripts() {
   });
 }
 
+initFooterScripts();
+
 // Экранирующая функция для безопасности
 const sanitizeHTML = text => {
   const div = document.createElement('div');
@@ -446,5 +448,37 @@ document.addEventListener('DOMContentLoaded', () => {
     closeModalButton.addEventListener('click', closeModal);
   }
 });
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const animateBlocks = document.querySelectorAll('.animate-block');
+
+  // Добавляем класс анимации к дочерним элементам
+  const animateItems = (block) => {
+    const items = block.children;
+    Array.from(items).forEach((item, index) => {
+      setTimeout(() => {
+        item.classList.add('animate'); // Добавляем класс для анимации
+      }, index * 200); // Последовательная задержка
+    });
+  };
+
+  // Наблюдение за появлением блоков
+  const observer = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          animateItems(entry.target); // Анимируем элементы
+          observer.unobserve(entry.target); // Убираем наблюдение
+        }
+      });
+    },
+    { threshold: 0.1 } // 10% блока видны
+  );
+
+  // Добавляем наблюдение за каждым блоком
+  animateBlocks.forEach((block) => observer.observe(block));
+});
+
 
 
